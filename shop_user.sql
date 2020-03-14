@@ -11,7 +11,7 @@
  Target Server Version : 100411
  File Encoding         : 65001
 
- Date: 12/03/2020 13:11:49
+ Date: 14/03/2020 18:10:25
 */
 
 SET NAMES utf8mb4;
@@ -41,6 +41,58 @@ INSERT INTO `cart` VALUES (37, 27, 1, 1);
 INSERT INTO `cart` VALUES (38, 19, 1, 1);
 
 -- ----------------------------
+-- Table structure for feedback
+-- ----------------------------
+DROP TABLE IF EXISTS `feedback`;
+CREATE TABLE `feedback`  (
+  `id` int(11) NOT NULL,
+  `product_id` int(11) NULL DEFAULT NULL,
+  `order_id` int(11) NULL DEFAULT NULL,
+  `user_id` int(11) NULL DEFAULT NULL,
+  `feedback` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `time` timestamp(0) NULL DEFAULT current_timestamp(0),
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `product_id`(`product_id`) USING BTREE,
+  INDEX `order_id`(`order_id`) USING BTREE,
+  INDEX `user_id`(`user_id`) USING BTREE,
+  CONSTRAINT `feedback_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `feedback_ibfk_2` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `feedback_ibfk_3` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of feedback
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for order
+-- ----------------------------
+DROP TABLE IF EXISTS `order`;
+CREATE TABLE `order`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NULL DEFAULT NULL,
+  `sum` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `datetime` datetime(0) NULL DEFAULT current_timestamp(0),
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `user_id`(`user_id`) USING BTREE,
+  CONSTRAINT `order_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of order
+-- ----------------------------
+INSERT INTO `order` VALUES (1, 1, '545646', '2020-03-07 13:02:52');
+INSERT INTO `order` VALUES (2, 1, '545646', '2020-03-07 13:16:04');
+INSERT INTO `order` VALUES (3, 1, '545646', '2020-03-07 13:18:46');
+INSERT INTO `order` VALUES (4, 1, '545646', '2020-03-07 13:19:37');
+INSERT INTO `order` VALUES (5, 1, '545646', '2020-03-07 13:24:32');
+INSERT INTO `order` VALUES (6, 1, '545646', '2020-03-07 13:26:25');
+INSERT INTO `order` VALUES (7, 1, '545646', '2020-03-07 13:27:55');
+INSERT INTO `order` VALUES (8, 1, '545646', '2020-03-12 18:13:34');
+INSERT INTO `order` VALUES (9, 1, '545646', '2020-03-12 18:33:13');
+INSERT INTO `order` VALUES (10, 1, '545646', '2020-03-12 18:34:15');
+
+-- ----------------------------
 -- Table structure for order_details
 -- ----------------------------
 DROP TABLE IF EXISTS `order_details`;
@@ -55,7 +107,7 @@ CREATE TABLE `order_details`  (
   INDEX `product_id`(`product_id`) USING BTREE,
   CONSTRAINT `order_details_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `order_details_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of order_details
@@ -167,7 +219,7 @@ CREATE TABLE `users`  (
 INSERT INTO `users` VALUES (1, 'ani', 'sargsyan', 'a@mail.ru', 22, '$2y$10$jAeNHzET4JTro8G/TdNvkuIAWiBS6TM.BtkpjhrFX./OeGlW31fXe', '1', '0');
 INSERT INTO `users` VALUES (2, 'ann', 'sargsyan', 's@mail.ru', 20, '$2y$10$N91Nv69akG7WjEdpmF7.WecVcEFpQNudbzo84FoWiZFRqEiDbTdtG', '0', '0');
 INSERT INTO `users` VALUES (4, 'armen', 'dfgdfgdfgdfgdf', 'z@mail.ru', 25, '$2y$10$c5EPoRWRP6O55Mb6QKoOdeW5t6kHOLZuP3pIlGnFAaxlN564of.ry', '0', '0');
-INSERT INTO `users` VALUES (26, 'ani', 'sargsyan', 'ed.arm.2000@gmail.com', 18, '$2y$10$.GDhmOqXTu9ri8djwazAfeujxhYroThy1D2v90Ume3pIGgZTgjG9e', '1', '60Cc1');
+INSERT INTO `users` VALUES (26, 'ani', 'sargsyan', 'ed.arm.2000@gmail.com', 18, '$2y$10$kxLtNp3VLIEYWiXA5jUmbeUN4p8f4UmOyknyc9o.vYHZKJPoqsMo2', '1', 'R3z98');
 
 -- ----------------------------
 -- Table structure for wishlist
