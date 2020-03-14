@@ -176,7 +176,7 @@
                                                     <a href="{{url('g_profile/product')}}">Address Book</a>
                                                 </li>
                                                 <li>
-                                                    <a href="page-my-account-orders.html">Orders History</a>
+                                                    <a href="{{ url('g_profile/my_orders_history') }}">Orders History</a>
                                                 </li>
                                                 <li>
                                                     <a href="{{url('g_profile/my_product')}}">Product</a>

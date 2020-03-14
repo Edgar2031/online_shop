@@ -103,14 +103,18 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 clearfix">
-                            <label><i class="fa fa-search"></i><span>I am searching for</span>
+                            <label>
+                                <i class="fa fa-search"></i>
+                                <span>I am searching for</span>
                             </label>
                             <div class="search-area-division search-area-division-input">
                                 <input class="form-control" type="text" placeholder="Travel Vacation" />
                             </div>
                         </div>
                         <div class="col-md-3 clearfix">
-                            <label><i class="fa fa-map-marker"></i><span>In</span>
+                            <label>
+                                <i class="fa fa-map-marker"></i>
+                                <span>In</span>
                             </label>
                             <div class="search-area-division search-area-division-location">
                                 <input class="form-control product_val" type="text" placeholder="Boston" />

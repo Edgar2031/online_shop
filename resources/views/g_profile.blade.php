@@ -10,7 +10,7 @@
 	    <!-- TITLE -->
         <title>Arduix</title>
         <!-- Favicon -->
-        <link rel="icon" type="image/png" href="img/favicon.png">
+        <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
         {{-- Loading --}}
         <link rel="stylesheet" href="{{asset('css/loader.css')}}">
         {{-- Up --}}
@@ -55,6 +55,7 @@
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 	</head>
     <body>
+        Logo image ???
     	<!-- Page Loading -->
         <div class="l-ing">          
             <div class="loading">

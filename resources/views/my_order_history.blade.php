@@ -3,61 +3,59 @@
 <!DOCTYPE HTML>
 <html>
     <head>  
-        <meta name="keywords" content="Koupon HTML5 Template" />
-        <meta name="description" content="Koupon - Premiun HTML5 Template for Coupons Website">
-        <meta name="author" content="Tsoy">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- TITLE -->
+	    <meta name="keywords" content="Koupon HTML5 Template" />
+	    <meta name="description" content="Koupon - Premiun HTML5 Template for Coupons Website">
+	    <meta name="author" content="Tsoy">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <!-- TITLE -->
         <title>Arduix</title>
         <!-- Favicon -->
-        <link rel="icon" type="image/png" href="img/favicon.png">
+        <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
         {{-- Loading --}}
         <link rel="stylesheet" href="{{asset('css/loader.css')}}">
         {{-- Up --}}
         <link rel="stylesheet" href="{{asset('css/up.css')}}">
 
-        <!-- Google fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300' rel='stylesheet' type='text/css'>
-        <!-- Bootstrap styles -->
-        <link rel="stylesheet" href="{{asset('css/boostrap.css')}}">
-        <!-- Font Awesome styles (icons) -->
-        <link rel="stylesheet" href="{{asset('css/font_awesome.css')}}">
-        <!-- Main Template styles -->
-        <link rel="stylesheet" href="{{asset('css/styles.css')}}">
-        <!-- IE 8 Fallback -->
+	    <!-- Google fonts -->
+	    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+	    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300' rel='stylesheet' type='text/css'>
+	    <!-- Bootstrap styles -->
+	    <link rel="stylesheet" href="{{asset('css/boostrap.css')}}">
+	    <!-- Font Awesome styles (icons) -->
+	    <link rel="stylesheet" href="{{asset('css/font_awesome.css')}}">
+	    <!-- Main Template styles -->
+	    <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+	    <!-- IE 8 Fallback -->
 
-        <!-- Your custom styles (blank file) -->
-        <link rel="stylesheet" href="{{asset('css/mystyles.css')}}">
+	    <!-- Your custom styles (blank file) -->
+	    <link rel="stylesheet" href="{{asset('css/mystyles.css')}}">
 
-        <link rel="stylesheet" href="{{asset('css/switcher.css')}}">
-        <!-- Demo Examples -->
-        <link rel="alternate stylesheet" href="{{asset('css/schemes/apple.css')}}" title="apple" media="all" />
-        <link rel="alternate stylesheet" href="{{asset('css/schemes/pink.css')}}" title="pink" media="all" />
-        <link rel="alternate stylesheet" href="{{asset('css/schemes/teal.css')}}" title="teal" media="all" />
-        <link rel="alternate stylesheet" href="{{asset('css/schemes/gold.css')}}" title="gold" media="all" />
-        <link rel="alternate stylesheet" href="{{asset('css/schemes/downy.css')}}" title="downy" media="all" />
-        <link rel="alternate stylesheet" href="{{asset('css/schemes/atlantis.css')}}" title="atlantis" media="all" />
-        <link rel="alternate stylesheet" href="{{asset('css/schemes/red.css')}}" title="red" media="all" />
-        <link rel="alternate stylesheet" href="{{asset('css/schemes/violet.css')}}" title="violet" media="all" />
-        <link rel="alternate stylesheet" href="{{asset('css/schemes/pomegranate.css')}}" title="pomegranate" media="all" />
-        <link rel="alternate stylesheet" href="{{asset('css/schemes/violet-red.css')}}" title="violet-red" media="all" />
-        <link rel="alternate stylesheet" href="{{asset('css/schemes/mexican-red.css')}}" title="mexican-red" media="all" />
-        <link rel="alternate stylesheet" href="{{asset('css/schemes/victoria.css')}}" title="victoria" media="all" />
-        <link rel="alternate stylesheet" href="{{asset('css/schemes/orient.css')}}" title="orient" media="all" />
-        <link rel="alternate stylesheet" href="{{asset('css/schemes/jgger.css')}}" title="jgger" media="all" />
-        <link rel="alternate stylesheet" href="{{asset('css/schemes/de-york.css')}}" title="de-york" media="all" />
-        <link rel="alternate stylesheet" href="{{asset('css/schemes/blaze-orange.css')}}" title="blaze-orange" media="all" />
-        <link rel="alternate stylesheet" href="{{asset('css/schemes/hot-pink.css')}}" title="hot-pink" media="all" />
-        <!-- END Demo Examples -->
+	    <link rel="stylesheet" href="{{asset('css/switcher.css')}}">
+	    <!-- Demo Examples -->
+	    <link rel="alternate stylesheet" href="{{asset('css/schemes/apple.css')}}" title="apple" media="all" />
+	    <link rel="alternate stylesheet" href="{{asset('css/schemes/pink.css')}}" title="pink" media="all" />
+	    <link rel="alternate stylesheet" href="{{asset('css/schemes/teal.css')}}" title="teal" media="all" />
+	    <link rel="alternate stylesheet" href="{{asset('css/schemes/gold.css')}}" title="gold" media="all" />
+	    <link rel="alternate stylesheet" href="{{asset('css/schemes/downy.css')}}" title="downy" media="all" />
+	    <link rel="alternate stylesheet" href="{{asset('css/schemes/atlantis.css')}}" title="atlantis" media="all" />
+	    <link rel="alternate stylesheet" href="{{asset('css/schemes/red.css')}}" title="red" media="all" />
+	    <link rel="alternate stylesheet" href="{{asset('css/schemes/violet.css')}}" title="violet" media="all" />
+	    <link rel="alternate stylesheet" href="{{asset('css/schemes/pomegranate.css')}}" title="pomegranate" media="all" />
+	    <link rel="alternate stylesheet" href="{{asset('css/schemes/violet-red.css')}}" title="violet-red" media="all" />
+	    <link rel="alternate stylesheet" href="{{asset('css/schemes/mexican-red.css')}}" title="mexican-red" media="all" />
+	    <link rel="alternate stylesheet" href="{{asset('css/schemes/victoria.css')}}" title="victoria" media="all" />
+	    <link rel="alternate stylesheet" href="{{asset('css/schemes/orient.css')}}" title="orient" media="all" />
+	    <link rel="alternate stylesheet" href="{{asset('css/schemes/jgger.css')}}" title="jgger" media="all" />
+	    <link rel="alternate stylesheet" href="{{asset('css/schemes/de-york.css')}}" title="de-york" media="all" />
+	    <link rel="alternate stylesheet" href="{{asset('css/schemes/blaze-orange.css')}}" title="blaze-orange" media="all" />
+	    <link rel="alternate stylesheet" href="{{asset('css/schemes/hot-pink.css')}}" title="hot-pink" media="all" />
+	    <!-- END Demo Examples -->
         <!-- Boxicons CSS --> 
         <link rel="stylesheet" href="{{asset('css/boxicons.min.css')}}">
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-        <!-- Fontawesome --> 
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.1/css/all.css">
-    </head>
+	</head>
     <body>
-        <!-- Page Loading -->
+    	<!-- Page Loading -->
         <div class="l-ing">          
             <div class="loading">
                 <div class="finger finger-1">
@@ -92,11 +90,9 @@
                 </div>
             </div>
         </div>
-        {{-- Csrf Token --}}
-        <input type="hidden" id="cart_token" value="{{csrf_token()}}">
         @endsection
         
-        @section('footer')
+        @section('footer')  
             <!-- SEARCH AREA -->
             <form class="search-area form-group">
                 <div class="container">
@@ -122,97 +118,55 @@
                 </div>
             </form>
             <!-- END SEARCH AREA -->
-
             <div class="gap"></div>
-
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8">
-                        <table class="table cart-table">
-                            <thead>
-                                <tr>
-                                    <th>Item</th>
-                                    <th>Name</th>
-                                    <th>QTY</th>
-                                    <th>Price</th>
-                                    <th>Wishlist</th>
-                                    <th>Remove</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($cart_product as $product)
-                                    @if ($product->wishlist === 1)
-                                            <tr class="this_{{$product->Pro_product->id}}" data-id="{{$product->Pro_product->count}}">
-                                                <td class="cart-item-image" style="height: 80px; width: 105px;">
-                                                    <a class="cart_pr_img">
-                                                        <img src="{{asset('product_photo/'.$product->Pro_product->p_photo[0]->photo)}}" alt="Image" title="Image" style="height: 100%; width: 100%;">
-                                                    </a>
-                                                </td>
-                                                <td>
-                                                    <a>{{$product->Pro_product->name}}</a>
-                                                </td>
-                                                <td class="cart-item-quantity">
-                                                    <i class="fa fa-minus cart-item-minus"></i>
-                                                    <input type="text" name="cart-quantity" class="cart-quantity" value="{{$product->count}}" disabled>
-                                                    <i class="fa fa-plus cart-item-plus"></i>
-                                                </td>
-                                                <td class="cart_td">&#36; {{$product->Pro_product->price}}</td>
-                                                <td class="cart-item-wishlist btn btn-sm move_to_wish_list" style="display: none;">
-                                                    <a class="fas fa-heart">Move To Wish List</a>
-                                                </td>
-                                                <td class="cart-item-wishlist btn btn-sm remove_from_wish_list">
-                                                    <img src="http://localhost:8000/img/heart-broken-solid.svg" style="width: 20px; height: 20px;">
-                                                    Remove From Wishlist
-                                                </td>
-                                                <td class="cart-item-remove">
-                                                    <a class="fa fa-times"></a>
-                                                </td>
-                                            </tr>
-                                        @else
-                                            <tr class="this_{{$product->Pro_product->id}}" data-id="{{$product->Pro_product->count}}">
-                                                <td class="cart-item-image" style="height: 80px; width: 105px;">
-                                                    <a class="cart_pr_img">
-                                                        <img src="{{asset('product_photo/'.$product->Pro_product->p_photo[0]->photo)}}" alt="Image" title="Image" style="height: 100%; width: 100%;">
-                                                    </a>
-                                                </td>
-                                                <td>
-                                                    <a>{{$product->Pro_product->name}}</a>
-                                                </td>
-                                                <td class="cart-item-quantity">
-                                                    <i class="fa fa-minus cart-item-minus"></i>
-                                                    <input type="text" name="cart-quantity" class="cart-quantity" value="{{$product->count}}" disabled>
-                                                    <i class="fa fa-plus cart-item-plus"></i>
-                                                </td>
-                                                <td class="cart_td">&#36; {{$product->Pro_product->price}}</td>
-                                                <td class="cart-item-wishlist btn btn-sm move_to_wish_list">
-                                                    <a class="fas fa-heart">Move To Wish List</a>
-                                                </td>
-                                                <td class="cart-item-wishlist btn btn-sm remove_from_wish_list" style="display: none;">
-                                                    <img src="http://localhost:8000/img/heart-broken-solid.svg" style="width: 20px; height: 20px;">
-                                                    Remove From Wish List
-                                                </td>
-                                                <td class="cart-item-remove">
-                                                    <a class="fa fa-times"></a>
-                                                </td>
-                                            </tr>
-                                    @endif
-                                @endforeach
-                            </tbody>
-                        </table>	
-                        <a href="#" class="btn btn-primary">Update the cart</a>
-                    </div>
                     <div class="col-md-3">
-                        <ul class="cart-total-list">
-                            <li>
-                                <span>Total</span>
-                                <span class="total_span"></span>
-                            </li>
-                        </ul>
-                        <a href="{{url('/g_profile/page_cart/stripe')}}" class="btn btn-primary btn-lg">Buy all</a>
+                        <aside class="sidebar-left">
+                            <ul class="nav nav-pills nav-stacked nav-arrow">
+                                <li><a href="page-my-account-settings.html">Settings</a>
+                                </li>
+                                <li><a href="page-my-account-addresses.html">Address Book</a>
+                                </li>
+                                <li class="active"><a href="page-my-account-orders.html">Orders History</a>
+                                </li>
+                                <li><a href="page-my-account-wishlist.html">Wishlist</a>
+                                </li>
+                            </ul>
+                        </aside>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <table class="table table-order">
+                                    <thead>
+                                        <tr>
+                                            <th>Item</th>
+                                            <th>Qty</th>
+                                            <th>Price</th>
+                                            <th>Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($orders as $val)
+                                            <tr>
+                                                <td>
+                                                    <a href="#">New Glass Collection</a>
+                                                </td>
+                                                <td>2</td>
+                                                <td>$ {{ $val->sum }}</td>
+                                                <td>{{ $val->datetime }}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="gap"></div>
                     </div>
                 </div>
-                <div class="gap"></div>
             </div>
+
             <footer class="main" id="main-footer">
                 <div class="footer-top-area">
                     <div class="container">
@@ -238,7 +192,7 @@
                                         <a class="fa fa-tumblr box-icon" href="#" data-toggle="tooltip" title="Tumblr"></a>
                                     </li>
                                 </ul>
-                                <p>At nostra cum feugiat habitant eget quis condimentum sed duis aenean ante sagittis amet aptent id cras placerat laoreet senectus</p>
+                                <p>Ridiculus class torquent hendrerit elementum vel magna penatibus ridiculus interdum leo ultricies sociis mus vivamus viverra in volutpat sed dis</p>
                             </div>
                             <div class="col-md-3">
                                 <h4>Sign Up to the Newsletter</h4>
@@ -248,7 +202,7 @@
                                             <label>E-mail</label>
                                             <input type="text" class="form-control" />
                                         </div>
-                                        <p class="mb10">Conubia aliquet ullamcorper consectetur integer nisl ac</p>
+                                        <p class="mb10">Fames in rhoncus in elit urna phasellus</p>
                                         <input type="submit" class="btn btn-primary" value="Sign Up" />
                                     </form>
                                 </div>
@@ -268,8 +222,8 @@
                                         </a>
                                         <div class="thumb-list-item-caption">
                                             <p class="thumb-list-item-meta">Jul 18, 2014</p>
-                                            <h5 class="thumb-list-item-title"><a href="#">Nascetur adipiscing</a></h5>
-                                            <p class="thumb-list-item-desciption">Dolor est vivamus tincidunt amet</p>
+                                            <h5 class="thumb-list-item-title"><a href="#">Quam felis</a></h5>
+                                            <p class="thumb-list-item-desciption">Ad diam suspendisse in etiam</p>
                                         </div>
                                     </li>
                                     <li>
@@ -278,8 +232,8 @@
                                         </a>
                                         <div class="thumb-list-item-caption">
                                             <p class="thumb-list-item-meta">Jul 18, 2014</p>
-                                            <h5 class="thumb-list-item-title"><a href="#">Rutrum purus</a></h5>
-                                            <p class="thumb-list-item-desciption">Posuere ipsum vulputate class fringilla</p>
+                                            <h5 class="thumb-list-item-title"><a href="#">Enim mattis</a></h5>
+                                            <p class="thumb-list-item-desciption">Taciti quis velit urna neque</p>
                                         </div>
                                     </li>
                                     <li>
@@ -288,8 +242,8 @@
                                         </a>
                                         <div class="thumb-list-item-caption">
                                             <p class="thumb-list-item-meta">Jul 18, 2014</p>
-                                            <h5 class="thumb-list-item-title"><a href="#">Euismod magnis</a></h5>
-                                            <p class="thumb-list-item-desciption">Primis condimentum conubia iaculis tincidunt</p>
+                                            <h5 class="thumb-list-item-title"><a href="#">Lacinia torquent</a></h5>
+                                            <p class="thumb-list-item-desciption">Sociis tempus pulvinar cubilia laoreet</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -345,7 +299,6 @@
     <!-- jQuery and Loading -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="{{asset('js/loader.js')}}"></script>
-
     <!-- Scripts queries -->
     <script src="{{asset('js/up.js')}}"></script>
     <script src="{{asset('js/jquery.js')}}"></script>
@@ -368,8 +321,5 @@
     <!-- Custom scripts -->
     <script src="{{asset('js/custom.js')}}"></script>
     <script src="{{asset('js/switcher.js')}}"></script>
-    
-    {{-- Ptoduct --}}
-    <script src="{{asset('js/cart_product.js')}}"></script>
 </html>
 @endsection

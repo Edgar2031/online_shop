@@ -44,6 +44,9 @@ Route::get('/g_profile/my_account_settings', "UserController@g_my_account")->mid
 // <= =============== Edit User =============== =>
 Route::post('/g_edit', "EditController@u_edit")->middleware('checkLogin:profile');
 
+// <= =============== Orders History =============== =>
+Route::get('g_profile/my_orders_history', "OrderController@g_profile_my_orders_history")->middleware('checkLogin:profile');
+
 // <= =============== All Product =============== =>
 Route::get('/g_profile/page_shop', 'ProductContoller@g_page_shop')->middleware('checkLogin:profile');
 Route::post('/g_profile/page_shop/page', 'ProductContoller@g_profile_page_shop_page')->middleware('checkLogin:profile');

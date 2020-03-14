@@ -52,13 +52,17 @@ class StripeController extends Controller
                 $ord_det->price = $v->Pro_product->price;
                 $ord_det->count = $v->count;
                 $ord_det->save();
+                $pr_count = $v->Pro_product->count - $v->count;
+                if ($pr_count <= 0) {
+                    ProductModel::where('id', $v->product_id)->delete();
+                }else {
+                    ProductModel::where('id', $v->product_id)->update([
+                        'count' => $pr_count
+                    ]);
+                }
             }
-            ProductModel::where('id', $v->product_id)->update([
-                'count' => $v->Pro_product->count - $v->count 
-            ]);
         }
-        CartModel::where('user_id', Ses
-            sion::get('id'))->delete();
+        CartModel::where('user_id', Session::get('id'))->delete();
         Session::flash('success', 'Payment successful!');
         return back();
     }
