@@ -19,8 +19,8 @@ class EditController extends Controller
     	$validator = Validator::make(
 		   $r->all(),
 		    array(
-		        'name' => 'required|string|min:3',
-		        'surname' => 'required|string|min:5',
+		        'name' => 'required|string|min:3|max:12',
+		        'surname' => 'required|string|min:5|max:12',
 		        'email' => 'required|email',
 		        'age' => 'required|integer|min:18'
 		    )
@@ -58,10 +58,10 @@ class EditController extends Controller
 		$validator = Validator::make(
 		   $r->all(),
 		    array(
-		        'pro_name_my' => 'required|min:3',
+		        'pro_name_my' => 'required|min:3|max:25',
 		        'pro_count_my' => 'required|integer|min:1|max:10000',
-		        'pro_price_my' => 'required|integer|min:130|max:500',
-		        'pro_description_my' => 'required|min:6',
+		        'pro_price_my' => 'required|integer|min:500|max:12000',
+		        'pro_description_my' => 'required|min:6|max:200',
 		        'pro_photo_my' => 'max:2000' 
 		    )
 		);

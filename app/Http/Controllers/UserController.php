@@ -9,26 +9,27 @@ use App\UserModel;
 use Hash;
 use Session;
 use Mail;
+use Response;
 
 class UserController extends Controller
 {
 	// <= === Register === =>
  	function r_register(Request $r) {
- 		// dd($r->all());
  		$validator = Validator::make(
 		   $r->all(),
 		    array(
-		        'name' => 'required|string|min:3',
-		        'surname' => 'required|string|min:5',
+		        'name' => 'required|string|min:3|max:12',
+		        'surname' => 'required|string|min:5|max:12',
 		        'email' => 'required|email',
 		        'age' => 'required|integer|min:16',
-		        'password' => 'required|min:6',
-		        'confirm' => 'required|same:password|min:6'
-		    ),
-		    array(
-		    	'name.required' => 'datark',
-		    	'email' => 'address error'
+		        'password' => 'required|min:6|max:12',
+		        'confirm' => 'required|same:password|min:6|max:12'
 		    )
+		    // ,
+		    // array(
+		    // 	'name.required' => 'datark',
+		    // 	'email' => 'address error'
+		    // )
 		);
 
  		$user = UserModel::where('email', $r->email)->first();
@@ -164,7 +165,7 @@ class UserController extends Controller
 		$validator = Validator::make(
 		   $r->all(),
 		    array(
-		        'new_password' => 'required|min:6',
+		        'new_password' => 'required|min:6|max:12',
 		        'new_password_confirm' => 'required|same:new_password|min:6'
 		    )
 		);
@@ -184,32 +185,37 @@ class UserController extends Controller
 	// <= === Login Check === =>
 	function g_login_check(Request $r) {
 		$validator = Validator::make(
-		   $r->all(),
+		   	$r->send,
 		    array(
-		        'l_email' => 'required',
-		        'l_password' => 'required|min:6',
+		        'email' => 'required|max:25',
+		        'password' => 'required|min:6|max:12',
 		    )
 		);
 			
-		$user = UserModel::where('email', $r->l_email)->first();
+		$user = UserModel::where('email', $r->send['email'])->first();
 		$validator->after(function($validator) use($user, $r){
 			if (!$user) {
-				$validator->errors()->add('l_email', 'chka tenc mail');		
+				$validator->errors()->add('email', 'chka tenc mail');		
 			}
-			else if (!Hash::check($r->l_password, $user['password'])){
-				$validator->errors()->add('l_password', 'sxal password');		
+			else if (!Hash::check($r->send['password'], $user['password'])){
+				$validator->errors()->add('password', 'sxal password');		
 			}
 			else if ($user->active == 0) {
-				$validator->errors()->add('l_verification', 'verify your account');
+				$validator->errors()->add('verify', 'Verify your account');
 			}
 		});
 
 		if ($validator->fails()) {
 			// Переданные данные не прошли проверку
-			return Redirect::to('/')->withErrors($validator)->withInput();
+			return Response::json(array(
+		        'success' => false,
+		        'errors' => $validator->getMessageBag()->toArray()
+		    ), 400); 
+		    // 400 being the HTTP code for an invalid request.
 		}else {
 			Session::put('id',$user['id']);
-			return Redirect::to('/g_profile');
+			return Response::json(array('success' => true), 200);
+			// 200 being the HTTP code for an invalid request.
 		}		
 	}
 

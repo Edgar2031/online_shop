@@ -1098,9 +1098,7 @@ pre code {
   .col-md-9 {
     width: 75%;
   }
-  .col-md-8 {
-    width: 66.66666667%;
-  }
+
   .col-md-7 {
     width: 58.33333333%;
   }
@@ -1120,7 +1118,7 @@ pre code {
     width: 16.66666667%;
   }
   .col-md-1 {
-    width: 8.33333333%;
+    width: 100%;
   }
   .col-md-pull-12 {
     right: 100%;
@@ -3451,6 +3449,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li {
   position: relative;
   display: block;
+  cursor: pointer;
 }
 .nav > li > a {
   position: relative;

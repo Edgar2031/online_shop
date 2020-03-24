@@ -53,43 +53,22 @@
         <!-- Boxicons CSS --> 
         <link rel="stylesheet" href="{{asset('css/boxicons.min.css')}}">
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-        <!-- Fontawesome --> 
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.1/css/all.css">
+        {{-- Font awesome --}}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     </head>
     <body>
         <!-- Page Loading -->
-        <div class="l-ing">          
+        <div class="l_ing">
+            <div class="circles">
+                <div class="circle c1"></div>
+                <div class="circle c2"></div>
+                <div class="circle c3"></div>
+            </div>
             <div class="loading">
-                <div class="finger finger-1">
-                    <div class="finger-item">
-                        <span></span>
-                        <i></i>
-                    </div>
-                </div>
-                <div class="finger finger-2">
-                    <div class="finger-item">
-                        <span></span>
-                        <i></i>
-                    </div>
-                </div>
-                <div class="finger finger-3">
-                    <div class="finger-item">
-                        <span></span>
-                        <i></i>
-                    </div>
-                </div>
-                <div class="finger finger-4">
-                    <div class="finger-item">
-                        <span></span>
-                        <i></i>
-                    </div>
-                </div>
-                <div class="last-finger">
-                    <div class="last-finger-item">
-                        <span></span>
-                        <i></i>
-                    </div>
-                </div>
+                <div class="a"></div>
+                <div class="b"></div>
+                <div class="c"></div>
+                <div class="d"></div>
             </div>
         </div>
         {{-- Csrf Token --}}
@@ -97,34 +76,8 @@
         @endsection
         
         @section('footer')
-            <!-- SEARCH AREA -->
-            <form class="search-area form-group">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 clearfix">
-                            <label><i class="fa fa-search"></i><span>I am searching for</span>
-                            </label>
-                            <div class="search-area-division search-area-division-input">
-                                <input class="form-control" type="text" placeholder="Travel Vacation" />
-                            </div>
-                        </div>
-                        <div class="col-md-3 clearfix">
-                            <label><i class="fa fa-map-marker"></i><span>In</span>
-                            </label>
-                            <div class="search-area-division search-area-division-location">
-                                <input class="form-control" type="text" placeholder="Boston" />
-                            </div>
-                        </div>
-                        <div class="col-md-1">
-                            <button class="btn btn-block btn-white search-btn" type="submit">Search</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-            <!-- END SEARCH AREA -->
-
+        <div class="head">
             <div class="gap"></div>
-
             <div class="container">
                 <div class="row">
                     <div class="col-md-8">
@@ -200,134 +153,12 @@
                 </div>
                 <div class="gap"></div>
             </div>
-
-
-            <!-- //////////////////////////////////
-    	//////////////END PAGE CONTENT///////// 
-    	////////////////////////////////////-->
-
-
-
-            <!-- //////////////////////////////////
-    	//////////////MAIN FOOTER////////////// 
-    	////////////////////////////////////-->
-
             <footer class="main" id="main-footer">
-                <div class="footer-top-area">
-                    <div class="container">
-                        <div class="row row-wrap">
-                            <div class="col-md-3">
-                                <a href="index.html">
-                                    <img src="img/logo.png" alt="logo" title="logo" class="logo">
-                                </a>
-                                <ul class="list list-social">
-                                    <li>
-                                        <a class="fa fa-facebook box-icon" href="#" data-toggle="tooltip" title="Facebook"></a>
-                                    </li>
-                                    <li>
-                                        <a class="fa fa-twitter box-icon" href="#" data-toggle="tooltip" title="Twitter"></a>
-                                    </li>
-                                    <li>
-                                        <a class="fa fa-flickr box-icon" href="#" data-toggle="tooltip" title="Flickr"></a>
-                                    </li>
-                                    <li>
-                                        <a class="fa fa-linkedin box-icon" href="#" data-toggle="tooltip" title="LinkedIn"></a>
-                                    </li>
-                                    <li>
-                                        <a class="fa fa-tumblr box-icon" href="#" data-toggle="tooltip" title="Tumblr"></a>
-                                    </li>
-                                </ul>
-                                <p>At nostra cum feugiat habitant eget quis condimentum sed duis aenean ante sagittis amet aptent id cras placerat laoreet senectus</p>
-                            </div>
-                            <div class="col-md-3">
-                                <h4>Sign Up to the Newsletter</h4>
-                                <div class="box">
-                                    <form>
-                                        <div class="form-group mb10">
-                                            <label>E-mail</label>
-                                            <input type="text" class="form-control" />
-                                        </div>
-                                        <p class="mb10">Conubia aliquet ullamcorper consectetur integer nisl ac</p>
-                                        <input type="submit" class="btn btn-primary" value="Sign Up" />
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <h4>Couponia on Twitter</h4>
-                                <!-- START TWITTER -->
-                                <div class="twitter-ticker" id="twitter-ticker"></div>
-                                <!-- END TWITTER -->
-                            </div>
-                            <div class="col-md-3">
-                                <h4>Recent News</h4>
-                                <ul class="thumb-list">
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/urbex_esch_lux_with_laney_and_laaaaag_70x70.jpg" alt="Image Alternative text" title="Urbex Esch/Lux with Laney and Laaaaag" />
-                                        </a>
-                                        <div class="thumb-list-item-caption">
-                                            <p class="thumb-list-item-meta">Jul 18, 2014</p>
-                                            <h5 class="thumb-list-item-title"><a href="#">Nascetur adipiscing</a></h5>
-                                            <p class="thumb-list-item-desciption">Dolor est vivamus tincidunt amet</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/amaze_70x70.jpg" alt="Image Alternative text" title="AMaze" />
-                                        </a>
-                                        <div class="thumb-list-item-caption">
-                                            <p class="thumb-list-item-meta">Jul 18, 2014</p>
-                                            <h5 class="thumb-list-item-title"><a href="#">Rutrum purus</a></h5>
-                                            <p class="thumb-list-item-desciption">Posuere ipsum vulputate class fringilla</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/the_hidden_power_of_the_heart_70x70.jpg" alt="Image Alternative text" title="The Hidden Power of the Heart" />
-                                        </a>
-                                        <div class="thumb-list-item-caption">
-                                            <p class="thumb-list-item-meta">Jul 18, 2014</p>
-                                            <h5 class="thumb-list-item-title"><a href="#">Euismod magnis</a></h5>
-                                            <p class="thumb-list-item-desciption">Primis condimentum conubia iaculis tincidunt</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="footer-copyright">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-4">
-                                <p>Copyright © 2014, Your Store, All Rights Reserved</p>
-                            </div>
-                            <div class="col-md-6 col-md-offset-2">
-                                <div class="pull-right">
-                                    <ul class="list-inline list-payment">
-                                        <li>
-                                            <img src="img/payment/american-express-curved-32px.png" alt="Image Alternative text" title="Image Title" />
-                                        </li>
-                                        <li>
-                                            <img src="img/payment/cirrus-curved-32px.png" alt="Image Alternative text" title="Image Title" />
-                                        </li>
-                                        <li>
-                                            <img src="img/payment/discover-curved-32px.png" alt="Image Alternative text" title="Image Title" />
-                                        </li>
-                                        <li>
-                                            <img src="img/payment/ebay-curved-32px.png" alt="Image Alternative text" title="Image Title" />
-                                        </li>
-                                        <li>
-                                            <img src="img/payment/maestro-curved-32px.png" alt="Image Alternative text" title="Image Title" />
-                                        </li>
-                                        <li>
-                                            <img src="img/payment/mastercard-curved-32px.png" alt="Image Alternative text" title="Image Title" />
-                                        </li>
-                                        <li>
-                                            <img src="img/payment/visa-curved-32px.png" alt="Image Alternative text" title="Image Title" />
-                                        </li>
-                                    </ul>
-                                </div>
+                                <p>Copyright © <?php date_default_timezone_set("Asia/Yerevan"); echo(date('Y')); ?>, Your Store, All Rights Reserved</p>
                             </div>
                         </div>
                     </div>
@@ -340,6 +171,7 @@
             <i class="bx bx-chevrons-up bx-fade-up"></i>
         </div>
         <!-- End Go Top Area -->
+        </div>
     </body>
     <!-- jQuery and Loading -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

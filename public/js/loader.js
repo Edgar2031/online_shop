@@ -2,8 +2,8 @@ $(window).on('load', function() {
 	/*------------------
 		Preloder
 	--------------------*/
-	$(".loading").fadeOut(); 
-	$(".l-ing").delay(400).fadeOut("slow");
+	$(".circles, .loading").fadeOut(250); 
+	$(".l_ing").delay(500).fadeOut("slow");
 });
 
 
@@ -20,3 +20,11 @@ $('.icon-wishlist').on('click', function(){
 $('.icon-cart').on('click', function(){
 	$(this).toggleClass('in-cart');
 });
+
+
+// Range brightness
+$('#range_brightness').change(function() {
+	$('.head, .main').css('filter','brightness(' + $('#range_brightness').val() + '%)');
+});
+
+

@@ -687,6 +687,7 @@ label {
 }
 .search-area .search-area-division {
   float: left;
+  width: 400px;
 }
 @media (max-width: 992px) {
   .search-area .search-area-division {
@@ -705,9 +706,6 @@ label {
   .search-area .search-area-division-location {
     width: 120px;
   }
-}
-.search-area .search-area-division-input {
-  width: 510px;
 }
 @media (max-width: 1200px) {
   .search-area .search-area-division-input {
@@ -1289,7 +1287,8 @@ label {
   margin: 0;
   color: #666;
 }
-.nav-tabs.nav-stacked.nav-coupon-category > li > a .fa {
+.nav-tabs.nav-stacked.nav-coupon-category > li > a .fa,
+.nav-tabs.nav-stacked.nav-coupon-category > li > a .fas {
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   -o-transform: translate3d(0, 0, 0);
@@ -1307,7 +1306,8 @@ label {
   line-height: 40px;
   border-right: 1px solid #ededed;
 }
-.nav-tabs.nav-stacked.nav-coupon-category > li > a .fa:before {
+.nav-tabs.nav-stacked.nav-coupon-category > li > a .fa:before,
+.nav-tabs.nav-stacked.nav-coupon-category > li > a .fas:before {
   opacity: 0.65;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
   filter: alpha(opacity=65);
@@ -1330,11 +1330,13 @@ label {
   padding-left: 65px;
   color: #2a8fbd;
 }
-.nav-tabs.nav-stacked.nav-coupon-category > li > a:hover .fa {
+.nav-tabs.nav-stacked.nav-coupon-category > li > a:hover .fa,
+.nav-tabs.nav-stacked.nav-coupon-category > li > a:hover .fas {
   background: #2a8fbd;
   color: #fff;
 }
-.nav-tabs.nav-stacked.nav-coupon-category > li > a:hover .fa:before {
+.nav-tabs.nav-stacked.nav-coupon-category > li > a:hover .fa:before,
+.nav-tabs.nav-stacked.nav-coupon-category > li > a:hover .fas:before {
   opacity: 1;
   -ms-filter: none;
   filter: none;
@@ -1358,12 +1360,14 @@ label {
   color: #fff;
   background: rgba(0,0,0,0.5);
 }
-.nav-tabs.nav-stacked.nav-coupon-category > .active > a .fa {
+.nav-tabs.nav-stacked.nav-coupon-category > .active > a .fa,
+.nav-tabs.nav-stacked.nav-coupon-category > .active > a .fas {
   background: #298dba;
   color: #fff;
-  border-right: 1px solid #2681aa;
+  border-right: 1px solid #fff;
 }
-.nav-tabs.nav-stacked.nav-coupon-category > .active > a .fa:before {
+.nav-tabs.nav-stacked.nav-coupon-category > .active > a .fa:before,
+.nav-tabs.nav-stacked.nav-coupon-category > .active > a .fas:before {
   opacity: 1;
   -ms-filter: none;
   filter: none;
@@ -1454,7 +1458,7 @@ label {
   position: relative;
   margin-bottom: 15px;
   font-size: 16px;
-  display: table;
+  display: inline-block;
 }
 .product-sort b {
   font-weight: 600;
@@ -3304,7 +3308,7 @@ span.count {
 .flexnav > li > a {
   background: none;
   color: #fff;
-  height: 50px;
+  height: 54px;
   line-height: 50px;
   padding: 0 15px;
 }
@@ -6596,3 +6600,75 @@ img.mfp-img {
 }
 /*RESPONSIVE*/
 /*END RESPONSIVE*/
+
+.price_lab {
+  height: 34px;
+  width: 42px;
+  position: absolute;
+  top: 43%;
+  right: 0%;
+  color: #fff;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+
+
+h1 {
+  margin: 0 0 0.25em;
+}
+/* Reset Select */
+.select_category {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #2c3e50;
+  background-image: none;
+}
+/* Remove IE arrow */
+.select_category::-ms-expand {
+  display: none;
+}
+/* Custom Select */
+.select {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  background: #2c3e50;
+  overflow: hidden;
+  border-radius: .25em;
+}
+.select_category {
+  flex: 1;
+  padding: 0 .5em;
+  color: #fff;
+  cursor: pointer;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #34495e;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+/* Transition */
+.select:hover::after {
+  color: #f39c12;
+}

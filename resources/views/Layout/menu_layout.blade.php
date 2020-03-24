@@ -1,7 +1,7 @@
 @yield('header')
     <div class="global-wrap">
         <div class="demo_changer" id="demo_changer">
-            <div class="demo-icon fa fa-sliders"></div>
+            <div class="demo-icon fas fa-sliders-h"></div>
             <div class="form_holder">
                 <div class="line"></div>
                 <p>Color Scheme</p>
@@ -25,17 +25,17 @@
                     <a href="#" data-source="blaze-orange" class="styleswitch" style="background:#FF6600"></a>
                     <a href="#" data-source="hot-pink" class="styleswitch" style="background:#FF5EAA"></a>
                 </div>
+                <div class="container_brightness">
+                    <div class="brightness-box">
+                        <i class="bx bx-sun"></i>
+                        <input type="range" id="range_brightness" min="5" max="100" value="100">
+                        <i class='bx bxs-sun'></i>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- =============== MAIN HEADER =============== -->
-        <div class="top-main-area text-center">
-            <div class="container">
-                <a href="{{url('/g_profile')}}" class="logo mt5">
-                    <img src="img/white-logo.png" alt="Arduix" title="Arduix" />
-                </a>
-            </div>
-        </div>
         <header class="main">
             <div class="container">
                 <div class="row">
@@ -45,55 +45,9 @@
                         <nav>
                             <ul class="nav nav-pills flexnav" id="flexnav" data-breakpoint="800">
                                 <li class="active">
-                                    <a href="index.html">Home</a>
-                                    <ul>
-                                        <li class="active"><a href="index-shop-layout-1.html">Shop Layout</a>
-                                            <ul>
-                                                <li class="active"><a href="index-shop-layout-1.html">Layout 1</a>
-                                                </li>
-                                                <li><a href="index-shop-layout-2.html">Layout 2</a>
-                                                </li>
-                                                <li><a href="index-shop-layout-3.html">Layout 3</a>
-                                                </li>
-                                                <li><a href="index-shop-layout-4.html">Layout 4</a>
-                                                </li>
-                                                <li><a href="index-shop-layout-5.html">Layout 5</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="index-coupon-layout-1.html">Coupon Layout</a>
-                                            <ul>
-                                                <li><a href="index-coupon-layout-1.html">Layout 1</a>
-                                                </li>
-                                                <li><a href="index-coupon-layout-2.html">Layout 2</a>
-                                                </li>
-                                                <li><a href="index-coupon-layout-3.html">Layout 3</a>
-                                                </li>
-                                                <li><a href="index.html">Layout 4</a>
-                                                </li>
-                                                <li><a href="index-coupon-layout-5.html">Layout 5</a>
-                                                </li>
-                                                <li><a href="index-coupon-layout-6.html">Layout 6</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="index-header-layout-1.html">Headers</a>
-                                            <ul>
-                                                <li><a href="index-header-layout-1.html">Layout 1</a>
-                                                </li>
-                                                <li><a href="index-header-layout-2.html">Layout 2</a>
-                                                </li>
-                                                <li><a href="index-header-layout-3.html">Layout 3</a>
-                                                </li>
-                                                <li><a href="index-header-layout-4.html">Layout 4</a>
-                                                </li>
-                                                <li><a href="index-header-layout-5.html">Layout 5</a>
-                                                </li>
-                                                <li><a href="index-header-logged-user.html">Logged User</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                    <a href="{{url('/g_profile')}}" style="background: #333;">
+                                        <img src="img/white-logo.png" alt="Arduix" title="Arduix" style='height: 35px; width: 100px; cursor: pointer;'>
+                                    </a>
                                 </li>
                                 <li>
                                     <a href="{{url('g_profile/page_shop')}}">Shop</a>
@@ -123,26 +77,6 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="features-typography.html">Features</a>
-                                    <ul>
-                                        <li><a href="features-typography.html">Typography</a>
-                                        </li>
-                                        <li><a href="features-elements.html">Elements</a>
-                                        </li>
-                                        <li><a href="features-grid.html">Grid</a>
-                                        </li>
-                                        <li><a href="features-icons.html">Icons</a>
-                                        </li>
-                                        <li><a href="features-image-hover.html">Image Hovers</a>
-                                        </li>
-                                        <li><a href="features-sliders.html">Sliders</a>
-                                        </li>
-                                        <li><a href="features-media.html">Media</a>
-                                        </li>
-                                        <li><a href="features-lightbox.html">Lightbox</a>
-                                        </li>
-                                    </ul>
-                                </li>
                                 <li><a href="blog-sidebar-right.html">Blog</a>
                                     <ul>
                                         <li><a href="blog-sidebar-right.html">Sidebar Right</a>
@@ -164,55 +98,32 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="page-full-width.html">Pages</a>
+                                    <a href="{{url('g_profile/my_account_settings')}}">Profile</a>
                                     <ul>
                                         <li>
-                                            <a href="{{url('g_profile/my_account_settings')}}">My Account</a>
-                                            <ul>
-                                                <li>
-                                                    <a href="{{url('g_profile/my_account_settings')}}">Settings</a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{url('g_profile/product')}}">Address Book</a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{ url('g_profile/my_orders_history') }}">Orders History</a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{url('g_profile/my_product')}}">Product</a>
-                                                </li>
-                                            </ul>
+                                            <a href="{{url('g_profile/my_account_settings')}}">
+                                                My Account
+                                            </a>
                                         </li>
                                         <li>
-                                            <a href="page-full-width.html">Full Width</a>
+                                            <a href="{{url('g_profile/my_account_settings')}}">
+                                                Settings
+                                            </a>
                                         </li>
                                         <li>
-                                            <a href="page-sidebar-right.html">Sidebar Right</a>
+                                            <a href="{{url('g_profile/product')}}">
+                                                Add Product
+                                            </a>
                                         </li>
                                         <li>
-                                            <a href="page-sidebar-left.html">Sidebar Left</a>
+                                            <a href="{{ url('g_profile/my_orders_history') }}">
+                                                Orders History
+                                            </a>
                                         </li>
                                         <li>
-                                            <a href="page-faq.html">Faq</a>
-                                        <li>
-                                            <a href="page-search.html">Search</a>
-                                            <ul>
-                                                <li>
-                                                    <a href="page-search-black.html">Black</a>
-                                                </li>
-                                                <li>
-                                                    <a href="page-search-white.html">White</a>
-                                                </li>
-                                                <li>
-                                                    <a href="page-search-sticky.html">Sticky</a>
-                                                </li>
-                                                <li>
-                                                    <a href="page-search-no-search.html">No Search</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="page-contact.html">Contact</a>
+                                            <a href="{{url('g_profile/my_product')}}">
+                                                My Product
+                                            </a>
                                         </li>
                                     </ul>
                                 </li>

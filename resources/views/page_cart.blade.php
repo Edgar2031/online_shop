@@ -55,41 +55,22 @@
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
         <!-- Fontawesome --> 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.1/css/all.css">
+        {{-- Font awesome --}}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     </head>
     <body>
         <!-- Page Loading -->
-        <div class="l-ing">          
+        <div class="l_ing">
+            <div class="circles">
+                <div class="circle c1"></div>
+                <div class="circle c2"></div>
+                <div class="circle c3"></div>
+            </div>
             <div class="loading">
-                <div class="finger finger-1">
-                    <div class="finger-item">
-                        <span></span>
-                        <i></i>
-                    </div>
-                </div>
-                <div class="finger finger-2">
-                    <div class="finger-item">
-                        <span></span>
-                        <i></i>
-                    </div>
-                </div>
-                <div class="finger finger-3">
-                    <div class="finger-item">
-                        <span></span>
-                        <i></i>
-                    </div>
-                </div>
-                <div class="finger finger-4">
-                    <div class="finger-item">
-                        <span></span>
-                        <i></i>
-                    </div>
-                </div>
-                <div class="last-finger">
-                    <div class="last-finger-item">
-                        <span></span>
-                        <i></i>
-                    </div>
-                </div>
+                <div class="a"></div>
+                <div class="b"></div>
+                <div class="c"></div>
+                <div class="d"></div>
             </div>
         </div>
         {{-- Csrf Token --}}
@@ -97,238 +78,120 @@
         @endsection
         
         @section('footer')
-            <!-- SEARCH AREA -->
-            <form class="search-area form-group">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 clearfix">
-                            <label><i class="fa fa-search"></i><span>I am searching for</span>
-                            </label>
-                            <div class="search-area-division search-area-division-input">
-                                <input class="form-control" type="text" placeholder="Travel Vacation" />
-                            </div>
-                        </div>
-                        <div class="col-md-3 clearfix">
-                            <label><i class="fa fa-map-marker"></i><span>In</span>
-                            </label>
-                            <div class="search-area-division search-area-division-location">
-                                <input class="form-control" type="text" placeholder="Boston" />
-                            </div>
-                        </div>
-                        <div class="col-md-1">
-                            <button class="btn btn-block btn-white search-btn" type="submit">Search</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-            <!-- END SEARCH AREA -->
-
+        <div class="head">
             <div class="gap"></div>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8">
-                        <table class="table cart-table">
-                            <thead>
-                                <tr>
-                                    <th>Item</th>
-                                    <th>Name</th>
-                                    <th>QTY</th>
-                                    <th>Price</th>
-                                    <th>Wishlist</th>
-                                    <th>Remove</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($cart_product as $product)
-                                    @if ($product->wishlist === 1)
-                                            <tr class="this_{{$product->Pro_product->id}}" data-id="{{$product->Pro_product->count}}">
-                                                <td class="cart-item-image" style="height: 80px; width: 105px;">
-                                                    <a class="cart_pr_img">
-                                                        <img src="{{asset('product_photo/'.$product->Pro_product->p_photo[0]->photo)}}" alt="Image" title="Image" style="height: 100%; width: 100%;">
-                                                    </a>
-                                                </td>
-                                                <td>
-                                                    <a>{{$product->Pro_product->name}}</a>
-                                                </td>
-                                                <td class="cart-item-quantity">
-                                                    <i class="fa fa-minus cart-item-minus"></i>
-                                                    <input type="text" name="cart-quantity" class="cart-quantity" value="{{$product->count}}" disabled>
-                                                    <i class="fa fa-plus cart-item-plus"></i>
-                                                </td>
-                                                <td class="cart_td">&#36; {{$product->Pro_product->price}}</td>
-                                                <td class="cart-item-wishlist btn btn-sm move_to_wish_list" style="display: none;">
-                                                    <a class="fas fa-heart">Move To Wish List</a>
-                                                </td>
-                                                <td class="cart-item-wishlist btn btn-sm remove_from_wish_list">
-                                                    <img src="http://localhost:8000/img/heart-broken-solid.svg" style="width: 20px; height: 20px;">
-                                                    Remove From Wishlist
-                                                </td>
-                                                <td class="cart-item-remove">
-                                                    <a class="fa fa-times"></a>
-                                                </td>
-                                            </tr>
-                                        @else
-                                            <tr class="this_{{$product->Pro_product->id}}" data-id="{{$product->Pro_product->count}}">
-                                                <td class="cart-item-image" style="height: 80px; width: 105px;">
-                                                    <a class="cart_pr_img">
-                                                        <img src="{{asset('product_photo/'.$product->Pro_product->p_photo[0]->photo)}}" alt="Image" title="Image" style="height: 100%; width: 100%;">
-                                                    </a>
-                                                </td>
-                                                <td>
-                                                    <a>{{$product->Pro_product->name}}</a>
-                                                </td>
-                                                <td class="cart-item-quantity">
-                                                    <i class="fa fa-minus cart-item-minus"></i>
-                                                    <input type="text" name="cart-quantity" class="cart-quantity" value="{{$product->count}}" disabled>
-                                                    <i class="fa fa-plus cart-item-plus"></i>
-                                                </td>
-                                                <td class="cart_td">&#36; {{$product->Pro_product->price}}</td>
-                                                <td class="cart-item-wishlist btn btn-sm move_to_wish_list">
-                                                    <a class="fas fa-heart">Move To Wish List</a>
-                                                </td>
-                                                <td class="cart-item-wishlist btn btn-sm remove_from_wish_list" style="display: none;">
-                                                    <img src="http://localhost:8000/img/heart-broken-solid.svg" style="width: 20px; height: 20px;">
-                                                    Remove From Wish List
-                                                </td>
-                                                <td class="cart-item-remove">
-                                                    <a class="fa fa-times"></a>
-                                                </td>
-                                            </tr>
-                                    @endif
-                                @endforeach
-                            </tbody>
-                        </table>	
-                        <a href="#" class="btn btn-primary">Update the cart</a>
-                    </div>
-                    <div class="col-md-3">
-                        <ul class="cart-total-list">
-                            <li>
-                                <span>Total</span>
-                                <span class="total_span"></span>
-                            </li>
-                        </ul>
-                        <a href="{{url('/g_profile/page_cart/stripe')}}" class="btn btn-primary btn-lg">Buy all</a>
-                    </div>
-                </div>
-                <div class="gap"></div>
-            </div>
-            <footer class="main" id="main-footer">
-                <div class="footer-top-area">
-                    <div class="container">
-                        <div class="row row-wrap">
+            @if (!$cart_product->isEmpty())
+                    <div class="container con_empty">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <table class="table cart-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Item</th>
+                                            <th>Name</th>
+                                            <th>QTY</th>
+                                            <th>Price</th>
+                                            <th>Wishlist</th>
+                                            <th>Remove</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="cart_tbody">
+                                        @foreach($cart_product as $product)
+                                            @if ($product->wishlist === 1)
+                                                    <tr class="this_{{$product->Pro_product->id}}" data-id="{{$product->Pro_product->count}}">
+                                                        <td class="cart-item-image" style="height: 80px; width: 105px;">
+                                                            <a class="cart_pr_img">
+                                                                <img src="{{asset('product_photo/'.$product->Pro_product->p_photo[0]->photo)}}" alt="Image" title="Image" style="height: 100%; width: 100%;">
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <a>{{$product->Pro_product->name}}</a>
+                                                        </td>
+                                                        <td class="cart-item-quantity">
+                                                            <i class="fa fa-minus cart-item-minus"></i>
+                                                            <input type="text" name="cart-quantity" class="cart-quantity" value="{{$product->count}}" disabled>
+                                                            <i class="fa fa-plus cart-item-plus"></i>
+                                                        </td>
+                                                        <td class="cart_td" data-id="{{ $product->Pro_product->price }}">&#36; {{$product->Pro_product->price  * $product->count }}.00</td>
+                                                        <td class="cart-item-wishlist btn btn-sm move_to_wish_list" style="display: none;">
+                                                            <a class="fas fa-heart">Move To Wish List</a>
+                                                        </td>
+                                                        <td class="cart-item-wishlist btn btn-sm remove_from_wish_list">
+                                                            <img src="http://localhost:8000/img/heart-broken-solid.svg" style="width: 20px; height: 20px;">
+                                                            Remove From Wishlist
+                                                        </td>
+                                                        <td class="cart-item-remove">
+                                                            <a class="fa fa-times"></a>
+                                                        </td>
+                                                    </tr>
+                                                @else
+                                                    <tr class="this_{{$product->Pro_product->id}}" data-id="{{$product->Pro_product->count}}">
+                                                        <td class="cart-item-image" style="height: 80px; width: 105px;">
+                                                            <a class="cart_pr_img">
+                                                                <img src="{{asset('product_photo/'.$product->Pro_product->p_photo[0]->photo)}}" alt="Image" title="Image" style="height: 100%; width: 100%;">
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <a>{{$product->Pro_product->name}}</a>
+                                                        </td>
+                                                        <td class="cart-item-quantity">
+                                                            <i class="fa fa-minus cart-item-minus"></i>
+                                                            <input type="text" name="cart-quantity" class="cart-quantity" value="{{$product->count}}" disabled>
+                                                            <i class="fa fa-plus cart-item-plus"></i>
+                                                        </td>
+                                                        <td class="cart_td" data-id="{{ $product->Pro_product->price }}">&#36; {{$product->Pro_product->price * $product->count }}.00</td>
+                                                        <td class="cart-item-wishlist btn btn-sm move_to_wish_list">
+                                                            <a class="fas fa-heart">Move To Wish List</a>
+                                                        </td>
+                                                        <td class="cart-item-wishlist btn btn-sm remove_from_wish_list" style="display: none;">
+                                                            <img src="http://localhost:8000/img/heart-broken-solid.svg" style="width: 20px; height: 20px;">
+                                                            Remove From Wish List
+                                                        </td>
+                                                        <td class="cart-item-remove">
+                                                            <a class="fa fa-times"></a>
+                                                        </td>
+                                                    </tr>
+                                            @endif
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                                <a class="btn btn-primary empty_the_cart">Empty the cart</a>
+                            </div>
                             <div class="col-md-3">
-                                <a href="index.html">
-                                    <img src="img/logo.png" alt="logo" title="logo" class="logo">
-                                </a>
-                                <ul class="list list-social">
+                                <ul class="cart-total-list">
                                     <li>
-                                        <a class="fa fa-facebook box-icon" href="#" data-toggle="tooltip" title="Facebook"></a>
-                                    </li>
-                                    <li>
-                                        <a class="fa fa-twitter box-icon" href="#" data-toggle="tooltip" title="Twitter"></a>
-                                    </li>
-                                    <li>
-                                        <a class="fa fa-flickr box-icon" href="#" data-toggle="tooltip" title="Flickr"></a>
-                                    </li>
-                                    <li>
-                                        <a class="fa fa-linkedin box-icon" href="#" data-toggle="tooltip" title="LinkedIn"></a>
-                                    </li>
-                                    <li>
-                                        <a class="fa fa-tumblr box-icon" href="#" data-toggle="tooltip" title="Tumblr"></a>
+                                        <span>Total</span>
+                                        <span class="total_span"></span>
                                     </li>
                                 </ul>
-                                <p>At nostra cum feugiat habitant eget quis condimentum sed duis aenean ante sagittis amet aptent id cras placerat laoreet senectus</p>
+                                <a href="{{ url('/g_profile/page_cart/stripe') }}" class="btn btn-primary btn-lg buy_all">Buy all</a>
                             </div>
-                            <div class="col-md-3">
-                                <h4>Sign Up to the Newsletter</h4>
-                                <div class="box">
-                                    <form>
-                                        <div class="form-group mb10">
-                                            <label>E-mail</label>
-                                            <input type="text" class="form-control" />
-                                        </div>
-                                        <p class="mb10">Conubia aliquet ullamcorper consectetur integer nisl ac</p>
-                                        <input type="submit" class="btn btn-primary" value="Sign Up" />
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <h4>Couponia on Twitter</h4>
-                                <!-- START TWITTER -->
-                                <div class="twitter-ticker" id="twitter-ticker"></div>
-                                <!-- END TWITTER -->
-                            </div>
-                            <div class="col-md-3">
-                                <h4>Recent News</h4>
-                                <ul class="thumb-list">
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/urbex_esch_lux_with_laney_and_laaaaag_70x70.jpg" alt="Image Alternative text" title="Urbex Esch/Lux with Laney and Laaaaag" />
-                                        </a>
-                                        <div class="thumb-list-item-caption">
-                                            <p class="thumb-list-item-meta">Jul 18, 2014</p>
-                                            <h5 class="thumb-list-item-title"><a href="#">Nascetur adipiscing</a></h5>
-                                            <p class="thumb-list-item-desciption">Dolor est vivamus tincidunt amet</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/amaze_70x70.jpg" alt="Image Alternative text" title="AMaze" />
-                                        </a>
-                                        <div class="thumb-list-item-caption">
-                                            <p class="thumb-list-item-meta">Jul 18, 2014</p>
-                                            <h5 class="thumb-list-item-title"><a href="#">Rutrum purus</a></h5>
-                                            <p class="thumb-list-item-desciption">Posuere ipsum vulputate class fringilla</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/the_hidden_power_of_the_heart_70x70.jpg" alt="Image Alternative text" title="The Hidden Power of the Heart" />
-                                        </a>
-                                        <div class="thumb-list-item-caption">
-                                            <p class="thumb-list-item-meta">Jul 18, 2014</p>
-                                            <h5 class="thumb-list-item-title"><a href="#">Euismod magnis</a></h5>
-                                            <p class="thumb-list-item-desciption">Primis condimentum conubia iaculis tincidunt</p>
-                                        </div>
-                                    </li>
-                                </ul>
+                        </div>
+                        <div class="gap"></div>
+                    </div>
+                @else
+                    <div class="container" style="display: flex; justify-content: center; align-items: center;">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <table class="table cart-table">
+                                    <thead>
+                                        <tr>
+                                            <th>  
+                                                Your shopping cart is empty
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                </table>
                             </div>
                         </div>
                     </div>
-                </div>
+            @endif
+            <footer class="main" id="main-footer">
                 <div class="footer-copyright">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-4">
-                                <p>Copyright © 2014, Your Store, All Rights Reserved</p>
-                            </div>
-                            <div class="col-md-6 col-md-offset-2">
-                                <div class="pull-right">
-                                    <ul class="list-inline list-payment">
-                                        <li>
-                                            <img src="img/payment/american-express-curved-32px.png" alt="Image Alternative text" title="Image Title" />
-                                        </li>
-                                        <li>
-                                            <img src="img/payment/cirrus-curved-32px.png" alt="Image Alternative text" title="Image Title" />
-                                        </li>
-                                        <li>
-                                            <img src="img/payment/discover-curved-32px.png" alt="Image Alternative text" title="Image Title" />
-                                        </li>
-                                        <li>
-                                            <img src="img/payment/ebay-curved-32px.png" alt="Image Alternative text" title="Image Title" />
-                                        </li>
-                                        <li>
-                                            <img src="img/payment/maestro-curved-32px.png" alt="Image Alternative text" title="Image Title" />
-                                        </li>
-                                        <li>
-                                            <img src="img/payment/mastercard-curved-32px.png" alt="Image Alternative text" title="Image Title" />
-                                        </li>
-                                        <li>
-                                            <img src="img/payment/visa-curved-32px.png" alt="Image Alternative text" title="Image Title" />
-                                        </li>
-                                    </ul>
-                                </div>
+                                <p>Copyright © <?php date_default_timezone_set("Asia/Yerevan"); echo(date('Y')); ?>, Your Store, All Rights Reserved</p>
                             </div>
                         </div>
                     </div>
@@ -341,6 +204,7 @@
             <i class="bx bx-chevrons-up bx-fade-up"></i>
         </div>
         <!-- End Go Top Area -->
+        </div>
     </body>
     <!-- jQuery and Loading -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -371,5 +235,18 @@
     
     {{-- Ptoduct --}}
     <script src="{{asset('js/cart_product.js')}}"></script>
+    <script type="text/javascript">
+        $('.buy_all').click(function(event) {
+            const total = $('.total_span').html();
+            $.ajax({
+                url: '/g_profile/page_cart/stripe_total',
+                type: 'post',
+                data: {'_token': cart_token, total},
+                success: function(r){
+                    
+                }
+            });
+        });
+    </script>
 </html>
 @endsection

@@ -27,6 +27,12 @@ class CartController extends Controller
     	return view('page_cart')->with('cart_product',$cart_product);
     }	
     
+    // <= === Empty the cart === =>
+    function g_profile_page_cart_empty_the_cart(){
+        CartModel::where('user_id', Session::get('id'))
+                    ->delete();
+    }
+
     // <= === Add Cart === =>
     function g_page_cart_add(Request $r){
     	$cart_add = new CartModel;

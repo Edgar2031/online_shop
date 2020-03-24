@@ -4,6 +4,8 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        {{-- Token --}}
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
         <!-- TITLE -->
         <title>Arduix</title>
         <!-- Favicon -->
@@ -22,38 +24,17 @@
     </head>
     <body>
         <!-- Page Loading -->
-        <div class="l-ing">          
+        <div class="l_ing">
+            <div class="circles">
+                <div class="circle c1"></div>
+                <div class="circle c2"></div>
+                <div class="circle c3"></div>
+            </div>
             <div class="loading">
-                <div class="finger finger-1">
-                    <div class="finger-item">
-                        <span></span>
-                        <i></i>
-                    </div>
-                </div>
-                <div class="finger finger-2">
-                    <div class="finger-item">
-                        <span></span>
-                        <i></i>
-                    </div>
-                </div>
-                <div class="finger finger-3">
-                    <div class="finger-item">
-                        <span></span>
-                        <i></i>
-                    </div>
-                </div>
-                <div class="finger finger-4">
-                    <div class="finger-item">
-                        <span></span>
-                        <i></i>
-                    </div>
-                </div>
-                <div class="last-finger">
-                    <div class="last-finger-item">
-                        <span></span>
-                        <i></i>
-                    </div>
-                </div>
+                <div class="a"></div>
+                <div class="b"></div>
+                <div class="c"></div>
+                <div class="d"></div>
             </div>
         </div>
         <!-- Start Arduix -->
@@ -65,32 +46,73 @@
         <!-- End Arduix -->
         <div class="container" id="container">
             <div class="form-container sign-up-container">
-                <form action="{{url('/register')}}" method="post">
-                    {{csrf_field()}}
-                    <h1>Create Account</h1>
+                <div class="div_log">
+                    <h1>Login</h1>
                     <div class="social-container">
                         <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                         <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                     </div>
+                    <p class="l_verify_error" style="height: 35px; width: 230px; border-radius: 10px; margin: 5px; letter-spacing: 0; text-align: center; background: red; color: #fff; display: none; justify-content: center; align-items: center;"></p>
+
+                    <input class="l_email" type="email" placeholder="Email" value="{{ old('l_email') }}" >
+
+                    <input class="l_password" type="password" placeholder="Password" value="{{ old('l_password') }}" >
+                    <a href="{{url('/user_verify')}}" class="forgot">Forgot your password ?</a>
+                    <!-- <button>Sign In</button> -->
+
+                    <!-- Start Other Option -->
+                    <button class="btn_none login">
+                        <div class="others-option">
+                            <a class="default-btn on">
+                                <span>Login</span> 
+                                <i class="bx bx-log-in-circle"></i>
+                                <div class="sk-wave">
+                                    <div class="sk-wave-rect"></div>
+                                    <div class="sk-wave-rect"></div>
+                                    <div class="sk-wave-rect"></div>
+                                    <div class="sk-wave-rect"></div>
+                                    <div class="sk-wave-rect"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </button>
+                    <!-- End Other Option -->
+                </div>
+            </div>
+            <div class="form-container sign-in-container">
+                <form action="{{url('/register')}}" method="post">
+                    {{ csrf_field() }}
+                    <h1>Create Account</h1>
+                    <div class="social-container">
+                        <a href="#" class="social">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social">
+                            <i class="fab fa-google-plus-g"></i>
+                        </a>
+                        <a href="#" class="social">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
 
                     {{ $errors->first('name') }}
-                    <input name="name" value="{{ old('name') }}" placeholder="name">
+                    <input name="name" value="{{ old('name') }}" placeholder="Name">
 
                     {{ $errors->first('surname') }}
-                    <input name="surname" value="{{ old('surname') }}" placeholder="suername">
+                    <input name="surname" value="{{ old('surname') }}" placeholder="Suername">
 
                     {{ $errors->first('email') }}
-                    <input name="email" value="{{ old('email') }}" placeholder="email">
+                    <input name="email" value="{{ old('email') }}" placeholder="Email">
 
                     {{ $errors->first('age') }}
-                    <input name="age" value="{{ old('age') }}" placeholder="age">
+                    <input name="age" value="{{ old('age') }}" placeholder="Age">
 
                     {{ $errors->first('password') }}
-                    <input name="password" value="{{ old('password') }}" placeholder="password">
+                    <input name="password" value="{{ old('password') }}" placeholder="Password">
 
                     {{ $errors->first('confirm') }}
-                    <input name="confirm" value="{{ old('confirm') }}" placeholder="Repeat Password">
+                    <input name="confirm" value="{{ old('confirm') }}" placeholder="Repeat password">
                     <!-- Start Other Option --> 
 
                     {{-- disabled="disabled" --}}
@@ -105,57 +127,26 @@
                     <!-- End Other Option -->
                 </form>
             </div>
-            <div class="form-container sign-in-container">
-                <form method="post" action="{{url('/login_check')}}" method="post">
-                    {{csrf_field()}}
-                    <h1>Login</h1>
-                    <div class="social-container">
-                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                    {{ $errors->first('l_verification')}}
-
-                    {{ $errors->first('l_email') }}
-                    <input type="email" placeholder="Email" name="l_email" value="{{ old('l_email') }}" >
-
-                    {{ $errors->first('l_password') }}
-                    <input type="password" placeholder="Password" name="l_password" value="{{ old('l_password') }}" >
-                    <a href="{{url('/user_verify')}}" class="forgot">Forgot your password ?</a>
-                    <!-- <button>Sign In</button> -->
-
-                    <!-- Start Other Option -->
-                    <button class="btn_none">
-                        <div class="others-option">
-                            <a class="default-btn">
-                                Login
-                                <i class="bx bx-log-in-circle"></i>
-                            </a>
-                        </div>
-                    </button>
-                    <!-- End Other Option -->
-                </form>
-            </div>
             <div class="overlay-container">
                 <div class="overlay">
-                    <div class="overlay-panel overlay-left">
-                        <h1>Welcome!</h1>
-                        <p></p>
-                        <!-- Start Other Option -->
-                        <button class="btn_none ghost" id="signIn">
-                            <div class="others-option">
-                                <a class="default-btn" style="background-color: #ff0018;">
-                                    Login
-                                </a>
-                            </div>
-                        </button>
-                        <!-- End Other Option -->
-                    </div>
                     <div class="overlay-panel overlay-right">
                         <h1>Hello, Friend!</h1>
                         <p></p>
                         <!-- Start Other Option -->
                         <button class="btn_none ghost" id="signUp">
+                            <div class="others-option">
+                                <a class="default-btn" style="background-color: #ff0018;">
+                                   Login
+                                </a>
+                            </div>
+                        </button>
+                        <!-- End Other Option -->
+                    </div>
+                    <div class="overlay-panel overlay-left">
+                        <h1>Welcome!</h1>
+                        <p></p>
+                        <!-- Start Other Option -->
+                        <button class="btn_none ghost" id="signIn">
                             <div class="others-option">
                                 <a class="default-btn" style="background-color: #ff0018;">
                                     Sing Up
@@ -181,5 +172,4 @@
     <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
     <script src="{{asset('js/script.js')}}"></script>
     <script src="{{asset('js/up.js')}}"></script>
-
 </html>

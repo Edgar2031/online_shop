@@ -1,5 +1,7 @@
-$(document).ready(function() {       
+$(document).ready(function() {
+    const date = $('meta[name="date"]').attr('content');
     const all_pro = $('#all_pro').val();
+
     $.ajax({
         url: '/g_profile/page_shop/page',
         type: 'post',
@@ -7,13 +9,14 @@ $(document).ready(function() {
         success: function(r){
             r = JSON.parse(r);
             r.forEach( function(element, index) {
+                const des = element.description.substr(0, 20) + '...';
                 if (element.cart === 1 && element.wishlist === 1) {                   
                     $('.product_append').append(`
                                             <div class="col-md-4">
                                                 <div class="product-thumb">
                                                     <header class="product-header">
                                                         <span class="product-label label label-info">Featured</span>
-                                                        <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image">
+                                                        <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image" style='height: 120px;'>
                                                     </header>
                                                     <div class="product-inner">
                                                         <ul class="icon-group icon-list-rating" title="4.7/5 rating">
@@ -30,7 +33,7 @@ $(document).ready(function() {
                                                         </ul>
                                                         <h5 class="product-title">${element.name}</h5>
                                                         <p class="product-desciption">
-                                                            ${element.description}
+                                                            ${des}
                                                         </p>
                                                         <div class="product-meta">
                                                             <span class="product-time">
@@ -74,7 +77,7 @@ $(document).ready(function() {
                                                 <div class="product-thumb">
                                                     <header class="product-header">
                                                         <span class="product-label label label-info">Featured</span>
-                                                        <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image">
+                                                        <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image" style='height: 120px;'>
                                                     </header>
                                                     <div class="product-inner">
                                                         <ul class="icon-group icon-list-rating" title="4.7/5 rating">
@@ -91,7 +94,7 @@ $(document).ready(function() {
                                                         </ul>
                                                         <h5 class="product-title">${element.name}</h5>
                                                         <p class="product-desciption">
-                                                            ${element.description}
+                                                            ${des}
                                                         </p>
                                                         <div class="product-meta">
                                                             <span class="product-time">
@@ -134,7 +137,7 @@ $(document).ready(function() {
                                                 <div class="product-thumb">
                                                     <header class="product-header">
                                                         <span class="product-label label label-info">Featured</span>
-                                                        <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image">
+                                                        <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image" style='height: 120px;'>
                                                     </header>
                                                     <div class="product-inner">
                                                         <ul class="icon-group icon-list-rating" title="4.7/5 rating">
@@ -151,7 +154,7 @@ $(document).ready(function() {
                                                         </ul>
                                                         <h5 class="product-title">${element.name}</h5>
                                                         <p class="product-desciption">
-                                                            ${element.description}
+                                                            ${des}
                                                         </p>
                                                         <div class="product-meta">
                                                             <span class="product-time">
@@ -194,7 +197,7 @@ $(document).ready(function() {
                                                 <div class="product-thumb">
                                                     <header class="product-header">
                                                         <span class="product-label label label-info">Featured</span>
-                                                        <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image">
+                                                        <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image" style='height: 120px;'>
                                                     </header>
                                                     <div class="product-inner">
                                                         <ul class="icon-group icon-list-rating" title="4.7/5 rating">
@@ -211,7 +214,7 @@ $(document).ready(function() {
                                                         </ul>
                                                         <h5 class="product-title">${element.name}</h5>
                                                         <p class="product-desciption">
-                                                            ${element.description}
+                                                            ${des}
                                                         </p>
                                                         <div class="product-meta">
                                                             <span class="product-time">
@@ -252,24 +255,23 @@ $(document).ready(function() {
             });
         }
     });
-    
-    $('.sort_btn').click(function() {
+
+    function search(){
         $('.product_append').empty();
         const pro_sort_token = $('#all_pro').val();
         const product_val = $('.product_val').val();
+        const category = $('.search_data_id').attr('data-id');
         const sort_pro = $('#sort_pro').val();
         const sort_az = $('#sort_az').val();
-        const range = $('.irs-single').html().split(' — ');
-        let range_start = range[0].split('$');
-            range_start = range_start[1];
-        let range_end = range[1].split('$');  
-            range_end = range_end[1];   
+        let range_start =+ $('#first').html().replace(/\s+/g, '');
+        let range_end =+ $('#second').html().replace(/\s+/g, '');   
         $.ajax({
             url: '/g_profile/page_shop/page/sort_pro',
             type: 'post',
             data: {
                     '_token': pro_sort_token, 
                     product_val, 
+                    category,
                     sort_pro, 
                     sort_az, 
                     range_start, 
@@ -278,13 +280,14 @@ $(document).ready(function() {
             success: function(r){
                 r = JSON.parse(r);
                 r.forEach( function(element, index) {
+                    const des = element.description.substr(0, 20) + '...';
                     if (element.cart === 1 && element.wishlist === 1) {                   
                         $('.product_append').append(`
                                                 <div class="col-md-4">
                                                     <div class="product-thumb">
                                                         <header class="product-header">
                                                             <span class="product-label label label-info">Featured</span>
-                                                            <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image">
+                                                            <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image" style='height: 120px;'>
                                                         </header>
                                                         <div class="product-inner">
                                                             <ul class="icon-group icon-list-rating" title="4.7/5 rating">
@@ -301,7 +304,7 @@ $(document).ready(function() {
                                                             </ul>
                                                             <h5 class="product-title">${element.name}</h5>
                                                             <p class="product-desciption">
-                                                                ${element.description}
+                                                                ${des}
                                                             </p>
                                                             <div class="product-meta">
                                                                 <span class="product-time">
@@ -328,7 +331,7 @@ $(document).ready(function() {
                                                                         <a class="wishlist_${element.id} this_wishlist btn btn-sm" style="display: none;">
                                                                             <i class="fas fa-heart">To Wish List</i>
                                                                         </a>
-                                                                        <a class="wishlist_${element.id} this_wishlist_remove btn btn-sm">>
+                                                                        <a class="wishlist_${element.id} this_wishlist_remove btn btn-sm">
                                                                            <img src="http://localhost:8000/img/heart-broken-solid.svg" style="width: 20px; height: 20px;">
                                                                             Remove From Wish List
                                                                         </a>
@@ -345,7 +348,7 @@ $(document).ready(function() {
                                                     <div class="product-thumb">
                                                         <header class="product-header">
                                                             <span class="product-label label label-info">Featured</span>
-                                                            <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image">
+                                                            <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image" style='height: 120px;'>
                                                         </header>
                                                         <div class="product-inner">
                                                             <ul class="icon-group icon-list-rating" title="4.7/5 rating">
@@ -362,7 +365,7 @@ $(document).ready(function() {
                                                             </ul>
                                                             <h5 class="product-title">${element.name}</h5>
                                                             <p class="product-desciption">
-                                                                ${element.description}
+                                                                ${des}
                                                             </p>
                                                             <div class="product-meta">
                                                                 <span class="product-time">
@@ -406,7 +409,7 @@ $(document).ready(function() {
                                                     <div class="product-thumb">
                                                         <header class="product-header">
                                                             <span class="product-label label label-info">Featured</span>
-                                                            <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image">
+                                                            <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image" style='height: 120px;'>
                                                         </header>
                                                         <div class="product-inner">
                                                             <ul class="icon-group icon-list-rating" title="4.7/5 rating">
@@ -423,7 +426,7 @@ $(document).ready(function() {
                                                             </ul>
                                                             <h5 class="product-title">${element.name}</h5>
                                                             <p class="product-desciption">
-                                                                ${element.description}
+                                                                ${des}
                                                             </p>
                                                             <div class="product-meta">
                                                                 <span class="product-time">
@@ -467,7 +470,7 @@ $(document).ready(function() {
                                                     <div class="product-thumb">
                                                         <header class="product-header">
                                                             <span class="product-label label label-info">Featured</span>
-                                                            <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image">
+                                                            <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image" style='height: 120px;'>
                                                         </header>
                                                         <div class="product-inner">
                                                             <ul class="icon-group icon-list-rating" title="4.7/5 rating">
@@ -484,7 +487,7 @@ $(document).ready(function() {
                                                             </ul>
                                                             <h5 class="product-title">${element.name}</h5>
                                                             <p class="product-desciption">
-                                                                ${element.description}
+                                                                ${des}
                                                             </p>
                                                             <div class="product-meta">
                                                                 <span class="product-time">
@@ -526,8 +529,24 @@ $(document).ready(function() {
                 });
             }
         });
-    });       
+    }
     
+    $('.search-btn').click(function() {
+        search();
+    });       
+
+    $('.search_li').click(function() {
+        $('.search_li').removeClass('active search_data_id');
+        $(this).addClass('active search_data_id');
+        search();
+    });
+    
+    $('.search-area-division-input').keydown(function(e) {
+        if (e.which === 13) {
+            search();
+        }
+    });
+
     $(document).on('click', '.this_cart', function() {
         const cart_token = $('#all_pro').val();
         const cart_id = Number($(this).attr('class').split(' ')[0].split('_')[1]);

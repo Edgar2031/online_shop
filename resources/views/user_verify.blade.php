@@ -13,38 +13,17 @@
     </head>
     <body>
         <!-- Page Loading -->
-        <div class="l-ing">          
+        <div class="l_ing">
+            <div class="circles">
+                <div class="circle c1"></div>
+                <div class="circle c2"></div>
+                <div class="circle c3"></div>
+            </div>
             <div class="loading">
-                <div class="finger finger-1">
-                    <div class="finger-item">
-                        <span></span>
-                        <i></i>
-                    </div>
-                </div>
-                <div class="finger finger-2">
-                    <div class="finger-item">
-                        <span></span>
-                        <i></i>
-                    </div>
-                </div>
-                <div class="finger finger-3">
-                    <div class="finger-item">
-                        <span></span>
-                        <i></i>
-                    </div>
-                </div>
-                <div class="finger finger-4">
-                    <div class="finger-item">
-                        <span></span>
-                        <i></i>
-                    </div>
-                </div>
-                <div class="last-finger">
-                    <div class="last-finger-item">
-                        <span></span>
-                        <i></i>
-                    </div>
-                </div>
+                <div class="a"></div>
+                <div class="b"></div>
+                <div class="c"></div>
+                <div class="d"></div>
             </div>
         </div>
         {{-- Csrf Token --}}

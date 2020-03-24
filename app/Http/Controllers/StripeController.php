@@ -21,8 +21,11 @@ class StripeController extends Controller
 	*/
     public function stripe()
     {
-        Session::put('sum','545646');
     	return view('stripe');
+    }
+
+    public function stripe_total(Request $r){
+        Session::put('sum', $r->total);
     }
 
     /**

@@ -7,6 +7,8 @@
         <meta name="description" content="Koupon - Premiun HTML5 Template for Coupons Website">
         <meta name="author" content="Tsoy">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {{-- Date --}}
+        <meta name="date" content="@php date_default_timezone_set('Asia/Yerevan'); echo date('Y-m-d h:i:s');  @endphp">
         <!-- TITLE -->
         <title>Arduix</title>
         <!-- Favicon -->
@@ -53,43 +55,25 @@
         <!-- Boxicons CSS --> 
         <link rel="stylesheet" href="{{asset('css/boxicons.min.css')}}">
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-        <!-- Fontawesome --> 
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.1/css/all.css">
+        {{-- Font awesome --}}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+        <link rel="stylesheet" href="{{ asset('css/scss/style.css') }}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;display=swap">
     </head>
     <body>
         <!-- Page Loading -->
-        <div class="l-ing">          
+        <div class="l_ing">
+            <div class="circles">
+                <div class="circle c1"></div>
+                <div class="circle c2"></div>
+                <div class="circle c3"></div>
+            </div>
             <div class="loading">
-                <div class="finger finger-1">
-                    <div class="finger-item">
-                        <span></span>
-                        <i></i>
-                    </div>
-                </div>
-                <div class="finger finger-2">
-                    <div class="finger-item">
-                        <span></span>
-                        <i></i>
-                    </div>
-                </div>
-                <div class="finger finger-3">
-                    <div class="finger-item">
-                        <span></span>
-                        <i></i>
-                    </div>
-                </div>
-                <div class="finger finger-4">
-                    <div class="finger-item">
-                        <span></span>
-                        <i></i>
-                    </div>
-                </div>
-                <div class="last-finger">
-                    <div class="last-finger-item">
-                        <span></span>
-                        <i></i>
-                    </div>
-                </div>
+                <div class="a"></div>
+                <div class="b"></div>
+                <div class="c"></div>
+                <div class="d"></div>
             </div>
         </div>
         {{-- Csrf Token --}}
@@ -97,35 +81,45 @@
         @endsection
         
         @section('footer')
-
+        <div class="head">
             <!-- SEARCH AREA -->
-            <form class="search-area form-group">
+            <div class="search-area form-group">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-8 clearfix">
-                            <label>
-                                <i class="fa fa-search"></i>
-                                <span>I am searching for</span>
-                            </label>
+                        <div class="col-md-8 clearfix" style="display: inline-block;">
                             <div class="search-area-division search-area-division-input">
-                                <input class="form-control" type="text" placeholder="Travel Vacation" />
+                                <input class="form-control product_val" type="text" placeholder="Travel Vacation" style="padding-left: 10px;">
                             </div>
                         </div>
-                        <div class="col-md-3 clearfix">
-                            <label>
-                                <i class="fa fa-map-marker"></i>
-                                <span>In</span>
-                            </label>
-                            <div class="search-area-division search-area-division-location">
-                                <input class="form-control product_val" type="text" placeholder="Boston" />
+                        <div class="product-sort">
+                            <select id="sort_pro">
+                                <option value="name">Name</option>
+                                <option value="time" selected>Date</option>
+                                <option value="price">Price</option>
+                            </select>
+                            <select id="sort_az">
+                                <option value="ASC" selected>A - Z</option>
+                                <option value="DESC">Z - A</option>
+                            </select>
+                        </div>
+                        <div class="range" style="display: inline-block;">
+                            <div class="values" style="display: inline-block; width: 48%;">
+                                <div>
+                                    $ <span id="first"></span>
+                                </div> 
+                                    - 
+                                <div>
+                                    $ <span id="second"></span>
+                                </div>
                             </div>
+                            <div class="slider" data-value-0="#first" data-value-1="#second" data-range="#third"></div>
                         </div>
                         <div class="col-md-1">
                             <button class="btn btn-block btn-white search-btn" type="submit">Search</button>
                         </div>
                     </div>
                 </div>
-            </form>
+            </div>
             <!-- END SEARCH AREA -->
 
             <div class="gap"></div>
@@ -134,33 +128,38 @@
                     <div class="col-md-3">
                         <aside class="sidebar-left">
                             <ul class="nav nav-tabs nav-stacked nav-coupon-category">
-                                <li class="active"><a href="#"><i class="fa fa-ticket"></i>All</a>
+                                <li data-id="all" class="search_li active search_data_id">
+                                    <a>
+                                        <i class="fa fa-plane"></i>
+                                        All
+                                    </a>
                                 </li>
-                                <li><a href="#"><i class="fa fa-cutlery"></i>Food & Drink</a>
+                                <li data-id="grocery" class="search_li">
+                                    <a>
+                                        <i class="fas fa-apple-alt"></i>
+                                        Grocery
+                                    </a>
                                 </li>
-                                <li><a href="#"><i class="fa fa-calendar"></i>Events</a>
+                                <li data-id="apparel" class="search_li">
+                                    <a>
+                                        <i class="fas fa-tshirt"></i>
+                                        Apparel
+                                    </a>
                                 </li>
-                                <li><a href="#"><i class="fa fa-female"></i>Beauty</a>
+                                <li data-id="electronics" class="search_li">
+                                    <a>
+                                        <i class="fas fa-tv"></i>
+                                        Electronics
+                                    </a>
                                 </li>
-                                <li><a href="#"><i class="fa fa-bolt"></i>Fitness</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-headphones"></i>Electronics</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-image"></i>Furniture</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-umbrella"></i>Fashion</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i>Shopping</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-home"></i>Home & Garden</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-plane"></i>Travel</a>
+                                <li data-id="beauty" class="search_li">
+                                    <a>
+                                        <i class="fa fa-female"></i>
+                                        Beauty
+                                    </a>
                                 </li>
                             </ul>
-                            <div class="sidebar-box">
-                                <h5>Filter By Price</h5>
-                                <input type="text" id="price-slider">
-                            </div>
+                            
                             <div class="sidebar-box">
                                 <h5>Product Feature</h5>
                                 <ul class="checkbox-list">
@@ -186,56 +185,11 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="sidebar-box">
-                                <h5>Recent Viewed</h5>
-                                <ul class="thumb-list">
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/urbex_esch_lux_with_laney_and_laaaaag_70x70.jpg" alt="Image Alternative text" title="Urbex Esch/Lux with Laney and Laaaaag" />
-                                        </a>
-                                        <div class="thumb-list-item-caption">
-                                            <h5 class="thumb-list-item-title"><a href="#">Best Camera Lenthes</a></h5>
-                                            <p class="thumb-list-item-price">$391</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/amaze_70x70.jpg" alt="Image Alternative text" title="AMaze" />
-                                        </a>
-                                        <div class="thumb-list-item-caption">
-                                            <h5 class="thumb-list-item-title"><a href="#">New Glass Collection</a></h5>
-                                            <p class="thumb-list-item-price">$382</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/waipio_valley_70x70.jpg" alt="Image Alternative text" title="waipio valley" />
-                                        </a>
-                                        <div class="thumb-list-item-caption">
-                                            <h5 class="thumb-list-item-title"><a href="#">Awesome Vacation</a></h5>
-                                            <p class="thumb-list-item-price">$469</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
+                            
                         </aside>
                     </div>
                     <div class="col-md-9">
                         <div class="row">
-                            <div class="col-md-3">
-                                <div class="product-sort">
-                                    <select id="sort_pro">
-                                      <option value="name">Name</option>
-                                      <option value="time" selected>Date</option>
-                                      <option value="price">Price</option>
-                                    </select>
-                                    <select id="sort_az">
-                                      <option value="ASC" selected>A - Z</option>
-                                      <option value="DESC">Z - A</option>
-                                    </select>
-                                    <button class="sort_btn">Sort</button>
-                                </div>
-                            </div>
                             <div class="col-md-2 col-md-offset-7">
                                 <div class="product-view pull-right">
                                     <a class="fa fa-th-large active" href="#"></a>
@@ -381,152 +335,226 @@
                         <div class="gap"></div>
                     </div>
                 </div>
-
             </div>
-
-
-            <!-- //////////////////////////////////
-    	//////////////END PAGE CONTENT///////// 
-    	////////////////////////////////////-->
-
-
-
-            <!-- //////////////////////////////////
-    	//////////////MAIN FOOTER////////////// 
-    	////////////////////////////////////-->
-
             <footer class="main" id="main-footer">
-                <div class="footer-top-area">
-                    <div class="container">
-                        <div class="row row-wrap">
-                            <div class="col-md-3">
-                                <a href="index.html">
-                                    <img src="img/logo.png" alt="logo" title="logo" class="logo">
-                                </a>
-                                <ul class="list list-social">
-                                    <li>
-                                        <a class="fa fa-facebook box-icon" href="#" data-toggle="tooltip" title="Facebook"></a>
-                                    </li>
-                                    <li>
-                                        <a class="fa fa-twitter box-icon" href="#" data-toggle="tooltip" title="Twitter"></a>
-                                    </li>
-                                    <li>
-                                        <a class="fa fa-flickr box-icon" href="#" data-toggle="tooltip" title="Flickr"></a>
-                                    </li>
-                                    <li>
-                                        <a class="fa fa-linkedin box-icon" href="#" data-toggle="tooltip" title="LinkedIn"></a>
-                                    </li>
-                                    <li>
-                                        <a class="fa fa-tumblr box-icon" href="#" data-toggle="tooltip" title="Tumblr"></a>
-                                    </li>
-                                </ul>
-                                <p>Parturient ipsum fringilla arcu bibendum rutrum consequat vulputate a netus id penatibus quam facilisi donec eu dictum tempor dis natoque</p>
-                            </div>
-                            <div class="col-md-3">
-                                <h4>Sign Up to the Newsletter</h4>
-                                <div class="box">
-                                    <form>
-                                        <div class="form-group mb10">
-                                            <label>E-mail</label>
-                                            <input type="text" class="form-control" />
-                                        </div>
-                                        <p class="mb10">Duis feugiat in quam dictumst parturient luctus</p>
-                                        <input type="submit" class="btn btn-primary" value="Sign Up" />
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <h4>Couponia on Twitter</h4>
-                                <!-- START TWITTER -->
-                                <div class="twitter-ticker" id="twitter-ticker"></div>
-                                <!-- END TWITTER -->
-                            </div>
-                            <div class="col-md-3">
-                                <h4>Recent News</h4>
-                                <ul class="thumb-list">
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/urbex_esch_lux_with_laney_and_laaaaag_70x70.jpg" alt="Image Alternative text" title="Urbex Esch/Lux with Laney and Laaaaag" />
-                                        </a>
-                                        <div class="thumb-list-item-caption">
-                                            <p class="thumb-list-item-meta">Jul 18, 2014</p>
-                                            <h5 class="thumb-list-item-title"><a href="#">Pellentesque vitae</a></h5>
-                                            <p class="thumb-list-item-desciption">Interdum sem facilisis dapibus pellentesque</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/amaze_70x70.jpg" alt="Image Alternative text" title="AMaze" />
-                                        </a>
-                                        <div class="thumb-list-item-caption">
-                                            <p class="thumb-list-item-meta">Jul 18, 2014</p>
-                                            <h5 class="thumb-list-item-title"><a href="#">Inceptos metus</a></h5>
-                                            <p class="thumb-list-item-desciption">Dapibus integer est aliquet felis</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="img/the_hidden_power_of_the_heart_70x70.jpg" alt="Image Alternative text" title="The Hidden Power of the Heart" />
-                                        </a>
-                                        <div class="thumb-list-item-caption">
-                                            <p class="thumb-list-item-meta">Jul 18, 2014</p>
-                                            <h5 class="thumb-list-item-title"><a href="#">Consectetur metus</a></h5>
-                                            <p class="thumb-list-item-desciption">At libero rhoncus quam feugiat</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="footer-copyright">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-4">
-                                <p>Copyright © 2014, Your Store, All Rights Reserved</p>
-                            </div>
-                            <div class="col-md-6 col-md-offset-2">
-                                <div class="pull-right">
-                                    <ul class="list-inline list-payment">
-                                        <li>
-                                            <img src="img/payment/american-express-curved-32px.png" alt="Image Alternative text" title="Image Title" />
-                                        </li>
-                                        <li>
-                                            <img src="img/payment/cirrus-curved-32px.png" alt="Image Alternative text" title="Image Title" />
-                                        </li>
-                                        <li>
-                                            <img src="img/payment/discover-curved-32px.png" alt="Image Alternative text" title="Image Title" />
-                                        </li>
-                                        <li>
-                                            <img src="img/payment/ebay-curved-32px.png" alt="Image Alternative text" title="Image Title" />
-                                        </li>
-                                        <li>
-                                            <img src="img/payment/maestro-curved-32px.png" alt="Image Alternative text" title="Image Title" />
-                                        </li>
-                                        <li>
-                                            <img src="img/payment/mastercard-curved-32px.png" alt="Image Alternative text" title="Image Title" />
-                                        </li>
-                                        <li>
-                                            <img src="img/payment/visa-curved-32px.png" alt="Image Alternative text" title="Image Title" />
-                                        </li>
-                                    </ul>
-                                </div>
+                                <p>Copyright © <?php date_default_timezone_set("Asia/Yerevan"); echo(date('Y')); ?>, Your Store, All Rights Reserved</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </footer>
         </div>
+        
         <!-- Start Go Top Area -->
         <div class="go-top">
             <i class="bx bx-chevrons-up"></i>
             <i class="bx bx-chevrons-up bx-fade-up"></i>
         </div>
         <!-- End Go Top Area -->
+        </div>
     </body>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+
+    <script type="text/javascript">
+        $('.slider').each(function(e) {
+            var slider = $(this),
+                width = slider.width(),
+                handle,
+                handleObj;
+
+            let svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            svg.setAttribute('viewBox', '0 0 ' + width + ' 83');
+
+            slider.html(svg);
+            slider.append($('<div>').addClass('active').html(svg.cloneNode(true)));
+
+            slider.slider({
+                range: true,
+                values: [1800, 7800],
+                min: 500,
+                step: 5,
+                minRange: 1000,
+                max: 12000,
+                create(event, ui) {
+
+                    slider.find('.ui-slider-handle').append($('<div />'));
+
+                    $(slider.data('value-0')).html(slider.slider('values', 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '&thinsp;'));
+                    $(slider.data('value-1')).html(slider.slider('values', 1).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '&thinsp;'));
+                    $(slider.data('range')).html((slider.slider('values', 1) - slider.slider('values', 0)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '&thinsp;'));
+
+                    setCSSVars(slider);
+                },
+                start(event, ui) {
+
+                    $('body').addClass('ui-slider-active');
+
+                    handle = $(ui.handle).data('index', ui.handleIndex);
+                    handleObj = slider.find('.ui-slider-handle');
+                },
+                change(event, ui) {
+                    setCSSVars(slider);
+                },
+                slide(event, ui) {
+
+                    let min = slider.slider('option', 'min'),
+                        minRange = slider.slider('option', 'minRange'),
+                        max = slider.slider('option', 'max');
+
+                    if(ui.handleIndex == 0) {
+                        if((ui.values[0] + minRange) >= ui.values[1]) {
+                            slider.slider('values', 1, ui.values[0] + minRange);
+                        }
+                        if(ui.values[0] > max - minRange) {
+                            return false;
+                        }
+                    } else if(ui.handleIndex == 1) {
+                        if((ui.values[1] - minRange) <= ui.values[0]) {
+                            slider.slider('values', 0, ui.values[1] - minRange);
+                        }
+                        if(ui.values[1] < min + minRange) {
+                            return false;
+                        }
+                    }
+
+                    $(slider.data('value-0')).html(ui.values[0].toString().replace(/\B(?=(\d{3})+(?!\d))/g, '&thinsp;'));
+                    $(slider.data('value-1')).html(ui.values[1].toString().replace(/\B(?=(\d{3})+(?!\d))/g, '&thinsp;'));
+                    $(slider.data('range')).html((slider.slider('values', 1) - slider.slider('values', 0)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '&thinsp;'));
+
+                    setCSSVars(slider);
+                },
+                stop(event, ui) {
+
+                    $('body').removeClass('ui-slider-active');
+
+                    let duration = .6,
+                        ease = Elastic.easeOut.config(1.08, .44);
+
+                    TweenMax.to(handle, duration, {
+                        '--y': 0,
+                        ease: ease
+                    });
+
+                    TweenMax.to(svgPath, duration, {
+                        y: 42,
+                        ease: ease
+                    });
+
+                    handle = null;
+
+                }
+            });
+
+            var svgPath = new Proxy({
+                x: null,
+                y: null,
+                b: null,
+                a: null
+            }, {
+                set(target, key, value) {
+                    target[key] = value;
+                    if(target.x !== null && target.y !== null && target.b !== null && target.a !== null) {
+                        slider.find('svg').html(getPath([target.x, target.y], target.b, target.a, width));
+                    }
+                    return true;
+                },
+                get(target, key) {
+                    return target[key];
+                }
+            });
+
+            svgPath.x = width / 2;
+            svgPath.y = 42;
+            svgPath.b = 0;
+            svgPath.a = width;
+
+            $(document).on('mousemove touchmove', e => {
+                if(handle) {
+
+                    let laziness = 4,
+                        max = 24,
+                        edge = 52,
+                        other = handleObj.eq(handle.data('index') == 0 ? 1 : 0),
+                        currentLeft = handle.position().left,
+                        otherLeft = other.position().left,
+                        handleWidth = handle.outerWidth(),
+                        handleHalf = handleWidth / 2,
+                        y = e.pageY - handle.offset().top - handle.outerHeight() / 2,
+                        moveY = (y - laziness >= 0) ? y - laziness : (y + laziness <= 0) ? y + laziness : 0,
+                        modify = 1;
+
+                    moveY = (moveY > max) ? max : (moveY < -max) ? -max : moveY;
+                    modify = handle.data('index') == 0 ? ((currentLeft + handleHalf <= edge ? (currentLeft + handleHalf) / edge : 1) * (otherLeft - currentLeft - handleWidth <= edge ? (otherLeft - currentLeft - handleWidth) / edge : 1)) : ((currentLeft - (otherLeft + handleHalf * 2) <= edge ? (currentLeft - (otherLeft + handleWidth)) / edge : 1) * (slider.outerWidth() - (currentLeft + handleHalf) <= edge ? (slider.outerWidth() - (currentLeft + handleHalf)) / edge : 1));
+                    modify = modify > 1 ? 1 : modify < 0 ? 0 : modify;
+
+                    if(handle.data('index') == 0) {
+                        svgPath.b = currentLeft / 2  * modify;
+                        svgPath.a = otherLeft;
+                    } else {
+                        svgPath.b = otherLeft + handleHalf;
+                        svgPath.a = (slider.outerWidth() - currentLeft) / 2 + currentLeft + handleHalf + ((slider.outerWidth() - currentLeft) / 2) * (1 - modify);
+                    }
+
+                    svgPath.x = currentLeft + handleHalf;
+                    svgPath.y = moveY * modify + 42;
+
+                    handle.css('--y', moveY * modify);
+
+                }
+            });
+
+        });
+
+        function getPoint(point, i, a, smoothing) {
+            let cp = (current, previous, next, reverse) => {
+                    let p = previous || current,
+                        n = next || current,
+                        o = {
+                            length: Math.sqrt(Math.pow(n[0] - p[0], 2) + Math.pow(n[1] - p[1], 2)),
+                            angle: Math.atan2(n[1] - p[1], n[0] - p[0])
+                        },
+                        angle = o.angle + (reverse ? Math.PI : 0),
+                        length = o.length * smoothing;
+                    return [current[0] + Math.cos(angle) * length, current[1] + Math.sin(angle) * length];
+                },
+                cps = cp(a[i - 1], a[i - 2], point, false),
+                cpe = cp(point, a[i - 1], a[i + 1], true);
+            return `C ${cps[0]},${cps[1]} ${cpe[0]},${cpe[1]} ${point[0]},${point[1]}`;
+        }
+
+        function getPath(update, before, after, width) {
+            let smoothing = .16,
+                points = [
+                    [0, 42],
+                    [before <= 0 ? 0 : before, 42],
+                    update,
+                    [after >= width ? width : after, 42],
+                    [width, 42]
+                ],
+                d = points.reduce((acc, point, i, a) => i === 0 ? `M ${point[0]},${point[1]}` : `${acc} ${getPoint(point, i, a, smoothing)}`, '');
+            return `<path d="${d}" />`;
+        }
+
+        function setCSSVars(slider) {
+            let handle = slider.find('.ui-slider-handle');
+            slider.css({
+                '--l': handle.eq(0).position().left + handle.eq(0).outerWidth() / 2,
+                '--r': slider.outerWidth() - (handle.eq(1).position().left + handle.eq(1).outerWidth() / 2)
+            });
+        }
+    </script>
+
     <!-- jQuery and Loading -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="{{asset('js/loader.js')}}"></script>
+
 
     <!-- Scripts queries -->
     <script src="{{asset('js/up.js')}}"></script>

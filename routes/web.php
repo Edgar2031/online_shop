@@ -74,6 +74,9 @@ Route::post('g_profile/my_product/product_item/delete_photo', "ProductContoller@
 // <= =============== Cart =============== =>
 Route::get('/g_profile/page_cart', "CartController@g_page_cart")->middleware('checkLogin:profile');
 
+// <= =============== Empty the cart =============== =>
+Route::post('/g_profile/page_cart/empty_the_cart', "CartController@g_profile_page_cart_empty_the_cart")->middleware('checkLogin:profile');
+
 // <= =============== Add Cart =============== =>
 Route::post('/g_profile/page_cart/add', "CartController@g_page_cart_add")->middleware('checkLogin:profile');
 
@@ -98,6 +101,7 @@ Route::post('/g_profile/page_cart/this_count_plus_1', "CartController@g_page_car
 
 // <= =============== Cart Stripe =============== =>
 Route::get('/g_profile/page_cart/stripe', "StripeController@stripe")->middleware('checkLogin:profile');
+Route::post('/g_profile/page_cart/stripe_total', "StripeController@stripe_total")->middleware('checkLogin:profile');
 Route::post('stripe', 'StripeController@stripePost')->name('stripe.post');
 
 // <= =============== Wishlist =============== =>
