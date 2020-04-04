@@ -14,6 +14,9 @@ use App\ProductModel;
 
 class StripeController extends Controller
 {
+    function stripe_total(Request $r){
+        Session::put('sum', $r->total);
+    }
     /**
 	* success response method.
 	*
@@ -24,9 +27,6 @@ class StripeController extends Controller
     	return view('stripe');
     }
 
-    public function stripe_total(Request $r){
-        Session::put('sum', $r->total);
-    }
 
     /**
 	* success response method.

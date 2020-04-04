@@ -38,8 +38,8 @@ $(document).ready(function() {
 			data: {send},
 			success: function(data){
 				if (data){
-					if (data.success === true)
-						window.location.href = 'http://localhost:8000/g_profile';    	
+					if (data.success === true) window.location.href = 'http://localhost:8000/admin';    
+					else if (data.success === false) window.location.href = 'http://localhost:8000/g_profile'; 
 				}	
 			},
 			error: function (reject) {

@@ -35,6 +35,12 @@ Route::post('/login_check', "UserController@g_login_check");
 // <= =============== Logout =============== =>
 Route::get('/g_logout', "UserController@g_logout");
 
+// <= =============== Admin =============== =>
+Route::get('/admin', "AdminController@admin_show");
+Route::get('/admin/{any}', function(){
+	return view('admin');
+})->where('any', '.*');
+
 // <= =============== Profile =============== =>
 Route::get('/g_profile', "UserController@profile")->middleware('checkLogin:profile');
 
@@ -46,6 +52,12 @@ Route::post('/g_edit', "EditController@u_edit")->middleware('checkLogin:profile'
 
 // <= =============== Orders History =============== =>
 Route::get('g_profile/my_orders_history', "OrderController@g_profile_my_orders_history")->middleware('checkLogin:profile');
+
+// <= =============== Orders Remove =============== =>
+Route::post('g_profile/my_orders_history/remove', "OrderController@g_profile_my_orders_history_remove")->middleware('checkLogin:profile');
+
+// <= =============== Orders History this show =============== =>
+Route::get('g_profile/my_orders_history/this/{id}', "OrderController@g_profile_my_orders_history_this")->middleware('checkLogin:profile');
 
 // <= =============== All Product =============== =>
 Route::get('/g_profile/page_shop', 'ProductContoller@g_page_shop')->middleware('checkLogin:profile');
@@ -100,8 +112,8 @@ Route::post('/g_profile/page_cart/this_count_plus_0', "CartController@g_page_car
 Route::post('/g_profile/page_cart/this_count_plus_1', "CartController@g_page_cart_this_count_plus_1")->middleware('checkLogin:profile');
 
 // <= =============== Cart Stripe =============== =>
-Route::get('/g_profile/page_cart/stripe', "StripeController@stripe")->middleware('checkLogin:profile');
 Route::post('/g_profile/page_cart/stripe_total', "StripeController@stripe_total")->middleware('checkLogin:profile');
+Route::get('/g_profile/page_cart/stripe', "StripeController@stripe")->middleware('checkLogin:profile');
 Route::post('stripe', 'StripeController@stripePost')->name('stripe.post');
 
 // <= =============== Wishlist =============== =>

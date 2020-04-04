@@ -213,8 +213,9 @@ class UserController extends Controller
 		    ), 400); 
 		    // 400 being the HTTP code for an invalid request.
 		}else {
-			Session::put('id',$user['id']);
-			return Response::json(array('success' => true), 200);
+			Session::put('id', $user['id']);
+			if ($user->type == 1) return Response::json(array('success' => true), 200);// 200 being the HTTP code for an invalid request.
+			else return Response::json(array('success' => false), 200);
 			// 200 being the HTTP code for an invalid request.
 		}		
 	}

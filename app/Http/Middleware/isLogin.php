@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Session;
 use Illuminate\Support\Facades\Redirect;
+use App\UserModel;
 
 class isLogin
 {
@@ -24,16 +25,16 @@ class isLogin
             case 'profile':
                 if (!Session::has('id')) {
                     return Redirect::to('/')->with('mess','pliz login');
-                }
-                else {    
+                }else {    
                     return $respone->header('Cache-Control','no-cache, no-store, max-age-0, must-revalisate');
                 }
                 break;
             case 'login':
                 if (Session::has('id')) {
-                    return Redirect::to('/g_profile');
-                }
-                else {    
+                    $user = UserModel::where('id', Session::get('id'))->first();
+                    if ($user->type == 1) return Redirect::to('/admin');
+                    else return Redirect::to('/g_profile');
+                }else {    
                     return $respone->header('Cache-Control','no-cache, no-store, max-age-0, must-revalisate');
                 }
                 break;

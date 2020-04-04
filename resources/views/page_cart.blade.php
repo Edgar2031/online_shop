@@ -164,7 +164,7 @@
                                         <span class="total_span"></span>
                                     </li>
                                 </ul>
-                                <a href="{{ url('/g_profile/page_cart/stripe') }}" class="btn btn-primary btn-lg buy_all">Buy all</a>
+                                <a class="btn btn-primary btn-lg buy_all">Buy all</a>
                             </div>
                         </div>
                         <div class="gap"></div>
@@ -241,9 +241,9 @@
             $.ajax({
                 url: '/g_profile/page_cart/stripe_total',
                 type: 'post',
-                data: {'_token': cart_token, total},
+                data: {'_token': '{{ csrf_token() }}', total},
                 success: function(r){
-                    
+                    location.href = '{{ url('g_profile/page_cart/stripe') }}'
                 }
             });
         });

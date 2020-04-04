@@ -102,24 +102,33 @@
                         <div class="row">
                             <div class="col-md-9">
                                 <table class="table table-order">
-                                    <thead>
+                                     <thead>
                                         <tr>
                                             <th>Item</th>
+                                            <th>Name</th>
                                             <th>Price</th>
-                                            <th>Date</th>
-                                            <th>Remove</th>
+                                            <th>Count</th>
+                                            <th>Feedback</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        @foreach($orders as $val)
-                                            <tr data-id="this_{{ $val->id }}">
-                                                <td>
-                                                    <a href="{{ url('g_profile/my_orders_history/this/' . $val->id) }}">New Glass Collection</a>
+                                    <tbody class="cart_tbody">
+                                        @foreach($order_this as $product)
+                                            <tr data-id="this_{{ $product->order_pro->id }}">
+                                                <td class="cart-item-image" style="height: 80px; width: 105px;">
+                                                    <a class="cart_pr_img">
+                                                        <img src="{{ asset('product_photo/'.$product->order_pro->p_photo[0]->photo) }}" alt="Image" title="Image" style="height: 100%; width: 100%;">
+                                                    </a>
                                                 </td>
-                                                <td>$ {{ $val->sum }}</td>
-                                                <td>{{ $val->datetime }}</td>
+                                                <td>
+                                                    <a>{{ $product->order_pro->name }}</a>
+                                                </td>
+                                                <td class="cart_td">&#36; {{ $product->order_pro->price }}
+                                                </td>
+                                                <td>
+                                                    <a>{{ $product->count }}</a>
+                                                </td>
                                                 <td class="order-item-remove">
-                                                    <a class="fa fa-times order_remove"></a>
+                                                    
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -131,7 +140,6 @@
                     </div>
                 </div>
             </div>
-
             <footer class="main" id="main-footer">
                 <div class="footer-copyright">
                     <div class="container">
@@ -178,6 +186,5 @@
     <script src="{{asset('js/custom.js')}}"></script>
     <script src="{{asset('js/switcher.js')}}"></script>
 
-    <script src="{{ asset('js/order.js') }}"></script>
 </html>
 @endsection
