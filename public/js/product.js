@@ -19,18 +19,6 @@ $(document).ready(function() {
                                                         <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image" style='height: 120px;'>
                                                     </header>
                                                     <div class="product-inner">
-                                                        <ul class="icon-group icon-list-rating" title="4.7/5 rating">
-                                                            <li><i class="fa fa-star"></i>
-                                                            </li>
-                                                            <li><i class="fa fa-star"></i>
-                                                            </li>
-                                                            <li><i class="fa fa-star"></i>
-                                                            </li>
-                                                            <li><i class="fa fa-star"></i>
-                                                            </li>
-                                                            <li><i class="fa fa-star"></i>
-                                                            </li>
-                                                        </ul>
                                                         <h5 class="product-title">${element.name}</h5>
                                                         <p class="product-desciption">
                                                             ${des}
@@ -68,7 +56,7 @@ $(document).ready(function() {
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                </div
+                                                </div>
                                             </div>
                     `);
                 }else if (element.cart === 0 && element.wishlist === 0){
@@ -80,18 +68,6 @@ $(document).ready(function() {
                                                         <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image" style='height: 120px;'>
                                                     </header>
                                                     <div class="product-inner">
-                                                        <ul class="icon-group icon-list-rating" title="4.7/5 rating">
-                                                            <li><i class="fa fa-star"></i>
-                                                            </li>
-                                                            <li><i class="fa fa-star"></i>
-                                                            </li>
-                                                            <li><i class="fa fa-star"></i>
-                                                            </li>
-                                                            <li><i class="fa fa-star"></i>
-                                                            </li>
-                                                            <li><i class="fa fa-star"></i>
-                                                            </li>
-                                                        </ul>
                                                         <h5 class="product-title">${element.name}</h5>
                                                         <p class="product-desciption">
                                                             ${des}
@@ -128,7 +104,7 @@ $(document).ready(function() {
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                </div
+                                                </div>
                                             </div>
                     `);
                 }else if (element.cart === 1 && element.wishlist === 0){
@@ -140,18 +116,6 @@ $(document).ready(function() {
                                                         <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image" style='height: 120px;'>
                                                     </header>
                                                     <div class="product-inner">
-                                                        <ul class="icon-group icon-list-rating" title="4.7/5 rating">
-                                                            <li><i class="fa fa-star"></i>
-                                                            </li>
-                                                            <li><i class="fa fa-star"></i>
-                                                            </li>
-                                                            <li><i class="fa fa-star"></i>
-                                                            </li>
-                                                            <li><i class="fa fa-star"></i>
-                                                            </li>
-                                                            <li><i class="fa fa-star"></i>
-                                                            </li>
-                                                        </ul>
                                                         <h5 class="product-title">${element.name}</h5>
                                                         <p class="product-desciption">
                                                             ${des}
@@ -188,7 +152,7 @@ $(document).ready(function() {
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                </div
+                                                </div>
                                             </div>
                     `);
                 }else if (element.cart === 0 && element.wishlist === 1){
@@ -200,18 +164,6 @@ $(document).ready(function() {
                                                         <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image" style='height: 120px;'>
                                                     </header>
                                                     <div class="product-inner">
-                                                        <ul class="icon-group icon-list-rating" title="4.7/5 rating">
-                                                            <li><i class="fa fa-star"></i>
-                                                            </li>
-                                                            <li><i class="fa fa-star"></i>
-                                                            </li>
-                                                            <li><i class="fa fa-star"></i>
-                                                            </li>
-                                                            <li><i class="fa fa-star"></i>
-                                                            </li>
-                                                            <li><i class="fa fa-star"></i>
-                                                            </li>
-                                                        </ul>
                                                         <h5 class="product-title">${element.name}</h5>
                                                         <p class="product-desciption">
                                                             ${des}
@@ -248,7 +200,7 @@ $(document).ready(function() {
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                </div
+                                                </div>
                                             </div>
                     `);
                 }
@@ -290,18 +242,6 @@ $(document).ready(function() {
                                                             <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image" style='height: 120px;'>
                                                         </header>
                                                         <div class="product-inner">
-                                                            <ul class="icon-group icon-list-rating" title="4.7/5 rating">
-                                                                <li><i class="fa fa-star"></i>
-                                                                </li>
-                                                                <li><i class="fa fa-star"></i>
-                                                                </li>
-                                                                <li><i class="fa fa-star"></i>
-                                                                </li>
-                                                                <li><i class="fa fa-star"></i>
-                                                                </li>
-                                                                <li><i class="fa fa-star"></i>
-                                                                </li>
-                                                            </ul>
                                                             <h5 class="product-title">${element.name}</h5>
                                                             <p class="product-desciption">
                                                                 ${des}
@@ -351,18 +291,6 @@ $(document).ready(function() {
                                                             <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image" style='height: 120px;'>
                                                         </header>
                                                         <div class="product-inner">
-                                                            <ul class="icon-group icon-list-rating" title="4.7/5 rating">
-                                                                <li><i class="fa fa-star"></i>
-                                                                </li>
-                                                                <li><i class="fa fa-star"></i>
-                                                                </li>
-                                                                <li><i class="fa fa-star"></i>
-                                                                </li>
-                                                                <li><i class="fa fa-star"></i>
-                                                                </li>
-                                                                <li><i class="fa fa-star"></i>
-                                                                </li>
-                                                            </ul>
                                                             <h5 class="product-title">${element.name}</h5>
                                                             <p class="product-desciption">
                                                                 ${des}
@@ -412,18 +340,6 @@ $(document).ready(function() {
                                                             <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image" style='height: 120px;'>
                                                         </header>
                                                         <div class="product-inner">
-                                                            <ul class="icon-group icon-list-rating" title="4.7/5 rating">
-                                                                <li><i class="fa fa-star"></i>
-                                                                </li>
-                                                                <li><i class="fa fa-star"></i>
-                                                                </li>
-                                                                <li><i class="fa fa-star"></i>
-                                                                </li>
-                                                                <li><i class="fa fa-star"></i>
-                                                                </li>
-                                                                <li><i class="fa fa-star"></i>
-                                                                </li>
-                                                            </ul>
                                                             <h5 class="product-title">${element.name}</h5>
                                                             <p class="product-desciption">
                                                                 ${des}
@@ -473,18 +389,6 @@ $(document).ready(function() {
                                                             <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image" style='height: 120px;'>
                                                         </header>
                                                         <div class="product-inner">
-                                                            <ul class="icon-group icon-list-rating" title="4.7/5 rating">
-                                                                <li><i class="fa fa-star"></i>
-                                                                </li>
-                                                                <li><i class="fa fa-star"></i>
-                                                                </li>
-                                                                <li><i class="fa fa-star"></i>
-                                                                </li>
-                                                                <li><i class="fa fa-star"></i>
-                                                                </li>
-                                                                <li><i class="fa fa-star"></i>
-                                                                </li>
-                                                            </ul>
                                                             <h5 class="product-title">${element.name}</h5>
                                                             <p class="product-desciption">
                                                                 ${des}

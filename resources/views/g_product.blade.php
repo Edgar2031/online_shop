@@ -75,31 +75,6 @@
         
         @section('footer')
         <div class="head">
-            <!-- SEARCH AREA -->
-            <form class="search-area form-group">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 clearfix">
-                            <label><i class="fa fa-search"></i><span>I am searching for</span>
-                            </label>
-                            <div class="search-area-division search-area-division-input">
-                                <input class="form-control" type="text" placeholder="Travel Vacation" />
-                            </div>
-                        </div>
-                        <div class="col-md-3 clearfix">
-                            <label><i class="fa fa-map-marker"></i><span>In</span>
-                            </label>
-                            <div class="search-area-division search-area-division-location">
-                                <input class="form-control" type="text" placeholder="Boston" />
-                            </div>
-                        </div>
-                        <div class="col-md-1">
-                            <button class="btn btn-block btn-white search-btn" type="submit">Search</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-            <!-- END SEARCH AREA -->
 
             <div class="gap"></div>
             <div class="container">
@@ -108,16 +83,16 @@
                         <aside class="sidebar-left">
                             <ul class="nav nav-pills nav-stacked nav-arrow">
                                 <li>
-                                    <a href="{{url('g_profile/my_account_settings')}}">Settings</a>
+                                    <a href="{{ url('g_profile/my_account_settings') }}">{{ __('g_product.settings') }}</a>
                                 </li>
                                 <li class="active">
-                                    <a href="{{url('g_profile/product')}}">Add Product</a>
+                                    <a href="{{ url('g_profile/product') }}">{{ __('g_product.add_product') }}</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('g_profile/my_orders_history') }}">Orders History</a>
+                                    <a href="{{ url('g_profile/my_orders_history') }}">{{ __('g_product.orders_history') }}</a>
                                 </li>
                                 <li>
-                                    <a href="{{url('g_profile/my_product')}}">My Product</a>
+                                    <a href="{{ url('g_profile/my_product') }}">{{ __('g_product.my_product') }}</a>
                                 </li>
                             </ul>
                         </aside>
@@ -128,52 +103,52 @@
                             <form action="{{url('/add_product')}}" method="post" enctype="multipart/form-data">
                                     {{csrf_field()}}
                                     <div class="form-group">
-                                        <label for="">Name</label>
+                                        <label for="">{{ __('g_product.name') }}</label>
                                         {{ $errors->first('p_name') }}
                                         <input type="text" value="{{ old('p_name') }}" name="p_name" placeholder="name" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Count</label>                               
+                                        <label for="">{{ __('g_product.count') }}</label>                               
                                         {{ $errors->first('p_count') }}
                                         <input type="text" value="{{ old('p_count') }}" name="p_count" placeholder="Count" class="form-control">
                                     </div>
                                     <div class="form-group" style="position: relative;">
-                                        <label for="">Price</label>
+                                        <label for="">{{ __('g_product.price') }}</label>
                                         <label class="price_lab">USA</label>                    
                                         {{ $errors->first('p_price') }}
                                         <input type="text" value="{{ old('p_price') }}" name="p_price" placeholder="Price" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Description</label>
+                                        <label for="">{{ __('g_product.description') }}</label>
                                         {{ $errors->first('p_description') }}
                                         <textarea type="text" value="{{ old('p_description_m') }}" name="p_description" class="form-control"></textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Product category</label>
+                                        <label for="">{{ __('g_product.product_category') }}</label>
                                         {{ $errors->first('p_category') }}
                                         <div class="select">
                                             <select name="p_category" id="slct" class="select_category" value="{{ old('p_price') }}">
                                                 <option ></option>
                                                 <option value="grocery">
                                                     <i class="fas fa-apple-alt"></i>
-                                                    Grocery
+                                                    {{ __('g_product.grocery') }}
                                                 </option>
                                                 <option value="apparel">
                                                     <i class="fas fa-tshirt"></i>
-                                                    Apparel
+                                                    {{ __('g_product.apparel') }}
                                                 </option>
                                                 <option value="electronics">
                                                     <i class="fas fa-tv"></i>
-                                                    Electronics
+                                                    {{ __('g_product.electronics') }}
                                                 </option>
                                                 <option value="another">
-                                                    Another
+                                                    {{ __('g_product.another') }}
                                                 </option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Photo</label>
+                                        <label for="">{{ __('g_product.photo') }}</label>
                                         {{ $errors->first('p_photo') }}
                                         <input type="file" value="{{ old('p_photo') }}" name="p_photo[]" multiple="" class="form-control">
                                     </div>
@@ -190,7 +165,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-4">
-                                <p>Copyright © <?php date_default_timezone_set("Asia/Yerevan"); echo(date('Y')); ?>, Your Store, All Rights Reserved</p>
+                                <p>{{ __('g_product.copyright') }} <?php date_default_timezone_set("Asia/Yerevan"); echo(date('Y')); ?>{{ __('g_product.all_rights_reserved') }}</p>
                             </div>
                         </div>
                     </div>

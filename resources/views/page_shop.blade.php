@@ -159,162 +159,13 @@
                                     </a>
                                 </li>
                             </ul>
-                            
-                            <div class="sidebar-box">
-                                <h5>Product Feature</h5>
-                                <ul class="checkbox-list">
-                                    <li class="checkbox">
-                                        <label>
-                                            <input type="checkbox" class="i-check">On Sale</label>
-                                    </li>
-                                    <li class="checkbox">
-                                        <label>
-                                            <input type="checkbox" class="i-check">New</label>
-                                    </li>
-                                    <li class="checkbox">
-                                        <label>
-                                            <input type="checkbox" class="i-check">Ending Soon</label>
-                                    </li>
-                                    <li class="checkbox">
-                                        <label>
-                                            <input type="checkbox" class="i-check">High Rating</label>
-                                    </li>
-                                    <li class="checkbox">
-                                        <label>
-                                            <input type="checkbox" class="i-check">Free Shipping</label>
-                                    </li>
-                                </ul>
-                            </div>
-                            
                         </aside>
                     </div>
                     <div class="col-md-9">
-                        <div class="row">
-                            <div class="col-md-2 col-md-offset-7">
-                                <div class="product-view pull-right">
-                                    <a class="fa fa-th-large active" href="#"></a>
-                                    <a class="fa fa-list" href="category-page-thumbnails-shop-horizontal.html"></a>
-                                </div>
-                            </div>
-                        </div>
                         <div class="row row-wrap product_append">
-
-                            <!-- <div class="col-md-4">
-                                <div class="product-thumb">
-                                    <header class="product-header"><span class="product-label label label-info">Featured</span>
-                                        <img src="img/nikon_prime_love_800x600.jpg" alt="Image Alternative text" title="Nikon Prime love" />
-                                    </header>
-                                    <div class="product-inner">
-                                        <ul class="icon-group icon-list-rating" title="4.7/5 rating">
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                        </ul>
-                                        <h5 class="product-title">Best Camera Lenthes</h5>
-                                        <p class="product-desciption">Iaculis parturient sollicitudin parturient ad odio torquent tincidunt</p>
-                                        <div class="product-meta">
-                                            <ul class="product-price-list">
-                                                <li><span class="product-price">$56</span>
-                                                </li>
-                                                <li><span class="product-old-price">$125</span>
-                                                </li>
-                                                <li><span class="product-save">Save 45%</span>
-                                                </li>
-                                            </ul>
-                                            <ul class="product-actions-list">
-                                                <li><a class="btn btn-sm" href="#"><i class="fa fa-shopping-cart"></i> To Cart</a>
-                                                </li>
-                                                <li><a class="btn btn-sm"><i class="fa fa-bars"></i> Details</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="product-thumb">
-                                    <header class="product-header"><span class="product-label label label-danger">Hot</span>
-                                        <img src="img/aspen_lounge_chair_800x600.jpg" alt="Image Alternative text" title="Aspen Lounge Chair" />
-                                    </header>
-                                    <div class="product-inner">
-                                        <ul class="icon-group icon-list-rating" title="3.7/5 rating">
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star-o"></i>
-                                            </li>
-                                        </ul>
-                                        <h5 class="product-title">Aspen Lounge Chair</h5>
-                                        <p class="product-desciption">Iaculis parturient sollicitudin parturient ad odio torquent tincidunt</p>
-                                        <div class="product-meta">
-                                            <ul class="product-price-list">
-                                                <li><span class="product-price">$57</span>
-                                                </li>
-                                                <li><span class="product-old-price">$179</span>
-                                                </li>
-                                                <li><span class="product-save">Save 32%</span>
-                                                </li>
-                                            </ul>
-                                            <ul class="product-actions-list">
-                                                <li><a class="btn btn-sm" href="#"><i class="fa fa-shopping-cart"></i> To Cart</a>
-                                                </li>
-                                                <li><a class="btn btn-sm"><i class="fa fa-bars"></i> Details</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="product-thumb">
-                                    <header class="product-header">
-                                        <span class="product-label label label-success">New</span>
-                                        <img src="img/ana_29_800x600.jpg" alt="Image Alternative text" title="Ana 29" />
-                                    </header>
-                                    <div class="product-inner">
-                                        <ul class="icon-group icon-list-rating" title="4.1/5 rating">
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star-half-empty"></i>
-                                            </li>
-                                        </ul>
-                                        <h5 class="product-title">Hot Summer Collection</h5>
-                                        <p class="product-desciption">Iaculis parturient sollicitudin parturient ad odio torquent tincidunt</p>
-                                        <div class="product-meta">
-                                            <ul class="product-price-list">
-                                                <li><span class="product-price">$232</span>
-                                                </li>
-                                            </ul>
-                                            <ul class="product-actions-list">
-                                                <li><a class="btn btn-sm" href="#"><i class="fa fa-shopping-cart"></i> To Cart</a>
-                                                </li>
-                                                <li><a class="btn btn-sm"><i class="fa fa-bars"></i> Details</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
+                            {{-- product append --}}
                         </div>
-                        <ul class="pagination">
+                        {{-- <ul class="pagination">
                             <li class="prev disabled">
                                 <a href="#"></a>
                             </li>
@@ -331,7 +182,7 @@
                             <li class="next">
                                 <a href="#"></a>
                             </li>
-                        </ul>
+                        </ul> --}}
                         <div class="gap"></div>
                     </div>
                 </div>

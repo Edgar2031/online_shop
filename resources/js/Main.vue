@@ -100,9 +100,9 @@
 	                        <li class="user-item nav-item dropdown">
 	                            <a class="user-link nav-link d-inline-flex align-items-center h-100 small-1 pl-1 pl-sm-3 pr-0" href="#" id="dropdownAdmin_02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	                                <img class="user-avatar rounded-circle mr-sm-3" src="assets/img/avatar/1.jpg" alt="Avatar">
-	                                <div class="d-none d-sm-block lh-1">
+	                                <div class="d-none d-sm-block lh-1" v-for="pr in profile" :key = 'pr.id'>
 	                                    <span class="small-5 fw-300">Welcome,</span>
-	                                    <div class="lh-5 text-primary">Paul Chappell</div>
+	                                    <div class="lh-5 text-primary">{{ pr.name }}Paul Chappell</div>
 	                                </div>
 	                                <span class="icon-chevron-down small-8 ml-3"></span>
 	                            </a>
@@ -145,13 +145,13 @@
 	                                <div class="panel-dropdown dropdown mr-auto">
 	                                    <button class="tep-btn btn dropdown-toggle ml-auto" type="button" id="timePanelTab" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	                                        <span class="d-flex pr-3">
-	                        <span class="d-flex align-items-center pr-3 border-right lead-3">
-	                          <span class="icon-calendar-alt"></span>
-	                                        </span>
-	                                        <span class="d-block lh-3 py-1 pl-3">
-	                          <span class="d-block mb-1">Feb 1 - Feb 29, 2020</span>
-	                                        <span class="small-3 fw-300">Compared Jan 1 - Jan 30, 2020</span>
-	                                        </span>
+	                        					<span class="d-flex align-items-center pr-3 border-right lead-3">
+	                          						<span class="icon-calendar-alt"></span>
+	                                        	</span>
+		                                        <span class="d-block lh-3 py-1 pl-3">
+		                          					<span class="d-block mb-1">Feb 1 - Feb 29, 2020</span>
+		                                        	<span class="small-3 fw-300">Compared Jan 1 - Jan 30, 2020</span>
+		                                        </span>
 	                                        </span>
 	                                    </button>
 	                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="timePanelTab">
@@ -870,6 +870,15 @@
 </template>
 <script>
 	export default {
-
+			data(){
+				return {
+					profile: [] 
+				}
+			},
+			created(){
+				this.axios.get('/api/admin/getProfile').then(r => {
+					this.profile = r.data;
+				});
+			}
 	}
 </script>

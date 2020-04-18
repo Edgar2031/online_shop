@@ -84,16 +84,16 @@
                         <aside class="sidebar-left">
                             <ul class="nav nav-pills nav-stacked nav-arrow">
                                 <li>
-                                    <a href="{{url('g_profile/my_account_settings')}}">Settings</a>
+                                    <a href="{{url('g_profile/my_account_settings')}}">{{ __('my_orders_history.settings') }}</a>
                                 </li>
                                 <li>
-                                    <a href="{{url('g_profile/product')}}">Add Product</a>
+                                    <a href="{{url('g_profile/product')}}">{{ __('my_orders_history.add_product') }}</a>
                                 </li>
                                 <li class="active">
-                                    <a href="{{ url('g_profile/my_orders_history') }}">Orders History</a>
+                                    <a href="{{ url('g_profile/my_orders_history') }}">{{ __('my_orders_history.orders_history') }}</a>
                                 </li>
                                 <li>
-                                    <a href="{{url('g_profile/my_product')}}">My Product</a>
+                                    <a href="{{url('g_profile/my_product')}}">{{ __('my_orders_history.my_product') }}</a>
                                 </li>
                             </ul>
                         </aside>
@@ -104,17 +104,17 @@
                                 <table class="table table-order">
                                     <thead>
                                         <tr>
-                                            <th>Item</th>
-                                            <th>Price</th>
-                                            <th>Date</th>
-                                            <th>Remove</th>
+                                            <th>{{ __('my_orders_history.item') }}</th>
+                                            <th>{{ __('my_orders_history.price') }}</th>
+                                            <th>{{ __('my_orders_history.date') }}</th>
+                                            <th>{{ __('my_orders_history.remove') }}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach($orders as $val)
                                             <tr data-id="this_{{ $val->id }}">
                                                 <td>
-                                                    <a href="{{ url('g_profile/my_orders_history/this/' . $val->id) }}">New Glass Collection</a>
+                                                    <a href="{{ url('g_profile/my_orders_history/this/' . $val->id) }}">=></a>
                                                 </td>
                                                 <td>$ {{ $val->sum }}</td>
                                                 <td>{{ $val->datetime }}</td>
@@ -137,7 +137,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-4">
-                                <p>Copyright © <?php date_default_timezone_set("Asia/Yerevan"); echo(date('Y')); ?>, Your Store, All Rights Reserved</p>
+                                <p>{{ __('my_orders_history.copyright') }} <?php date_default_timezone_set("Asia/Yerevan"); echo(date('Y')); ?>, {{ __('my_orders_history.all_rights_reserved') }}</p>
                             </div>
                         </div>
                     </div>

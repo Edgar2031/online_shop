@@ -237,7 +237,7 @@
     <script src="{{asset('js/cart_product.js')}}"></script>
     <script type="text/javascript">
         $('.buy_all').click(function(event) {
-            const total = $('.total_span').html();
+            const total = $('.total_span').html().split('$')[1];
             $.ajax({
                 url: '/g_profile/page_cart/stripe_total',
                 type: 'post',

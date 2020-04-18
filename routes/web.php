@@ -10,9 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('locale/{locale}', function($locale){
+	Session::put('locale', $locale);
+	return redirect()->back();
+});
+
 // <= =============== Login =============== =>
 Route::get('/', function () {
-    return view('login');
+	return view('login');
 })->middleware('checkLogin:login');
 
 // <= =============== Register =============== =>

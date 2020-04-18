@@ -4,7 +4,7 @@
             <div class="demo-icon fas fa-sliders-h"></div>
             <div class="form_holder">
                 <div class="line"></div>
-                <p>Color Scheme</p>
+                <p>{{ __('menu.color_scheme') }}</p>
                 <div class="predefined_styles" id="styleswitch_area">
                     <a href="page-my-account-settingsc392.html?default=true" class="styleswitch" style="background:#2A8FBD"></a>
                     <a href="#" data-source="apple" class="styleswitch" style="background:#56AD48"></a>
@@ -41,88 +41,42 @@
                 <div class="row">
                     <div class="col-md-6">
                         <!-- MAIN NAVIGATION -->
-                        <div class="flexnav-menu-button" id="flexnav-menu-button">Menu</div>
                         <nav>
                             <ul class="nav nav-pills flexnav" id="flexnav" data-breakpoint="800">
                                 <li class="active">
-                                    <a href="{{url('/g_profile')}}" style="background: #333;">
+                                    <a href="{{ url('/g_profile') }}" style="background: #333;">
                                         <img src="img/white-logo.png" alt="Arduix" title="Arduix" style='height: 35px; width: 100px; cursor: pointer;'>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{{url('g_profile/page_shop')}}">Shop</a>
+                                    <a href="{{ url('g_profile/page_shop') }}">{{ __('menu.shop') }}</a>
                                 </li>
                                 <li>
-                                    <a href="product-shop-sidebar.html">Product </a>
-                                    <ul>
-                                        <li><a href="product-shop-sidebar.html">Shop</a>
-                                            <ul>
-                                                <li><a href="product-shop-sidebar.html">Sidebar</a>
-                                                </li>
-                                                <li><a href="product-shop-sidebar-left.html">Sidebar Left</a>
-                                                </li>
-                                                <li><a href="product-shop-centered.html">Centered</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="product-coupon-default.html">Coupon</a>
-                                            <ul>
-                                                <li><a href="product-coupon-default.html">Default</a>
-                                                </li>
-                                                <li><a href="product-coupon-meta-right.html">Meta right</a>
-                                                </li>
-                                                <li><a href="">Gallery</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="blog-sidebar-right.html">Blog</a>
-                                    <ul>
-                                        <li><a href="blog-sidebar-right.html">Sidebar Right</a>
-                                        </li>
-                                        <li><a href="blog-sidebar-left.html">Sidebar Left</a>
-                                        </li>
-                                        <li><a href="blog-full-width.html">Full Width</a>
-                                        </li>
-                                        <li><a href="post-sidebar-right.html">Post</a>
-                                            <ul>
-                                                <li><a href="post-sidebar-right.html">Sidebar Right</a>
-                                                </li>
-                                                <li><a href="post-sidebar-left.html">Sidebar Left</a>
-                                                </li>
-                                                <li><a href="post-full-width.html">Full Width</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="{{url('g_profile/my_account_settings')}}">Profile</a>
+                                    <a href="{{ url('g_profile/my_account_settings') }}">{{ __('menu.profile') }}</a>
                                     <ul>
                                         <li>
-                                            <a href="{{url('g_profile/my_account_settings')}}">
-                                                My Account
+                                            <a href="{{ url('g_profile/my_account_settings') }}"> 
+                                                {{ __('menu.my_account') }}
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{url('g_profile/my_account_settings')}}">
-                                                Settings
+                                            <a href="{{ url('g_profile/my_account_settings') }}"> 
+                                                {{ __('menu.settings') }}
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{url('g_profile/product')}}">
-                                                Add Product
+                                            <a href="{{ url('g_profile/product') }}"> 
+                                                {{ __('menu.add_product') }}
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{ url('g_profile/my_orders_history') }}">
-                                                Orders History
+                                            <a href="{{ url('g_profile/my_orders_history') }}"> 
+                                                {{ __('menu.orders_history') }}
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{url('g_profile/my_product')}}">
-                                                My Product
+                                            <a href="{{ url('g_profile/my_product') }}"> 
+                                                {{ __('menu.my_product') }}
                                             </a>
                                         </li>
                                     </ul>
@@ -135,11 +89,11 @@
                         <!-- LOGIN REGISTER LINKS -->
                         <ul class="login-register">
                             <li class="shopping-cart">
-                                <a href="{{url('g_profile/page_cart')}}">
-                                    My Cart 
+                                <a href="{{ url('g_profile/page_cart') }}"> 
+                                    {{ __('menu.cart') }}
                                     <i class="fa fa-shopping-cart"></i>
                                 </a>
-                                <div class="shopping-cart-box">
+                                {{-- <div class="shopping-cart-box">
                                     <ul class="shopping-cart-items">
                                         <li>
                                             <a href="product-shop-sidebar.html">
@@ -170,17 +124,17 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> --}}
                             </li>
                             <li>
-                                <a href="{{url('g_profile/page_wishlist')}}">
-                                    Wish list
+                                <a href="{{ url('g_profile/page_wishlist') }}"> 
+                                    {{ __('menu.wishlist') }}
                                     <i class="bx bx-heart-circle"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{url('/g_logout')}}">
-                                    Logout
+                                <a href="{{ url('/g_logout') }}"> 
+                                    {{ __('menu.logout') }}
                                     <i class="bx bx-log-out-circle"></i>
                                 </a>
                             </li>

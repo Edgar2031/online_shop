@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mintaka - Responsive HTML5 Template</title>
+    <title>Arduix</title>
 
     <!-- CSS -->
     <link href="{{ asset('assets/css/fonts/fontawesome/all.min.css') }}" rel="stylesheet">
@@ -31,8 +31,8 @@
     <![endif]-->
 </head>
 <body class="body">
-    
-	
+{{ Session::get('id') }}
+    <!-- main --> 
 	<div id="app"></div>
 	<!-- /.main -->
 

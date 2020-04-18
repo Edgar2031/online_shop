@@ -65,6 +65,7 @@ class StripeController extends Controller
                 }
             }
         }
+        Session::put('sum', 0);
         CartModel::where('user_id', Session::get('id'))->delete();
         Session::flash('success', 'Payment successful!');
         return back();

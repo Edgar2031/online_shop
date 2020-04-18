@@ -82,16 +82,16 @@
                         <aside class="sidebar-left">
                             <ul class="nav nav-pills nav-stacked nav-arrow">
                                 <li>
-                                    <a href="{{url('g_profile/my_account_settings')}}">Settings</a>
+                                    <a href="{{url('g_profile/my_account_settings')}}">{{ __('my_product.settings') }}</a>
                                 </li>
                                 <li>
-                                    <a href="{{url('g_profile/product')}}">Add Product</a>
+                                    <a href="{{url('g_profile/product')}}">{{ __('my_product.add_product') }}</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('g_profile/my_orders_history') }}">Orders History</a>
+                                    <a href="{{ url('g_profile/my_orders_history') }}">{{ __('my_product.orders_history') }}</a>
                                 </li>
                                 <li class="active">
-                                    <a href="{{url('g_profile/my_product')}}">My Product</a>
+                                    <a href="{{url('g_profile/my_product')}}">{{ __('my_product.my_product') }}</a>
                                 </li>
                             </ul>
                         </aside>
@@ -106,26 +106,9 @@
                                             <img src="{{asset('product_photo/'.$p->p_photo[0]->photo)}}" alt="Image" >
                                         </header>
                                         <div class="product-inner">
-                                            <ul class="icon-group icon-list-rating" title="4/5 rating">
-                                                <li>
-                                                    <i class="fa fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-star-o"></i>
-                                                </li>
-                                            </ul>
                                             <h5 class="product-title">{{$p->name}}</h5>
                                             <p class="product-desciption">{{$p->description}}</p>
-                                            <p style="display: block; color: #f70707;" class="product-desciption">      {{$p->count}}
+                                            <p style="display: block; color: #f70707;" class="product-desciption">{{ __('my_product.count') }} {{$p->count}}
                                             </p>
                                             {{$p->time}}
                                             <div class="product-meta">
@@ -140,7 +123,7 @@
                                                     <li>
                                                         <a href="{{url('g_profile/my_product/product_item/'.$p->id)}}" class="btn btn-sm">
                                                             <i class="fa fa-bars"></i> 
-                                                            Details
+                                                            {{ __('my_product.details') }}
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -150,7 +133,7 @@
                                     <div class="product-wishlist-remove delete_prd" data-id="{{$p->id}}">
                                         <a class="btn btn-ghost btn-sm">
                                             <i class="fa fa-times"></i> 
-                                            Remove 
+                                            {{ __('my_product.remove') }} 
                                         </a>
                                     </div>
                                 </div>
@@ -165,7 +148,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-4">
-                                <p>Copyright © <?php date_default_timezone_set("Asia/Yerevan"); echo(date('Y')); ?>, Your Store, All Rights Reserved</p>
+                                <p>{{ __('my_product.copyright') }} <?php date_default_timezone_set("Asia/Yerevan"); echo(date('Y')); ?>, {{ ('my_product.all_rights_reserved') }}</p>
                             </div>
                         </div>
                     </div>

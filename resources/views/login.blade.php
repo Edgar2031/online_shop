@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="en" >
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -47,25 +47,21 @@
         <div class="container" id="container">
             <div class="form-container sign-up-container">
                 <div class="div_log">
-                    <h1>Login</h1>
-                    <div class="social-container">
-                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                    <h1>{{ __('login.login') }}</h1>
+
                     <p class="l_verify_error" style="height: 35px; width: 230px; border-radius: 10px; margin: 5px; letter-spacing: 0; text-align: center; background: red; color: #fff; display: none; justify-content: center; align-items: center;"></p>
 
-                    <input class="l_email" type="email" placeholder="Email" value="{{ old('l_email') }}" >
+                    <input class="l_email" type="email" placeholder="{{ __('login.email') }}" value="{{ old('l_email') }}" >
 
-                    <input class="l_password" type="password" placeholder="Password" value="{{ old('l_password') }}" >
-                    <a href="{{url('/user_verify')}}" class="forgot">Forgot your password ?</a>
+                    <input class="l_password" type="password" placeholder="{{ __('login.password') }}" value="{{ old('l_password') }}" >
+                    <a href="{{url('/user_verify')}}" class="forgot">{{ __('login.forgot') }}</a>
                     <!-- <button>Sign In</button> -->
 
                     <!-- Start Other Option -->
                     <button class="btn_none login">
                         <div class="others-option">
                             <a class="default-btn on">
-                                <span>Login</span> 
+                                <span>{{ __('login.login') }}</span> 
                                 <i class="bx bx-log-in-circle"></i>
                                 <div class="sk-wave">
                                     <div class="sk-wave-rect"></div>
@@ -81,45 +77,34 @@
                 </div>
             </div>
             <div class="form-container sign-in-container">
-                <form action="{{url('/register')}}" method="post">
+                <form action="{{ url('/register') }}" method="post">
                     {{ csrf_field() }}
-                    <h1>Create Account</h1>
-                    <div class="social-container">
-                        <a href="#" class="social">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social">
-                            <i class="fab fa-google-plus-g"></i>
-                        </a>
-                        <a href="#" class="social">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
+                    <h1>{{ __('login.singup') }}</h1>
 
                     {{ $errors->first('name') }}
-                    <input name="name" value="{{ old('name') }}" placeholder="Name">
+                    <input name="name" value="{{ old('name') }}" placeholder="{{ __('login.name') }}">
 
                     {{ $errors->first('surname') }}
-                    <input name="surname" value="{{ old('surname') }}" placeholder="Suername">
+                    <input name="surname" value="{{ old('surname') }}" placeholder="{{ __('login.surname') }}">
 
                     {{ $errors->first('email') }}
-                    <input name="email" value="{{ old('email') }}" placeholder="Email">
+                    <input name="email" value="{{ old('email') }}" placeholder="{{ __('login.email') }}">
 
                     {{ $errors->first('age') }}
-                    <input name="age" value="{{ old('age') }}" placeholder="Age">
+                    <input name="age" value="{{ old('age') }}" placeholder="{{ __('login.age') }}">
 
                     {{ $errors->first('password') }}
-                    <input name="password" value="{{ old('password') }}" placeholder="Password">
+                    <input name="password" value="{{ old('password') }}" placeholder="{{ __('login.password') }}">
 
                     {{ $errors->first('confirm') }}
-                    <input name="confirm" value="{{ old('confirm') }}" placeholder="Repeat password">
+                    <input name="confirm" value="{{ old('confirm') }}" placeholder="{{ __('login.confirm_password') }}">
                     <!-- Start Other Option --> 
 
                     {{-- disabled="disabled" --}}
                     <button class="btn_none">
                         <div class="others-option">
                             <a class="default-btn">
-                                Sign Up
+                                {{ __('login.singup') }}
                                 <i class="bx bx-log-in-circle"></i>
                             </a>
                         </div>
@@ -130,26 +115,26 @@
             <div class="overlay-container">
                 <div class="overlay">
                     <div class="overlay-panel overlay-right">
-                        <h1>Hello, Friend!</h1>
+                        <h1>{{ __('login.hello') }}</h1>
                         <p></p>
                         <!-- Start Other Option -->
                         <button class="btn_none ghost" id="signUp">
                             <div class="others-option">
                                 <a class="default-btn" style="background-color: #ff0018;">
-                                   Login
+                                   {{ __('login.login') }}
                                 </a>
                             </div>
                         </button>
                         <!-- End Other Option -->
                     </div>
                     <div class="overlay-panel overlay-left">
-                        <h1>Welcome!</h1>
+                        <h1>{{ __('login.welcome') }}</h1>
                         <p></p>
                         <!-- Start Other Option -->
                         <button class="btn_none ghost" id="signIn">
                             <div class="others-option">
                                 <a class="default-btn" style="background-color: #ff0018;">
-                                    Sing Up
+                                    {{ __('login.singup') }}
                                 </a>
                             </div>
                         </button>
@@ -158,6 +143,11 @@
                 </div>
             </div>
         </div>  
+        <div style="background: #fff; width: 100%; margin-top: 23px; text-align: center;">
+            <a class="@if (Session::get('locale') == 'en') return active_lang @elseif(Session::get('locale') != 'am') return active_lang @else return lang @endif" data-value="en" href="{{ url('locale/en') }}">English(US)</a>
+            <a class="@if (Session::get('locale') == 'am') return active_lang @else return lang @endif" data-value="am" href="{{ url('locale/am') }}">Հայերեն</a>
+            {{-- <a class="lang" href="">Русский</a> --}}
+        </div>
         <!-- Start Go Top Area -->
         <div class="go-top">
             <i class="bx bx-chevrons-up"></i>
@@ -167,9 +157,10 @@
     </body>
     <!-- jQuery and Loading -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="{{asset('js/loader.js')}}"></script>
+    <script src="{{ asset('js/loader.js') }}"></script>
 
     <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
-    <script src="{{asset('js/script.js')}}"></script>
-    <script src="{{asset('js/up.js')}}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
+    <script src="{{ asset('js/up.js') }}"></script>
+
 </html>

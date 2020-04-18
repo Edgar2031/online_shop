@@ -82,16 +82,16 @@
                         <aside class="sidebar-left">
                             <ul class="nav nav-pills nav-stacked nav-arrow">
                                 <li class="active">
-                                    <a href="{{url('g_profile/my_account_settings')}}">Settings</a>
+                                    <a href="{{url('g_profile/my_account_settings')}}">{{ __('my_account_settings.settings') }}</a>
                                 </li>
                                 <li>
-                                    <a href="{{url('g_profile/product')}}">Add Product</a>
+                                    <a href="{{url('g_profile/product')}}">{{ __('my_account_settings.add_product') }}</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('g_profile/my_orders_history') }}">Orders History</a>
+                                    <a href="{{ url('g_profile/my_orders_history') }}">{{ __('my_account_settings.orders_history') }}</a>
                                 </li>
                                 <li>
-                                    <a href="{{url('g_profile/my_product')}}">My Product</a>
+                                    <a href="{{url('g_profile/my_product')}}">{{ __('my_account_settings.my_product') }}</a>
                                 </li>
                             </ul>
                         </aside>
@@ -102,24 +102,24 @@
                                 <form action="{{url('/g_edit')}}" method="post">
                                     {{csrf_field()}}
                                     <div class="form-group">
-                                        <label for="">Name</label>
+                                        <label for="">{{ __('my_account_settings.name') }}</label>
                                         {{ $errors->first('name') }}
-                                        <input name="name" value="{{$user["name"]}}" placeholder="name" class="form-control">
+                                        <input name="name" value="{{$user["name"]}}" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Surname</label>
+                                        <label for="">{{ __('my_account_settings.surname') }}</label>
                                         {{ $errors->first('surname') }}
-                                        <input name="surname" value="{{$user["surname"]}}" placeholder="suername" class="form-control">
+                                        <input name="surname" value="{{$user["surname"]}}" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Email</label>
+                                        <label for="">{{ __('my_account_settings.email') }}</label>
                                         {{ $errors->first('email') }}
-                                        <input name="email" value="{{$user["email"]}}" placeholder="email" class="form-control">
+                                        <input name="email" value="{{$user["email"]}}" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Age</label>
+                                        <label for="">{{ __('my_account_settings.age') }}</label>
                                         {{ $errors->first('age') }}
-                                        <input name="age" value="{{$user["age"]}}" placeholder="age" class="form-control">
+                                        <input name="age" value="{{$user["age"]}}" class="form-control">
                                     </div>
                                     <input type="submit" value="Save Changes" class="btn btn-primary">
                                 </form>
@@ -134,7 +134,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-4">
-                                <p>Copyright © <?php date_default_timezone_set("Asia/Yerevan"); echo(date('Y')); ?>, Your Store, All Rights Reserved</p>
+                                <p>{{ __('my_account_settings.copyright') }} <?php date_default_timezone_set("Asia/Yerevan"); echo(date('Y')); ?>, {{ __('my_account_settings.all_rights_reserved') }}</p>
                             </div>
                         </div>
                     </div>

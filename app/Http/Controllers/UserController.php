@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Validator;
 use Illuminate\Support\Facades\Redirect;
 use App\UserModel;
+use App\ProductModel;
+use App\CartModel;
+use App\WishlistModel;
 use Hash;
 use Session;
 use Mail;
@@ -213,7 +216,7 @@ class UserController extends Controller
 		    ), 400); 
 		    // 400 being the HTTP code for an invalid request.
 		}else {
-			Session::put('id', $user['id']);
+			Session::put('id', $user->id);
 			if ($user->type == 1) return Response::json(array('success' => true), 200);// 200 being the HTTP code for an invalid request.
 			else return Response::json(array('success' => false), 200);
 			// 200 being the HTTP code for an invalid request.
@@ -222,8 +225,28 @@ class UserController extends Controller
 
 	// <= === Profile === =>
 	function profile() {
-		$user = UserModel::where('id',Session::get('id'))->first();
-		return view('g_profile')->with('user', $user);
+	    $cart = CartModel::where('user_id', Session::get('id'))->get();
+	    $wishlist = WishlistModel::where('user_id', Session::get('id'))->get();
+	    $product = ProductModel::where('user_id', '<>', Session::get('id'))
+	    						->orderBy('id','DESC')
+	    						->limit(5)
+	    						->get();
+								foreach($product as $p){		
+									$p['cart'] = 0;
+									$p['wishlist'] = 0;
+									foreach ($cart as $c) {
+										if ($p->id == $c->product_id) {
+											$p['cart'] = 1;
+										}
+									}
+									foreach ($wishlist as $w) {
+										if ($p->id == $w->product_id) {
+											$p['wishlist'] = 1;
+										}
+									}
+									$p->p_photo;	
+								}
+		return view('g_profile')->with('product', $product);
 	}
 
 	// <= === Logout === =>
@@ -234,7 +257,7 @@ class UserController extends Controller
 
 	// <= === My account Settings === =>
 	function g_my_account() {
-		$user = UserModel::where('id',Session::get('id'))->first();
+		$user = UserModel::where('id', Session::get('id'))->first();
 		return view('my_account_settings')->with('user', $user);
 	}
 }
