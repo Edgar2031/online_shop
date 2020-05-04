@@ -2056,638 +2056,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      profile: []
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    var id = $('meta[name="user-id"]').attr('content');
+    this.axios.get("/api/admin/profile/".concat(id)).then(function (r) {
+      _this.profile = r.data;
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Home.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 //
 //
 //
@@ -2781,33 +2176,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      profile: []
+      user_online_offline: [],
+      admin_online_offline: []
     };
   },
   created: function created() {
     var _this = this;
 
-    this.axios.get('/api/admin/getProfile').then(function (r) {
-      _this.profile = r.data;
+    this.axios.get('/api/admin/user_online_offline').then(function (r) {
+      _this.user_online_offline = r.data;
     });
+    this.axios.get('/api/admin/admin_online_offline').then(function (r) {
+      _this.admin_online_offline = r.data;
+    });
+  },
+  methods: {
+    refresh_user_online_offline: function refresh_user_online_offline() {
+      var _this2 = this;
+
+      this.axios.get("/api/admin/refresh_user_online_offline").then(function (r) {
+        _this2.user_online_offline = r.data;
+      });
+    },
+    refresh_admin_online_offline: function refresh_admin_online_offline() {
+      var _this3 = this;
+
+      this.axios.get("/api/admin/refresh_admin_online_offline").then(function (r) {
+        _this3.admin_online_offline = r.data;
+      });
+    }
   }
 });
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Home.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
 
@@ -2820,6 +2219,118 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2862,6 +2373,23 @@ __webpack_require__.r(__webpack_exports__);
           return a.id != x;
         });
       });
+    },
+    search: function search(e) {
+      var _this4 = this;
+
+      if (e.keyCode === 13) {
+        var search = $('.input_search').val();
+
+        if (search == '') {
+          this.axios.get('/api/admin/product').then(function (r) {
+            _this4.products = r.data;
+          });
+        } else {
+          this.axios.get("/api/admin/product_search/".concat(search)).then(function (r) {
+            _this4.products = r.data;
+          });
+        }
+      }
     }
   }
 });
@@ -2887,6 +2415,135 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2899,6 +2556,67 @@ __webpack_require__.r(__webpack_exports__);
     this.axios.get('/api/admin/getUsers').then(function (r) {
       _this.users = r.data;
     });
+  },
+  methods: {
+    refresh_user: function refresh_user() {
+      var _this2 = this;
+
+      this.axios.get('/api/admin/refresh_user').then(function (r) {
+        _this2.users = r.data;
+      });
+    },
+    block_3_day: function block_3_day(id) {
+      var _this3 = this;
+
+      this.axios.get("/api/admin/block_3_day/".concat(id)).then(function (r) {
+        _this3.users = r.data;
+      });
+    },
+    block_one_week: function block_one_week(id) {
+      var _this4 = this;
+
+      this.axios.get("/api/admin/block_one_week/".concat(id)).then(function (r) {
+        _this4.users = r.data;
+      });
+    },
+    block_1_month: function block_1_month(id) {
+      var _this5 = this;
+
+      this.axios.get("/api/admin/block_1_month/".concat(id)).then(function (r) {
+        _this5.users = r.data;
+      });
+    },
+    block_permanent: function block_permanent(id) {
+      var _this6 = this;
+
+      this.axios.get("/api/admin/block_permanent/".concat(id)).then(function (r) {
+        _this6.users = r.data;
+      });
+    },
+    remove_block: function remove_block(id) {
+      var _this7 = this;
+
+      this.axios.get("/api/admin/remove_block/".concat(id)).then(function (r) {
+        _this7.users = r.data;
+      });
+    },
+    search: function search(e) {
+      var _this8 = this;
+
+      if (e.keyCode === 13) {
+        var search = $('.input_search').val();
+
+        if (search == '') {
+          this.axios.get('/api/admin/refresh_user').then(function (r) {
+            _this8.users = r.data;
+          });
+        } else {
+          this.axios.get("/api/admin/user_search/".concat(search)).then(function (r) {
+            _this8.users = r.data;
+          });
+        }
+      }
+    }
   }
 });
 
@@ -20516,214 +20234,317 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c(
-        "nav",
-        {
-          staticClass:
-            "main-sidebar p-collapsing-sidebar sidebar-fixed sidebar-left",
-          attrs: { id: "adminNav" }
-        },
-        [
-          _vm._m(0),
-          _vm._v(" "),
-          _vm._m(1),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "main-sidebar-inner",
-              attrs: { "data-scrollbar": "sidebar" }
-            },
-            [
-              _c(
-                "ul",
-                {
-                  staticClass:
-                    "sidebar-nav sidebar-nav-light-hover list-unstyled text-unset small-3 fw-600 content-list"
-                },
-                [
-                  _c(
-                    "li",
-                    { staticClass: "nav-item text-light transition active" },
-                    [
-                      _vm._m(2),
-                      _vm._v(" "),
+  return _c("div", [
+    _c(
+      "nav",
+      {
+        staticClass:
+          "main-sidebar p-collapsing-sidebar sidebar-fixed sidebar-left",
+        attrs: { id: "adminNav" }
+      },
+      [
+        _c("div", { staticClass: "stick-toogler" }, [
+          _c("div", { staticClass: "toggler-wrapper" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "header",
+              {
+                staticClass: "main-header",
+                staticStyle: { display: "inline-block" }
+              },
+              [
+                _c(
+                  "nav",
+                  {
+                    staticClass:
+                      "main-navbar navbar navbar-expand-lg navbar-dark navbar-affix"
+                  },
+                  [
+                    _c("div", { staticClass: "ml-auto px-4 pl-lg-9" }, [
                       _c(
-                        "div",
-                        { staticClass: "collapse nav-collapse collapse show" },
+                        "ul",
+                        { staticClass: "nav sec-nav navbar-nav flex-row" },
                         [
-                          _c("ul", { staticClass: "list-unstyled" }, [
-                            _c(
-                              "li",
-                              { staticClass: "nav-item active" },
-                              [
-                                _c(
-                                  "router-link",
-                                  {
-                                    staticClass: "p-collapsing-title nav-link",
-                                    attrs: { to: "/admin" }
-                                  },
-                                  [_c("span", [_vm._v("Home")])]
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "li",
-                              { staticClass: "nav-item active" },
-                              [
-                                _c(
-                                  "router-link",
-                                  {
-                                    staticClass: "p-collapsing-title nav-link",
-                                    attrs: { to: "/admin/users" }
-                                  },
-                                  [_c("span", [_vm._v("Users")])]
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "li",
-                              { staticClass: "nav-item active" },
-                              [
-                                _c(
-                                  "router-link",
-                                  {
-                                    staticClass: "p-collapsing-title nav-link",
-                                    attrs: { to: "/admin/produts" }
-                                  },
-                                  [_c("span", [_vm._v("Products")])]
-                                )
-                              ],
-                              1
-                            )
-                          ])
-                        ]
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _vm._m(3)
-                ]
-              )
-            ]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "main-container" }, [
-        _c("header", { staticClass: "main-header" }, [
-          _c(
-            "nav",
-            {
-              staticClass:
-                "main-navbar navbar navbar-expand-lg navbar-dark navbar-affix"
-            },
-            [
-              _c("div", { staticClass: "ml-auto px-4 pl-lg-9" }, [
-                _c("ul", { staticClass: "nav sec-nav navbar-nav flex-row" }, [
-                  _vm._m(4),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "user-item nav-item dropdown" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass:
-                          "user-link nav-link d-inline-flex align-items-center h-100 small-1 pl-1 pl-sm-3 pr-0",
-                        attrs: {
-                          href: "#",
-                          id: "dropdownAdmin_02",
-                          "data-toggle": "dropdown",
-                          "aria-haspopup": "true",
-                          "aria-expanded": "false"
-                        }
-                      },
-                      [
-                        _c("img", {
-                          staticClass: "user-avatar rounded-circle mr-sm-3",
-                          attrs: {
-                            src: "assets/img/avatar/1.jpg",
-                            alt: "Avatar"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _vm._l(_vm.profile, function(pr) {
-                          return _c(
-                            "div",
-                            {
-                              key: pr.id,
-                              staticClass: "d-none d-sm-block lh-1"
-                            },
+                          _vm._m(1),
+                          _vm._v(" "),
+                          _c(
+                            "li",
+                            { staticClass: "user-item nav-item dropdown" },
                             [
-                              _c("span", { staticClass: "small-5 fw-300" }, [
-                                _vm._v("Welcome,")
-                              ]),
+                              _c(
+                                "a",
+                                {
+                                  staticClass:
+                                    "user-link nav-link d-inline-flex align-items-center h-100 small-1 pl-1 pl-sm-3 pr-0",
+                                  attrs: {
+                                    href: "#",
+                                    id: "dropdownAdmin_02",
+                                    "data-toggle": "dropdown",
+                                    "aria-haspopup": "true",
+                                    "aria-expanded": "false"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    { staticClass: "d-none d-sm-block lh-1" },
+                                    [
+                                      _c(
+                                        "span",
+                                        { staticClass: "small-5 fw-300" },
+                                        [
+                                          _vm._v(
+                                            "Welcome, " +
+                                              _vm._s(_vm.profile.name)
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "lh-5 text-primary" },
+                                        [
+                                          _vm._v(
+                                            _vm._s(_vm.profile.name) +
+                                              " " +
+                                              _vm._s(_vm.profile.surname)
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("span", {
+                                    staticClass:
+                                      "icon-chevron-down small-8 ml-3"
+                                  })
+                                ]
+                              ),
                               _vm._v(" "),
-                              _c("div", { staticClass: "lh-5 text-primary" }, [
-                                _vm._v(_vm._s(pr.name) + "Paul Chappell")
-                              ])
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "dropdown-menu dropdown-menu-right shadow-1 py-3 position-absolute mt-2",
+                                  attrs: { "aria-labelledby": "dropdownAdmin" }
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    { staticClass: "px-5 text-center" },
+                                    [
+                                      _c(
+                                        "div",
+                                        { staticClass: "lh-5 small-2 fw-500" },
+                                        [
+                                          _vm._v(
+                                            _vm._s(_vm.profile.name) +
+                                              " " +
+                                              _vm._s(_vm.profile.surname)
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("hr", { staticClass: "my-4" })
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _vm._m(2)
+                                ]
+                              )
                             ]
                           )
-                        }),
-                        _vm._v(" "),
-                        _c("span", {
-                          staticClass: "icon-chevron-down small-8 ml-3"
-                        })
-                      ],
-                      2
-                    ),
-                    _vm._v(" "),
-                    _vm._m(5)
-                  ])
-                ])
-              ])
-            ]
-          )
+                        ]
+                      )
+                    ])
+                  ]
+                )
+              ]
+            )
+          ])
         ]),
         _vm._v(" "),
+        _vm._m(3),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "main-sidebar-inner",
+            attrs: { "data-scrollbar": "sidebar" }
+          },
+          [
+            _c(
+              "ul",
+              {
+                staticClass:
+                  "sidebar-nav sidebar-nav-light-hover list-unstyled text-unset small-3 fw-600 content-list"
+              },
+              [
+                _c(
+                  "li",
+                  { staticClass: "nav-item text-light transition active" },
+                  [
+                    _vm._m(4),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "collapse nav-collapse collapse show" },
+                      [
+                        _c("ul", { staticClass: "list-unstyled" }, [
+                          _c(
+                            "li",
+                            { staticClass: "nav-item _li active" },
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  staticClass: "p-collapsing-title nav-link",
+                                  attrs: { to: "/admin" }
+                                },
+                                [_c("span", [_vm._v("Home")])]
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "li",
+                            { staticClass: "nav-item _li" },
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  staticClass: "p-collapsing-title nav-link",
+                                  attrs: { to: "/admin/produts" }
+                                },
+                                [_c("span", [_vm._v("Product")])]
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "li",
+                            { staticClass: "nav-item _li" },
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  staticClass: "p-collapsing-title nav-link",
+                                  attrs: { to: "/admin/users" }
+                                },
+                                [_c("span", [_vm._v("User")])]
+                              )
+                            ],
+                            1
+                          )
+                        ])
+                      ]
+                    )
+                  ]
+                )
+              ]
+            )
+          ]
+        )
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "main-container" }, [
+      _c("main", { staticClass: "main-content overflow-hidden" }, [
+        _c(
+          "div",
+          {
+            staticClass: "inner-body overflow-hidden",
+            attrs: { id: "dashboard" }
+          },
+          [
+            _c("div", { staticClass: "container-fluid pt-7 pb-3" }, [
+              _c(
+                "div",
+                { staticClass: "row flex-wrap align-items-center py-3" },
+                [
+                  _c("div", { staticClass: "col mb-4 mb-md-0" }, [
+                    _c("div", { staticClass: "text-light" }, [
+                      _c("h3", { staticClass: "fw-100 mb-1" }, [
+                        _vm._v(
+                          "Welcome back, " + _vm._s(_vm.profile.name) + "!"
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(5)
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("router-view")
+          ],
+          1
+        ),
+        _vm._v(" "),
         _vm._m(6)
-      ]),
-      _vm._v(" "),
-      _c("router-view")
-    ],
-    1
-  )
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "stick-toogler" }, [
-      _c("div", { staticClass: "toggler-wrapper" }, [
-        _c(
-          "button",
-          {
-            staticClass: "p-collapsing-toggler toggler-secondary",
-            attrs: {
-              "data-collapsing": "partially",
-              "data-collapsing-target": "#adminNav",
-              type: "button"
-            }
-          },
-          [
-            _c("span", { staticClass: "icon-menu-tgr" }, [
-              _c("span", { staticClass: "menu-icon_line" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "menu-icon_line" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "menu-icon_line" })
-            ])
-          ]
-        )
-      ])
+    return _c(
+      "button",
+      {
+        staticClass: "p-collapsing-toggler toggler-secondary",
+        staticStyle: { display: "inline-block" },
+        attrs: {
+          "data-collapsing": "partially",
+          "data-collapsing-target": "#adminNav",
+          type: "button"
+        }
+      },
+      [
+        _c("span", { staticClass: "icon-menu-tgr" }, [
+          _c("span", { staticClass: "menu-icon_line" }),
+          _vm._v(" "),
+          _c("span", { staticClass: "menu-icon_line" }),
+          _vm._v(" "),
+          _c("span", { staticClass: "menu-icon_line" })
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "nav-item lang" }, [
+      _c(
+        "a",
+        {
+          staticClass: "nav-link lead-2 pl-2 pl-md-3",
+          attrs: {
+            href: "#",
+            "data-toggle": "offcanvas",
+            "data-target": "#offcanvas-search"
+          }
+        },
+        [_c("span", { staticClass: "icon-search" })]
+      )
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      { staticClass: "dropdown-item", attrs: { href: "/g_logout" } },
+      [_c("span", { staticClass: "icon-power-on mr-2" }), _vm._v("Logout")]
+    )
   },
   function() {
     var _vm = this
@@ -20732,17 +20553,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "d-flex align-items-center" }, [
       _c("div", { staticClass: "logo-wrapper px-4 d-flex" }, [
         _c("div", { staticClass: "theme-logo" }, [
-          _c("div", { staticClass: "logo-cont" }, [
-            _c("img", {
-              staticClass: "logo-icon",
-              attrs: { src: "assets/img/logo-icon.png", alt: "Logo" }
-            }),
-            _vm._v(" "),
-            _c("img", {
-              staticClass: "logo",
-              attrs: { src: "assets/img/logo.png", alt: "Logo" }
-            })
-          ])
+          _c("div", { staticClass: "logo-cont" })
         ])
       ])
     ])
@@ -20773,39 +20584,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "nav-item text-light transition" }, [
-      _c(
-        "a",
-        {
-          staticClass:
-            "sbr-collapse nav-link nav-link-border collapser collapser-active open",
-          attrs: {
-            href: "#",
-            "aria-expanded": "false",
-            "data-toggle": "collapse"
-          }
-        },
-        [
-          _c("div", { staticClass: "link-icon-collapse icon-copy-file" }),
-          _c("span", { staticClass: "p-collapsing-title" }, [
-            _vm._v("App pages")
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "collapse nav-collapse collapse show" }, [
-        _c("ul", { staticClass: "list-unstyled" }, [
-          _c("li", { staticClass: "nav-item" }, [
-            _c(
-              "a",
-              {
-                staticClass: "p-collapsing-title nav-link",
-                attrs: { href: "chat.html" }
-              },
-              [_c("span", [_vm._v("Chat")])]
-            )
-          ])
-        ])
+    return _c("div", { staticClass: "col-12 col-md-auto" }, [
+      _c("div", { staticClass: "d-flex flex-wrap" }, [
+        _c("div", { staticClass: "panel-dropdown dropdown date" })
       ])
     ])
   },
@@ -20813,3049 +20594,42 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "nav-item dropdown" }, [
-      _c(
-        "a",
-        {
-          staticClass:
-            "nav-link text-capitalize d-none d-md-inline-flex align-items-center h-100 small-2",
-          attrs: {
-            href: "#",
-            id: "dropdownLang_02",
-            "data-toggle": "dropdown",
-            "aria-haspopup": "true",
-            "aria-expanded": "false"
-          }
-        },
-        [
-          _c("img", {
-            staticClass: "img-lang mr-3",
-            attrs: { src: "assets/img/icons/flag/us.svg", alt: "USA" }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "lh-1 fw-400" }, [
-            _vm._v(
-              "\n                                    English\n                                "
-            )
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass:
-            "dropdown-menu dropdown-menu-right shadow-1 py-3 position-absolute mt-1",
-          attrs: { "aria-labelledby": "dropdownAdmin" }
-        },
-        [
-          _c(
-            "a",
-            {
-              staticClass: "dropdown-item d-flex align-items-center py-1",
-              attrs: { href: "#" }
-            },
-            [
-              _c("img", {
-                staticClass: "img-lang mr-3",
-                attrs: { src: "assets/img/icons/flag/us.svg", alt: "USA" }
-              }),
-              _vm._v(" English\n                                ")
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass: "dropdown-item d-flex align-items-center py-1",
-              attrs: { href: "#" }
-            },
-            [
-              _c("img", {
-                staticClass: "img-lang mr-3",
-                attrs: { src: "assets/img/icons/flag/gr.svg", alt: "GR" }
-              }),
-              _vm._v(" German\n                                ")
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass: "dropdown-item d-flex align-items-center py-1",
-              attrs: { href: "#" }
-            },
-            [
-              _c("img", {
-                staticClass: "img-lang mr-3",
-                attrs: { src: "assets/img/icons/flag/fr.svg", alt: "FR" }
-              }),
-              _vm._v(" France\n                                ")
-            ]
-          )
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "dropdown-menu dropdown-menu-right shadow-1 py-3 position-absolute mt-2",
-        attrs: { "aria-labelledby": "dropdownAdmin" }
-      },
-      [
-        _c("div", { staticClass: "px-5 text-center" }, [
-          _c(
-            "div",
-            {
-              staticClass:
-                "img-md position-relative br-n bp-c bs-c ar-1_1 mx-auto rounded-circle mb-3",
-              staticStyle: {
-                "background-image": "url(assets/img/avatar/1.jpg)"
-              }
-            },
-            [
-              _c(
-                "span",
-                {
-                  staticClass:
-                    "position-absolute b-0 r--1 text-light small-6 d-block bg-primary p-2 rounded-circle lh-1"
-                },
-                [
-                  _c("input", {
-                    staticClass:
-                      "custom-file-input position-absolute l-0 t-0 b-0 h-auto",
-                    attrs: { type: "file", id: "customFile" }
-                  }),
-                  _c("i", { staticClass: "fas fa-pen" })
-                ]
-              )
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "lh-5 small-2 fw-500" }, [
-            _vm._v("Paul Chappell")
-          ]),
-          _vm._v(" "),
-          _c("hr", { staticClass: "my-4" })
-        ]),
-        _vm._v(" "),
-        _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
-          _c("span", { staticClass: "icon-user mr-2" }),
-          _vm._v("My Profile")
-        ]),
-        _vm._v(" "),
-        _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
-          _c("span", { staticClass: "icon-envelope mr-2" }),
-          _vm._v("Messages")
-        ]),
-        _vm._v(" "),
-        _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
-          _c("span", { staticClass: "icon-cog mr-2" }),
-          _vm._v("Settings")
-        ]),
-        _vm._v(" "),
-        _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
-          _c("span", { staticClass: "icon-power-on mr-2" }),
-          _vm._v("Logout")
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("main", { staticClass: "main-content overflow-hidden" }, [
-      _c(
-        "div",
-        {
-          staticClass: "inner-body overflow-hidden",
-          attrs: { id: "dashboard" }
-        },
-        [
-          _c("div", { staticClass: "container-fluid pt-7 pb-3" }, [
+    return _c("footer", { staticClass: "footer panel" }, [
+      _c("div", { staticClass: "footer-body text-primary" }, [
+        _c("div", { staticClass: "row no-gutters align-items-center" }, [
+          _c("div", { staticClass: "col-12 col-sm-auto" }, [
             _c(
               "div",
-              { staticClass: "row flex-wrap align-items-center py-3" },
+              { staticClass: "text-center text-sm-left fw-400 mb-2 mb-sm-0" },
               [
-                _c("div", { staticClass: "col mb-4 mb-md-0" }, [
-                  _c("div", { staticClass: "text-light" }, [
-                    _c("h3", { staticClass: "fw-100 mb-1" }, [
-                      _vm._v("Welcome back, Paul!")
-                    ]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "text-info" }, [
-                      _vm._v("Dashboard")
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-12 col-md-auto" }, [
-                  _c("div", { staticClass: "d-flex flex-wrap" }, [
-                    _c(
-                      "div",
-                      { staticClass: "panel-dropdown dropdown mr-auto" },
-                      [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "tep-btn btn dropdown-toggle ml-auto",
-                            attrs: {
-                              type: "button",
-                              id: "timePanelTab",
-                              "data-toggle": "dropdown",
-                              "aria-haspopup": "true",
-                              "aria-expanded": "false"
-                            }
-                          },
-                          [
-                            _c("span", { staticClass: "d-flex pr-3" }, [
-                              _c(
-                                "span",
-                                {
-                                  staticClass:
-                                    "d-flex align-items-center pr-3 border-right lead-3"
-                                },
-                                [
-                                  _c("span", {
-                                    staticClass: "icon-calendar-alt"
-                                  })
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "span",
-                                { staticClass: "d-block lh-3 py-1 pl-3" },
-                                [
-                                  _c("span", { staticClass: "d-block mb-1" }, [
-                                    _vm._v("Feb 1 - Feb 29, 2020")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "span",
-                                    { staticClass: "small-3 fw-300" },
-                                    [_vm._v("Compared Jan 1 - Jan 30, 2020")]
-                                  )
-                                ]
-                              )
-                            ])
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "dropdown-menu dropdown-menu-right",
-                            attrs: { "aria-labelledby": "timePanelTab" }
-                          },
-                          [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "dropdown-item",
-                                attrs: { href: "#" }
-                              },
-                              [
-                                _c("div", { staticClass: "lh-3 py-1" }, [
-                                  _c("span", { staticClass: "d-block mb-1" }, [
-                                    _vm._v("Junary, 2020")
-                                  ])
-                                ])
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "a",
-                              {
-                                staticClass: "dropdown-item",
-                                attrs: { href: "#" }
-                              },
-                              [
-                                _c("div", { staticClass: "lh-3 py-1" }, [
-                                  _c("span", { staticClass: "d-block mb-1" }, [
-                                    _vm._v("February, 2020")
-                                  ])
-                                ])
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "a",
-                              {
-                                staticClass: "dropdown-item",
-                                attrs: { href: "#" }
-                              },
-                              [
-                                _c("div", { staticClass: "lh-3 py-1" }, [
-                                  _c("span", { staticClass: "d-block mb-1" }, [
-                                    _vm._v("March, 2020")
-                                  ])
-                                ])
-                              ]
-                            )
-                          ]
-                        )
-                      ]
-                    )
-                  ])
-                ])
+                _vm._v(
+                  "\n\t                  2020 © Arduix\n\t                "
+                )
               ]
             )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "container-fluid" }, [
-            _c("div", [
-              _c("div", { staticClass: "row mb-4" }, [
-                _c(
-                  "div",
-                  { staticClass: "col d-flex align-items-center py-1" },
-                  [
-                    _c(
-                      "ul",
-                      {
-                        staticClass: "panel-tab-group flex-nowrap nav nav-tabs",
-                        attrs: { role: "tablist" }
-                      },
-                      [
-                        _c("li", { staticClass: "nav-item" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "nav-link active",
-                              attrs: {
-                                id: "day-tab",
-                                "data-toggle": "tab",
-                                href: "#day",
-                                role: "tab",
-                                "aria-controls": "day",
-                                "aria-selected": "true"
-                              }
-                            },
-                            [_vm._v("Day")]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "nav-item" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "nav-link",
-                              attrs: {
-                                id: "week-tab",
-                                "data-toggle": "tab",
-                                href: "#week",
-                                role: "tab",
-                                "aria-controls": "week",
-                                "aria-selected": "false"
-                              }
-                            },
-                            [_vm._v("Week")]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", { staticClass: "nav-item" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "nav-link",
-                              attrs: {
-                                id: "month-tab",
-                                "data-toggle": "tab",
-                                href: "#month",
-                                role: "tab",
-                                "aria-controls": "month",
-                                "aria-selected": "false"
-                              }
-                            },
-                            [_vm._v("Month")]
-                          )
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "pl-4" }, [
-                      _c("span", { staticClass: "d-none d-xl-block" }, [
-                        _vm._v("Time Zone: (GMT + 02:00)")
-                      ])
-                    ])
-                  ]
-                ),
+          _c("div", { staticClass: "col-12 col-sm" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "nav nav-bold-style justify-content-center justify-content-sm-end text-uppercase mx--4"
+              },
+              [
+                _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+                  _vm._v("About")
+                ]),
                 _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "col-12 col-md-auto d-none d-md-block py-1" },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "d-flex flex-wrap align-items-center justify-content-end"
-                      },
-                      [
-                        _c("div", { staticClass: "fw-500 mr-4" }, [
-                          _vm._v("Show value In:")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "panel-dropdown dropdown" }, [
-                          _c(
-                            "button",
-                            {
-                              staticClass:
-                                "tep-btn btn dropdown-toggle ml-auto",
-                              attrs: {
-                                type: "button",
-                                id: "dropdownMenuButton",
-                                "data-toggle": "dropdown",
-                                "aria-haspopup": "true",
-                                "aria-expanded": "false"
-                              }
-                            },
-                            [
-                              _c("span", { staticClass: "flex-1" }, [
-                                _vm._v("USD")
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "dropdown-menu dropdown-menu-right",
-                              attrs: { "aria-labelledby": "dropdownMenuButton" }
-                            },
-                            [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "dropdown-item",
-                                  attrs: { href: "#" }
-                                },
-                                [_vm._v("Last month")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "dropdown-item",
-                                  attrs: { href: "#" }
-                                },
-                                [_vm._v("Last 3 months")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "dropdown-item",
-                                  attrs: { href: "#" }
-                                },
-                                [_vm._v("Last year")]
-                              )
-                            ]
-                          )
-                        ])
-                      ]
-                    )
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "tab-content",
-                  attrs: { id: "defaultTabContent" }
-                },
-                [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "tab-pane fade show active",
-                      attrs: {
-                        id: "day",
-                        role: "tabpanel",
-                        "aria-labelledby": "day-tab"
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "card-row row mb-7" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "card-item col-md-6 col-lp-3 mb-6 mb-lp-3"
-                          },
-                          [
-                            _c(
-                              "div",
-                              { staticClass: "main-card card text-light" },
-                              [
-                                _c("div", { staticClass: "mb-2" }, [
-                                  _c(
-                                    "span",
-                                    {
-                                      staticClass:
-                                        "text-uppercase fw-600 text-glow-white-sm"
-                                    },
-                                    [_vm._v("Daily Sales")]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "d-flex align-items-center w-100"
-                                  },
-                                  [
-                                    _c("div", { staticClass: "flex-1" }, [
-                                      _c("h3", { staticClass: "fw-300 mb-0" }, [
-                                        _vm._v("78.4$")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("span", { staticClass: "small" }, [
-                                        _c(
-                                          "span",
-                                          {
-                                            staticClass: "text-success fw-600"
-                                          },
-                                          [
-                                            _vm._v("+ 41%"),
-                                            _c("i", {
-                                              staticClass:
-                                                "fas fa-arrow-up ml-1"
-                                            })
-                                          ]
-                                        )
-                                      ])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "w-50",
-                                        staticStyle: { height: "50px" }
-                                      },
-                                      [
-                                        _c("canvas", {
-                                          attrs: {
-                                            id: "chart-sm-01",
-                                            height: "49"
-                                          }
-                                        })
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ]
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "card-item col-md-6 col-lp-3 mb-6 mb-lp-3"
-                          },
-                          [
-                            _c(
-                              "div",
-                              { staticClass: "main-card card text-light" },
-                              [
-                                _c("div", { staticClass: "mb-2" }, [
-                                  _c(
-                                    "span",
-                                    {
-                                      staticClass:
-                                        "text-uppercase fw-600 text-glow-white-sm"
-                                    },
-                                    [_vm._v("Transactions")]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "d-flex align-items-center w-100"
-                                  },
-                                  [
-                                    _c("div", { staticClass: "flex-1" }, [
-                                      _c("h3", { staticClass: "fw-300 mb-0" }, [
-                                        _vm._v("240+")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("span", { staticClass: "small" }, [
-                                        _c(
-                                          "span",
-                                          {
-                                            staticClass: "text-success fw-600"
-                                          },
-                                          [
-                                            _vm._v("+ 41%"),
-                                            _c("i", {
-                                              staticClass:
-                                                "fas fa-arrow-up ml-1"
-                                            })
-                                          ]
-                                        )
-                                      ])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "w-50",
-                                        staticStyle: { height: "50px" }
-                                      },
-                                      [
-                                        _c("canvas", {
-                                          attrs: {
-                                            id: "chart-sm-02",
-                                            height: "49"
-                                          }
-                                        })
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ]
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "card-item col-md-6 col-lp-3 mb-6 mb-lg-3"
-                          },
-                          [
-                            _c(
-                              "div",
-                              { staticClass: "main-card card text-light" },
-                              [
-                                _c("div", { staticClass: "mb-2" }, [
-                                  _c(
-                                    "span",
-                                    {
-                                      staticClass:
-                                        "text-uppercase fw-600 text-glow-white-sm"
-                                    },
-                                    [_vm._v("Visits")]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "d-flex align-items-center w-100"
-                                  },
-                                  [
-                                    _c("div", { staticClass: "flex-1" }, [
-                                      _c("h3", { staticClass: "fw-300 mb-0" }, [
-                                        _vm._v("101.3K")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("span", { staticClass: "small" }, [
-                                        _c(
-                                          "span",
-                                          {
-                                            staticClass: "text-success fw-600"
-                                          },
-                                          [
-                                            _vm._v("+ 41%"),
-                                            _c("i", {
-                                              staticClass:
-                                                "fas fa-arrow-up ml-1"
-                                            })
-                                          ]
-                                        )
-                                      ])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "w-50",
-                                        staticStyle: { height: "50px" }
-                                      },
-                                      [
-                                        _c("canvas", {
-                                          attrs: {
-                                            id: "chart-sm-03",
-                                            height: "49"
-                                          }
-                                        })
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ]
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "card-item col-md-6 col-lp-3 mb-3" },
-                          [
-                            _c(
-                              "div",
-                              { staticClass: "main-card card text-light" },
-                              [
-                                _c("div", { staticClass: "mb-2" }, [
-                                  _c(
-                                    "span",
-                                    {
-                                      staticClass:
-                                        "text-uppercase fw-600 text-glow-white-sm"
-                                    },
-                                    [_vm._v("Total Sales")]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "d-flex align-items-center w-100"
-                                  },
-                                  [
-                                    _c("div", { staticClass: "flex-1" }, [
-                                      _c("h3", { staticClass: "fw-300 mb-0" }, [
-                                        _vm._v("205.9$")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("span", { staticClass: "small" }, [
-                                        _c(
-                                          "span",
-                                          { staticClass: "text-danger fw-600" },
-                                          [
-                                            _vm._v("+ 12%"),
-                                            _c("i", {
-                                              staticClass:
-                                                "fas fa-arrow-down ml-1"
-                                            })
-                                          ]
-                                        )
-                                      ])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "w-50",
-                                        staticStyle: { height: "50px" }
-                                      },
-                                      [
-                                        _c("canvas", {
-                                          attrs: {
-                                            id: "chart-sm-04",
-                                            height: "49"
-                                          }
-                                        })
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ]
-                            )
-                          ]
-                        )
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "tab-pane fade",
-                      attrs: {
-                        id: "week",
-                        role: "tabpanel",
-                        "aria-labelledby": "week-tab"
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "card-row row mb-7" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "card-item col-md-6 col-lp-3 mb-6 mb-lp-3"
-                          },
-                          [
-                            _c(
-                              "div",
-                              { staticClass: "main-card card text-light" },
-                              [
-                                _c("div", { staticClass: "mb-2" }, [
-                                  _c(
-                                    "span",
-                                    {
-                                      staticClass:
-                                        "text-uppercase fw-600 text-glow-white-sm"
-                                    },
-                                    [_vm._v("Conversion")]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "d-flex align-items-center w-100"
-                                  },
-                                  [
-                                    _c("div", { staticClass: "flex-1" }, [
-                                      _c("h3", { staticClass: "fw-300 mb-0" }, [
-                                        _vm._v("78.4")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("span", { staticClass: "small" }, [
-                                        _c(
-                                          "span",
-                                          {
-                                            staticClass: "text-success fw-600"
-                                          },
-                                          [
-                                            _vm._v("+ 41%"),
-                                            _c("i", {
-                                              staticClass:
-                                                "fas fa-arrow-up ml-1"
-                                            })
-                                          ]
-                                        )
-                                      ])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "w-50",
-                                        staticStyle: { height: "50px" }
-                                      },
-                                      [
-                                        _c("canvas", {
-                                          attrs: {
-                                            id: "chart-sm-05",
-                                            height: "49"
-                                          }
-                                        })
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ]
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "card-item col-md-6 col-lp-3 mb-6 mb-lp-3"
-                          },
-                          [
-                            _c(
-                              "div",
-                              { staticClass: "main-card card text-light" },
-                              [
-                                _c("div", { staticClass: "mb-2" }, [
-                                  _c(
-                                    "span",
-                                    {
-                                      staticClass:
-                                        "text-uppercase fw-600 text-glow-white-sm"
-                                    },
-                                    [_vm._v("Completed orders")]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "d-flex align-items-center w-100"
-                                  },
-                                  [
-                                    _c("div", { staticClass: "flex-1" }, [
-                                      _c("h3", { staticClass: "fw-300 mb-0" }, [
-                                        _vm._v("2405+")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("span", { staticClass: "small" }, [
-                                        _c(
-                                          "span",
-                                          {
-                                            staticClass: "text-success fw-600"
-                                          },
-                                          [
-                                            _vm._v("+ 41%"),
-                                            _c("i", {
-                                              staticClass:
-                                                "fas fa-arrow-up ml-1"
-                                            })
-                                          ]
-                                        )
-                                      ])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "w-50",
-                                        staticStyle: { height: "50px" }
-                                      },
-                                      [
-                                        _c("canvas", {
-                                          attrs: {
-                                            id: "chart-sm-06",
-                                            height: "49"
-                                          }
-                                        })
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ]
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "card-item col-md-6 col-lp-3 mb-6 mb-lg-3"
-                          },
-                          [
-                            _c(
-                              "div",
-                              { staticClass: "main-card card text-light" },
-                              [
-                                _c("div", { staticClass: "mb-2" }, [
-                                  _c(
-                                    "span",
-                                    {
-                                      staticClass:
-                                        "text-uppercase fw-600 text-glow-white-sm"
-                                    },
-                                    [_vm._v("Successful transactions")]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "d-flex align-items-center w-100"
-                                  },
-                                  [
-                                    _c("div", { staticClass: "flex-1" }, [
-                                      _c("h3", { staticClass: "fw-300 mb-0" }, [
-                                        _vm._v("620+")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("span", { staticClass: "small" }, [
-                                        _c(
-                                          "span",
-                                          {
-                                            staticClass: "text-success fw-600"
-                                          },
-                                          [
-                                            _vm._v("+ 41%"),
-                                            _c("i", {
-                                              staticClass:
-                                                "fas fa-arrow-up ml-1"
-                                            })
-                                          ]
-                                        )
-                                      ])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "w-50",
-                                        staticStyle: { height: "50px" }
-                                      },
-                                      [
-                                        _c("canvas", {
-                                          attrs: {
-                                            id: "chart-sm-07",
-                                            height: "49"
-                                          }
-                                        })
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ]
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "card-item col-md-6 col-lp-3 mb-3" },
-                          [
-                            _c(
-                              "div",
-                              { staticClass: "main-card card text-light" },
-                              [
-                                _c("div", { staticClass: "mb-2" }, [
-                                  _c(
-                                    "span",
-                                    {
-                                      staticClass:
-                                        "text-uppercase fw-600 text-glow-white-sm"
-                                    },
-                                    [_vm._v("Impressions")]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "d-flex align-items-center w-100"
-                                  },
-                                  [
-                                    _c("div", { staticClass: "flex-1" }, [
-                                      _c("h3", { staticClass: "fw-300 mb-0" }, [
-                                        _vm._v("52.2K")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("span", { staticClass: "small" }, [
-                                        _c(
-                                          "span",
-                                          { staticClass: "text-danger fw-600" },
-                                          [
-                                            _vm._v("+ 12%"),
-                                            _c("i", {
-                                              staticClass:
-                                                "fas fa-arrow-down ml-1"
-                                            })
-                                          ]
-                                        )
-                                      ])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "w-50",
-                                        staticStyle: { height: "50px" }
-                                      },
-                                      [
-                                        _c("canvas", {
-                                          attrs: {
-                                            id: "chart-sm-08",
-                                            height: "49"
-                                          }
-                                        })
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ]
-                            )
-                          ]
-                        )
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "tab-pane fade",
-                      attrs: {
-                        id: "month",
-                        role: "tabpanel",
-                        "aria-labelledby": "month-tab"
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "card-row row mb-7" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "card-item col-md-6 col-lp-3 mb-6 mb-lp-3"
-                          },
-                          [
-                            _c(
-                              "div",
-                              { staticClass: "main-card card text-light" },
-                              [
-                                _c("div", { staticClass: "mb-2" }, [
-                                  _c(
-                                    "span",
-                                    {
-                                      staticClass:
-                                        "text-uppercase fw-600 text-glow-white-sm"
-                                    },
-                                    [_vm._v("Sales Grow")]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "d-flex align-items-center w-100"
-                                  },
-                                  [
-                                    _c("div", { staticClass: "flex-1" }, [
-                                      _c("h3", { staticClass: "fw-300 mb-0" }, [
-                                        _vm._v("78.4K")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("span", { staticClass: "small" }, [
-                                        _c(
-                                          "span",
-                                          {
-                                            staticClass: "text-success fw-600"
-                                          },
-                                          [
-                                            _vm._v("+ 41%"),
-                                            _c("i", {
-                                              staticClass:
-                                                "fas fa-arrow-up ml-1"
-                                            })
-                                          ]
-                                        )
-                                      ])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "w-50",
-                                        staticStyle: { height: "50px" }
-                                      },
-                                      [
-                                        _c("canvas", {
-                                          attrs: {
-                                            id: "chart-sm-09",
-                                            height: "49"
-                                          }
-                                        })
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ]
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "card-item col-md-6 col-lp-3 mb-6 mb-lp-3"
-                          },
-                          [
-                            _c(
-                              "div",
-                              { staticClass: "main-card card text-light" },
-                              [
-                                _c("div", { staticClass: "mb-2" }, [
-                                  _c(
-                                    "span",
-                                    {
-                                      staticClass:
-                                        "text-uppercase fw-600 text-glow-white-sm"
-                                    },
-                                    [_vm._v("Profit Grow")]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "d-flex align-items-center w-100"
-                                  },
-                                  [
-                                    _c("div", { staticClass: "flex-1" }, [
-                                      _c("h3", { staticClass: "fw-300 mb-0" }, [
-                                        _vm._v("78.4K")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("span", { staticClass: "small" }, [
-                                        _c(
-                                          "span",
-                                          {
-                                            staticClass: "text-success fw-600"
-                                          },
-                                          [
-                                            _vm._v("+ 41%"),
-                                            _c("i", {
-                                              staticClass:
-                                                "fas fa-arrow-up ml-1"
-                                            })
-                                          ]
-                                        )
-                                      ])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "w-50",
-                                        staticStyle: { height: "50px" }
-                                      },
-                                      [
-                                        _c("canvas", {
-                                          attrs: {
-                                            id: "chart-sm-10",
-                                            height: "49"
-                                          }
-                                        })
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ]
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "card-item col-md-6 col-lp-3 mb-6 mb-lg-3"
-                          },
-                          [
-                            _c(
-                              "div",
-                              { staticClass: "main-card card text-light" },
-                              [
-                                _c("div", { staticClass: "mb-2" }, [
-                                  _c(
-                                    "span",
-                                    {
-                                      staticClass:
-                                        "text-uppercase fw-600 text-glow-white-sm"
-                                    },
-                                    [_vm._v("Orders Grow")]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "d-flex align-items-center w-100"
-                                  },
-                                  [
-                                    _c("div", { staticClass: "flex-1" }, [
-                                      _c("h3", { staticClass: "fw-300 mb-0" }, [
-                                        _vm._v("25K")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("span", { staticClass: "small" }, [
-                                        _c(
-                                          "span",
-                                          {
-                                            staticClass: "text-success fw-600"
-                                          },
-                                          [
-                                            _vm._v("+ 41%"),
-                                            _c("i", {
-                                              staticClass:
-                                                "fas fa-arrow-up ml-1"
-                                            })
-                                          ]
-                                        )
-                                      ])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "w-50",
-                                        staticStyle: { height: "50px" }
-                                      },
-                                      [
-                                        _c("canvas", {
-                                          attrs: {
-                                            id: "chart-sm-11",
-                                            height: "49"
-                                          }
-                                        })
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ]
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "card-item col-md-6 col-lp-3 mb-3" },
-                          [
-                            _c(
-                              "div",
-                              { staticClass: "main-card card text-light" },
-                              [
-                                _c("div", { staticClass: "mb-2" }, [
-                                  _c(
-                                    "span",
-                                    {
-                                      staticClass:
-                                        "text-uppercase fw-600 text-glow-white-sm"
-                                    },
-                                    [_vm._v("Member Grow")]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "d-flex align-items-center w-100"
-                                  },
-                                  [
-                                    _c("div", { staticClass: "flex-1" }, [
-                                      _c("h3", { staticClass: "fw-300 mb-0" }, [
-                                        _vm._v("78 234")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("span", { staticClass: "small" }, [
-                                        _c(
-                                          "span",
-                                          { staticClass: "text-danger fw-600" },
-                                          [
-                                            _vm._v("+ 12%"),
-                                            _c("i", {
-                                              staticClass:
-                                                "fas fa-arrow-down ml-1"
-                                            })
-                                          ]
-                                        )
-                                      ])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "w-50",
-                                        staticStyle: { height: "50px" }
-                                      },
-                                      [
-                                        _c("canvas", {
-                                          attrs: {
-                                            id: "chart-sm-12",
-                                            height: "49"
-                                          }
-                                        })
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ]
-                            )
-                          ]
-                        )
-                      ])
-                    ]
-                  )
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "panel-row row gutters-y mb-0" }, [
-              _c("div", { staticClass: "panel-col col-lp-8" }, [
-                _c("div", { staticClass: "panel-card panel" }, [
-                  _c(
-                    "header",
-                    { staticClass: "panel-header align-items-center" },
-                    [
-                      _c("div", [
-                        _c(
-                          "h5",
-                          { staticClass: "title text-glow-white-sm mb-0" },
-                          [_vm._v("Income")]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "panel-header-nav ml-auto" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "nav-item mr-3",
-                            attrs: {
-                              "data-toggle": "collapse",
-                              href: "#collapseIncome",
-                              role: "button",
-                              "aria-expanded": "false",
-                              "aria-controls": "collapseDayStat"
-                            }
-                          },
-                          [_c("span", { staticClass: "icon-minus" })]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          {
-                            staticClass: "nav-item mr-3",
-                            attrs: { "data-toggle": "refresh" }
-                          },
-                          [_c("span", { staticClass: "icon-refresh" })]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          {
-                            staticClass: "nav-item",
-                            attrs: { "data-toggle": "remove" }
-                          },
-                          [_c("span", { staticClass: "icon-close" })]
-                        )
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "collapse show",
-                      attrs: { id: "collapseIncome" }
-                    },
-                    [
-                      _c("div", { staticClass: "panel-body" }, [
-                        _c("div", { attrs: { id: "achart-income" } })
-                      ])
-                    ]
-                  )
+                _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+                  _vm._v("Terms of use")
+                ]),
+                _vm._v(" "),
+                _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+                  _vm._v("Privacy Policy")
                 ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "panel-col col-xl-6 col-lp-4" }, [
-                _c("div", { staticClass: "panel-card panel" }, [
-                  _c(
-                    "header",
-                    { staticClass: "panel-header align-items-center" },
-                    [
-                      _c("div", [
-                        _c("h5", { staticClass: "title mb-0" }, [
-                          _vm._v("Day stats")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "panel-header-nav ml-auto" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "nav-item mr-3",
-                            attrs: {
-                              "data-toggle": "collapse",
-                              href: "#collapseDayStat",
-                              role: "button",
-                              "aria-expanded": "false",
-                              "aria-controls": "collapseDayStat"
-                            }
-                          },
-                          [_c("span", { staticClass: "icon-minus" })]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          {
-                            staticClass: "nav-item mr-3",
-                            attrs: { "data-toggle": "refresh" }
-                          },
-                          [_c("span", { staticClass: "icon-refresh" })]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          {
-                            staticClass: "nav-item",
-                            attrs: { "data-toggle": "remove" }
-                          },
-                          [_c("span", { staticClass: "icon-close" })]
-                        )
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "collapse show",
-                      attrs: { id: "collapseDayStat" }
-                    },
-                    [
-                      _c("div", { staticClass: "panel-body" }, [
-                        _c("div", { staticClass: "py-2 mb-1" }, [
-                          _c("div", { attrs: { id: "chart-radialBar_A" } })
-                        ])
-                      ])
-                    ]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "panel-col col-xl-6 col-lp-4" }, [
-                _c("div", { staticClass: "panel-card panel" }, [
-                  _c(
-                    "header",
-                    { staticClass: "panel-header align-items-center" },
-                    [
-                      _c("div", [
-                        _c(
-                          "h5",
-                          { staticClass: "title text-glow-white-sm mb-0" },
-                          [_vm._v("Browser Statistics")]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "panel-header-nav ml-auto" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "nav-item mr-3",
-                            attrs: {
-                              "data-toggle": "collapse",
-                              href: "#browserStatistics",
-                              role: "button",
-                              "aria-expanded": "false",
-                              "aria-controls": "collapseDayStat"
-                            }
-                          },
-                          [_c("span", { staticClass: "icon-minus" })]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          {
-                            staticClass: "nav-item mr-3",
-                            attrs: { "data-toggle": "refresh" }
-                          },
-                          [_c("span", { staticClass: "icon-refresh" })]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          {
-                            staticClass: "nav-item",
-                            attrs: { "data-toggle": "remove" }
-                          },
-                          [_c("span", { staticClass: "icon-close" })]
-                        )
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "collapse show",
-                      attrs: { id: "browserStatistics" }
-                    },
-                    [
-                      _c("div", { staticClass: "panel-body" }, [
-                        _c("div", { staticClass: "mb-6" }, [
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "d-flex align-items-center mb-3 small-1 fw-500"
-                            },
-                            [
-                              _c("span", {
-                                staticClass: "panel-icon-g fab fa-chrome mr-3"
-                              }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "lh-1" }, [
-                                _c("span", { staticClass: "d-block mb-1" }, [
-                                  _vm._v("Google Chrome")
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "span",
-                                  { staticClass: "small text-primary fw-600" },
-                                  [_vm._v("10:30 PM")]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "span",
-                                {
-                                  staticClass:
-                                    "d-flex align-items-center ml-auto"
-                                },
-                                [
-                                  _vm._v("95%"),
-                                  _c("i", {
-                                    staticClass:
-                                      "fas fa-arrow-up text-success small-4 ml-1"
-                                  })
-                                ]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "progress w-100 my-0",
-                              staticStyle: { height: "5px" }
-                            },
-                            [
-                              _c("div", {
-                                staticClass:
-                                  "progress-bar bg-gradient-progress-primary",
-                                staticStyle: { width: "95%" },
-                                attrs: {
-                                  role: "progressbar",
-                                  "aria-valuenow": "95",
-                                  "aria-valuemin": "0",
-                                  "aria-valuemax": "100"
-                                }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mb-6" }, [
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "d-flex align-items-center mb-3 small-1 fw-500"
-                            },
-                            [
-                              _c("span", {
-                                staticClass: "panel-icon-g fab fa-firefox mr-3"
-                              }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "lh-1" }, [
-                                _c("span", { staticClass: "d-block mb-1" }, [
-                                  _vm._v("Firefox")
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "span",
-                                  { staticClass: "small text-primary fw-600" },
-                                  [_vm._v("11:03 PM")]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "span",
-                                {
-                                  staticClass:
-                                    "d-flex align-items-center ml-auto"
-                                },
-                                [
-                                  _vm._v("87%"),
-                                  _c("i", {
-                                    staticClass:
-                                      "fas fa-arrow-up text-success small-4 ml-1"
-                                  })
-                                ]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "progress w-100 my-0",
-                              staticStyle: { height: "5px" }
-                            },
-                            [
-                              _c("div", {
-                                staticClass:
-                                  "progress-bar bg-gradient-progress-primary",
-                                staticStyle: { width: "87%" },
-                                attrs: {
-                                  role: "progressbar",
-                                  "aria-valuenow": "87",
-                                  "aria-valuemin": "0",
-                                  "aria-valuemax": "100"
-                                }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mb-6" }, [
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "d-flex align-items-center mb-3 small-1 fw-500"
-                            },
-                            [
-                              _c("span", {
-                                staticClass: "panel-icon-g fab fa-safari mr-3"
-                              }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "lh-1" }, [
-                                _c("span", { staticClass: "d-block mb-1" }, [
-                                  _vm._v("Safari")
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "span",
-                                  { staticClass: "small text-primary fw-600" },
-                                  [_vm._v("8:21 PM")]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "span",
-                                {
-                                  staticClass:
-                                    "d-flex align-items-center ml-auto"
-                                },
-                                [
-                                  _vm._v("52%"),
-                                  _c("i", {
-                                    staticClass:
-                                      "fas fa-arrow-up text-success small-4 ml-1"
-                                  })
-                                ]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "progress w-100 my-0",
-                              staticStyle: { height: "5px" }
-                            },
-                            [
-                              _c("div", {
-                                staticClass:
-                                  "progress-bar bg-gradient-progress-primary",
-                                staticStyle: { width: "52%" },
-                                attrs: {
-                                  role: "progressbar",
-                                  "aria-valuenow": "52",
-                                  "aria-valuemin": "0",
-                                  "aria-valuemax": "100"
-                                }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mb-6" }, [
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "d-flex align-items-center mb-3 small-1 fw-500"
-                            },
-                            [
-                              _c("span", {
-                                staticClass: "panel-icon-g fab fa-opera mr-3"
-                              }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "lh-1" }, [
-                                _c("span", { staticClass: "d-block mb-1" }, [
-                                  _vm._v("Opera")
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "span",
-                                  { staticClass: "small text-primary fw-600" },
-                                  [_vm._v("11:07 PM")]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "span",
-                                {
-                                  staticClass:
-                                    "d-flex align-items-center ml-auto"
-                                },
-                                [
-                                  _vm._v("31%"),
-                                  _c("i", {
-                                    staticClass:
-                                      "fas fa-arrow-up text-success small-4 ml-1"
-                                  })
-                                ]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "progress w-100 my-0",
-                              staticStyle: { height: "5px" }
-                            },
-                            [
-                              _c("div", {
-                                staticClass:
-                                  "progress-bar bg-gradient-progress-primary",
-                                staticStyle: { width: "31%" },
-                                attrs: {
-                                  role: "progressbar",
-                                  "aria-valuenow": "31",
-                                  "aria-valuemin": "0",
-                                  "aria-valuemax": "100"
-                                }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mb-6" }, [
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "d-flex align-items-center mb-3 small-1 fw-500"
-                            },
-                            [
-                              _c("span", {
-                                staticClass: "panel-icon-g fab fa-edge mr-3"
-                              }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "lh-1" }, [
-                                _c("span", { staticClass: "d-block mb-1" }, [
-                                  _vm._v("Edge")
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "span",
-                                  { staticClass: "small text-primary fw-600" },
-                                  [_vm._v("7:31 PM")]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "span",
-                                {
-                                  staticClass:
-                                    "d-flex align-items-center ml-auto"
-                                },
-                                [
-                                  _vm._v("29%"),
-                                  _c("i", {
-                                    staticClass:
-                                      "fas fa-arrow-up text-success small-4 ml-1"
-                                  })
-                                ]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "progress w-100 my-0",
-                              staticStyle: { height: "5px" }
-                            },
-                            [
-                              _c("div", {
-                                staticClass:
-                                  "progress-bar bg-gradient-progress-primary",
-                                staticStyle: { width: "29%" },
-                                attrs: {
-                                  role: "progressbar",
-                                  "aria-valuenow": "29",
-                                  "aria-valuemin": "0",
-                                  "aria-valuemax": "100"
-                                }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mb-2" }, [
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "d-flex align-items-center mb-3 small-1 fw-500"
-                            },
-                            [
-                              _c("span", {
-                                staticClass:
-                                  "panel-icon-g fab fa-internet-explorer mr-3"
-                              }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "lh-1" }, [
-                                _c("span", { staticClass: "d-block mb-1" }, [
-                                  _vm._v("Internet Explorer")
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "span",
-                                  { staticClass: "small text-primary fw-600" },
-                                  [_vm._v("7:31 PM")]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "span",
-                                {
-                                  staticClass:
-                                    "d-flex align-items-center ml-auto"
-                                },
-                                [
-                                  _vm._v("12%"),
-                                  _c("i", {
-                                    staticClass:
-                                      "fas fa-arrow-up text-success small-4 ml-1"
-                                  })
-                                ]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "progress w-100 my-0",
-                              staticStyle: { height: "5px" }
-                            },
-                            [
-                              _c("div", {
-                                staticClass:
-                                  "progress-bar bg-gradient-progress-primary",
-                                staticStyle: { width: "12%" },
-                                attrs: {
-                                  role: "progressbar",
-                                  "aria-valuenow": "12",
-                                  "aria-valuemin": "0",
-                                  "aria-valuemax": "100"
-                                }
-                              })
-                            ]
-                          )
-                        ])
-                      ])
-                    ]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "panel-col col-xl-6 col-lp-4" }, [
-                _c("div", { staticClass: "panel-card panel" }, [
-                  _c(
-                    "header",
-                    { staticClass: "panel-header align-items-center" },
-                    [
-                      _c("div", [
-                        _c("h5", { staticClass: "title mb-0" }, [
-                          _vm._v("Location")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "panel-header-nav ml-auto" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "nav-item mr-3",
-                            attrs: {
-                              "data-toggle": "collapse",
-                              href: "#collapseLocation",
-                              role: "button",
-                              "aria-expanded": "false",
-                              "aria-controls": "collapseLocation"
-                            }
-                          },
-                          [_c("span", { staticClass: "icon-minus" })]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          {
-                            staticClass: "nav-item mr-3",
-                            attrs: { "data-toggle": "refresh" }
-                          },
-                          [_c("span", { staticClass: "icon-refresh" })]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          {
-                            staticClass: "nav-item",
-                            attrs: { "data-toggle": "remove" }
-                          },
-                          [_c("span", { staticClass: "icon-close" })]
-                        )
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "collapse show",
-                      attrs: { id: "collapseLocation" }
-                    },
-                    [
-                      _c("div", { staticClass: "panel-body" }, [
-                        _c("div", { attrs: { id: "chart-radar" } })
-                      ])
-                    ]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "panel-col col-xl-6 col-lp-4" }, [
-                _c("div", { staticClass: "panel-card panel" }, [
-                  _c(
-                    "header",
-                    { staticClass: "panel-header align-items-center" },
-                    [
-                      _c("div", [
-                        _c("h5", { staticClass: "title mb-0" }, [
-                          _vm._v("Users")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "panel-header-nav ml-auto" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "nav-item mr-3",
-                            attrs: {
-                              "data-toggle": "collapse",
-                              href: "#collapseUsers",
-                              role: "button",
-                              "aria-expanded": "false",
-                              "aria-controls": "collapseUsers"
-                            }
-                          },
-                          [_c("span", { staticClass: "icon-minus" })]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          {
-                            staticClass: "nav-item mr-3",
-                            attrs: { "data-toggle": "refresh" }
-                          },
-                          [_c("span", { staticClass: "icon-refresh" })]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          {
-                            staticClass: "nav-item",
-                            attrs: { "data-toggle": "remove" }
-                          },
-                          [_c("span", { staticClass: "icon-close" })]
-                        )
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "collapse show",
-                      attrs: { id: "collapseUsers" }
-                    },
-                    [
-                      _c("div", { staticClass: "panel-body" }, [
-                        _c("div", {
-                          staticClass: "pt-3 pb-8",
-                          attrs: { id: "achart-pie" }
-                        })
-                      ])
-                    ]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "panel-col col-12" }, [
-                _c("div", { staticClass: "panel-card panel" }, [
-                  _c(
-                    "header",
-                    { staticClass: "panel-header align-items-center" },
-                    [
-                      _c("div", [
-                        _c("h5", { staticClass: "title mb-0" }, [
-                          _vm._v("Purchase History")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "panel-header-nav ml-auto" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "nav-item mr-3",
-                            attrs: {
-                              "data-toggle": "collapse",
-                              href: "#collapsePurchaseHistory",
-                              role: "button",
-                              "aria-expanded": "false",
-                              "aria-controls": "collapsePurchaseHistory"
-                            }
-                          },
-                          [_c("span", { staticClass: "icon-minus" })]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          {
-                            staticClass: "nav-item mr-3",
-                            attrs: { "data-toggle": "refresh" }
-                          },
-                          [_c("span", { staticClass: "icon-refresh" })]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          {
-                            staticClass: "nav-item",
-                            attrs: { "data-toggle": "remove" }
-                          },
-                          [_c("span", { staticClass: "icon-close" })]
-                        )
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "collapse show",
-                      attrs: { id: "collapsePurchaseHistory" }
-                    },
-                    [
-                      _c("div", { staticClass: "panel-body p-0" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass: "panel-list-sc list-unstyled",
-                            attrs: { "data-scrollbar": "scroll" }
-                          },
-                          [
-                            _c("div", [
-                              _c(
-                                "table",
-                                { staticClass: "table table-borderless mb-0" },
-                                [
-                                  _c("thead", [
-                                    _c("tr", [
-                                      _c(
-                                        "th",
-                                        {
-                                          staticClass: "pl-6 py-3",
-                                          attrs: { scope: "col" }
-                                        },
-                                        [_vm._v("Order")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "th",
-                                        {
-                                          staticClass: "py-3",
-                                          attrs: { scope: "col" }
-                                        },
-                                        [_vm._v("Сlient")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "th",
-                                        {
-                                          staticClass: "py-3",
-                                          attrs: { scope: "col" }
-                                        },
-                                        [_vm._v("Product")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "th",
-                                        {
-                                          staticClass: "py-3",
-                                          attrs: { scope: "col" }
-                                        },
-                                        [_vm._v("Location")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "th",
-                                        {
-                                          staticClass: "py-3",
-                                          attrs: { scope: "col" }
-                                        },
-                                        [_vm._v("Total")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "th",
-                                        {
-                                          staticClass: "py-3",
-                                          attrs: { scope: "col" }
-                                        },
-                                        [_vm._v("Status")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "th",
-                                        {
-                                          staticClass: "py-3",
-                                          attrs: { scope: "col" }
-                                        },
-                                        [_vm._v("Action")]
-                                      )
-                                    ])
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("tbody", [
-                                    _c("tr", [
-                                      _c(
-                                        "th",
-                                        {
-                                          staticClass: "pl-6",
-                                          attrs: { scope: "row" }
-                                        },
-                                        [_vm._v("#3416")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("td", [
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "d-flex align-items-center"
-                                          },
-                                          [
-                                            _c("span", {
-                                              staticClass:
-                                                "icon-table-cust d-none d-lp-inline icon-building lead-2"
-                                            }),
-                                            _vm._v(" "),
-                                            _c(
-                                              "small",
-                                              { staticClass: "ml-3 small-2" },
-                                              [_vm._v("semVIper")]
-                                            )
-                                          ]
-                                        )
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("td", [_vm._v("Mintaka 8 Max")]),
-                                      _vm._v(" "),
-                                      _c("td", [_vm._v("321,418")]),
-                                      _vm._v(" "),
-                                      _c("td", [_vm._v("$104,142")]),
-                                      _vm._v(" "),
-                                      _c("td", [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass:
-                                              "d-flex align-items-center small-2 fw-500",
-                                            attrs: { href: "#" }
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "fas fa-circle text-glow-warning text-warning small-8 mr-2"
-                                            }),
-                                            _vm._v("Moving")
-                                          ]
-                                        )
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("td", [
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "panel-dropdown-menu dropdown"
-                                          },
-                                          [
-                                            _c(
-                                              "button",
-                                              {
-                                                staticClass:
-                                                  "btn text-warning dropdown-toggle no-carret bc-t p-0",
-                                                attrs: {
-                                                  type: "button",
-                                                  id: "navbar-dropdown",
-                                                  "data-toggle": "dropdown",
-                                                  "aria-haspopup": "true",
-                                                  "aria-expanded": "false"
-                                                }
-                                              },
-                                              [
-                                                _c("i", {
-                                                  staticClass:
-                                                    "fas fa-ellipsis-h"
-                                                })
-                                              ]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "div",
-                                              {
-                                                staticClass:
-                                                  "dropdown-menu dropdown-menu-right panel-dropdown-menu",
-                                                attrs: {
-                                                  "aria-labelledby":
-                                                    "navbar-dropdown"
-                                                }
-                                              },
-                                              [
-                                                _c(
-                                                  "ul",
-                                                  {
-                                                    staticClass: "list-unstyled"
-                                                  },
-                                                  [
-                                                    _c("li", [
-                                                      _c(
-                                                        "a",
-                                                        {
-                                                          staticClass:
-                                                            "dropdown-item",
-                                                          attrs: { href: "#" }
-                                                        },
-                                                        [_vm._v("Edit")]
-                                                      )
-                                                    ]),
-                                                    _vm._v(" "),
-                                                    _c("li", [
-                                                      _c(
-                                                        "a",
-                                                        {
-                                                          staticClass:
-                                                            "dropdown-item",
-                                                          attrs: { href: "#" }
-                                                        },
-                                                        [_vm._v("Delete")]
-                                                      )
-                                                    ])
-                                                  ]
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      ])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("tr", [
-                                      _c(
-                                        "th",
-                                        {
-                                          staticClass: "pl-6",
-                                          attrs: { scope: "row" }
-                                        },
-                                        [_vm._v("#6227")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("td", [
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "d-flex align-items-center"
-                                          },
-                                          [
-                                            _c("span", {
-                                              staticClass:
-                                                "icon-table-cust d-none d-lp-inline icon-building lead-2"
-                                            }),
-                                            _vm._v(" "),
-                                            _c(
-                                              "small",
-                                              { staticClass: "ml-3 small-2" },
-                                              [_vm._v("Clman. prod")]
-                                            )
-                                          ]
-                                        )
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("td", [_vm._v("NISi 6")]),
-                                      _vm._v(" "),
-                                      _c("td", [_vm._v("321,418")]),
-                                      _vm._v(" "),
-                                      _c("td", [_vm._v("$104,142")]),
-                                      _vm._v(" "),
-                                      _c("td", [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass:
-                                              "d-flex align-items-center small-2 fw-500",
-                                            attrs: { href: "#" }
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "fas fa-circle text-glow-success text-success small-8 mr-2"
-                                            }),
-                                            _vm._v("Pending")
-                                          ]
-                                        )
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("td", [
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "panel-dropdown-menu dropdown"
-                                          },
-                                          [
-                                            _c(
-                                              "button",
-                                              {
-                                                staticClass:
-                                                  "btn text-warning dropdown-toggle no-carret bc-t p-0",
-                                                attrs: {
-                                                  type: "button",
-                                                  "data-toggle": "dropdown",
-                                                  "aria-haspopup": "true",
-                                                  "aria-expanded": "false"
-                                                }
-                                              },
-                                              [
-                                                _c("i", {
-                                                  staticClass:
-                                                    "fas fa-ellipsis-h"
-                                                })
-                                              ]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "div",
-                                              {
-                                                staticClass:
-                                                  "dropdown-menu dropdown-menu-right panel-dropdown-menu"
-                                              },
-                                              [
-                                                _c(
-                                                  "ul",
-                                                  {
-                                                    staticClass: "list-unstyled"
-                                                  },
-                                                  [
-                                                    _c("li", [
-                                                      _c(
-                                                        "a",
-                                                        {
-                                                          staticClass:
-                                                            "dropdown-item",
-                                                          attrs: { href: "#" }
-                                                        },
-                                                        [_vm._v("Edit")]
-                                                      )
-                                                    ]),
-                                                    _vm._v(" "),
-                                                    _c("li", [
-                                                      _c(
-                                                        "a",
-                                                        {
-                                                          staticClass:
-                                                            "dropdown-item",
-                                                          attrs: { href: "#" }
-                                                        },
-                                                        [_vm._v("Delete")]
-                                                      )
-                                                    ])
-                                                  ]
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      ])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("tr", [
-                                      _c(
-                                        "th",
-                                        {
-                                          staticClass: "pl-6",
-                                          attrs: { scope: "row" }
-                                        },
-                                        [_vm._v("#2731")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("td", [
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "d-flex align-items-center"
-                                          },
-                                          [
-                                            _c("span", {
-                                              staticClass:
-                                                "icon-table-cust d-none d-lp-inline icon-building lead-2"
-                                            }),
-                                            _vm._v(" "),
-                                            _c(
-                                              "small",
-                                              { staticClass: "ml-3 small-2" },
-                                              [_vm._v("RDN")]
-                                            )
-                                          ]
-                                        )
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("td", [_vm._v("Commodo")]),
-                                      _vm._v(" "),
-                                      _c("td", [_vm._v("321,418")]),
-                                      _vm._v(" "),
-                                      _c("td", [_vm._v("$104,142")]),
-                                      _vm._v(" "),
-                                      _c("td", [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass:
-                                              "d-flex align-items-center small-2 fw-500",
-                                            attrs: { href: "#" }
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "fas fa-circle text-glow-danger text-danger small-8 mr-2"
-                                            }),
-                                            _vm._v("Canceled")
-                                          ]
-                                        )
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("td", [
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "panel-dropdown-menu dropdown"
-                                          },
-                                          [
-                                            _c(
-                                              "button",
-                                              {
-                                                staticClass:
-                                                  "btn text-warning dropdown-toggle no-carret bc-t p-0",
-                                                attrs: {
-                                                  type: "button",
-                                                  "data-toggle": "dropdown",
-                                                  "aria-haspopup": "true",
-                                                  "aria-expanded": "false"
-                                                }
-                                              },
-                                              [
-                                                _c("i", {
-                                                  staticClass:
-                                                    "fas fa-ellipsis-h"
-                                                })
-                                              ]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "div",
-                                              {
-                                                staticClass:
-                                                  "dropdown-menu dropdown-menu-right panel-dropdown-menu"
-                                              },
-                                              [
-                                                _c(
-                                                  "ul",
-                                                  {
-                                                    staticClass: "list-unstyled"
-                                                  },
-                                                  [
-                                                    _c("li", [
-                                                      _c(
-                                                        "a",
-                                                        {
-                                                          staticClass:
-                                                            "dropdown-item",
-                                                          attrs: { href: "#" }
-                                                        },
-                                                        [_vm._v("Edit")]
-                                                      )
-                                                    ]),
-                                                    _vm._v(" "),
-                                                    _c("li", [
-                                                      _c(
-                                                        "a",
-                                                        {
-                                                          staticClass:
-                                                            "dropdown-item",
-                                                          attrs: { href: "#" }
-                                                        },
-                                                        [_vm._v("Delete")]
-                                                      )
-                                                    ])
-                                                  ]
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      ])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("tr", [
-                                      _c(
-                                        "th",
-                                        {
-                                          staticClass: "pl-6",
-                                          attrs: { scope: "row" }
-                                        },
-                                        [_vm._v("#7437")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("td", [
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "d-flex align-items-center"
-                                          },
-                                          [
-                                            _c("span", {
-                                              staticClass:
-                                                "icon-table-cust d-none d-lp-inline icon-building lead-2"
-                                            }),
-                                            _vm._v(" "),
-                                            _c(
-                                              "small",
-                                              { staticClass: "ml-3 small-2" },
-                                              [_vm._v("IIios")]
-                                            )
-                                          ]
-                                        )
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("td", [_vm._v("TempusX")]),
-                                      _vm._v(" "),
-                                      _c("td", [_vm._v("321,418")]),
-                                      _vm._v(" "),
-                                      _c("td", [_vm._v("$104,142")]),
-                                      _vm._v(" "),
-                                      _c("td", [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass:
-                                              "d-flex align-items-center small-2 fw-500",
-                                            attrs: { href: "#" }
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "fas fa-circle text-glow-warning text-warning small-8 mr-2"
-                                            }),
-                                            _vm._v("Moving")
-                                          ]
-                                        )
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("td", [
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "panel-dropdown-menu dropdown"
-                                          },
-                                          [
-                                            _c(
-                                              "button",
-                                              {
-                                                staticClass:
-                                                  "btn text-warning dropdown-toggle no-carret bc-t p-0",
-                                                attrs: {
-                                                  type: "button",
-                                                  "data-toggle": "dropdown",
-                                                  "aria-haspopup": "true",
-                                                  "aria-expanded": "false"
-                                                }
-                                              },
-                                              [
-                                                _c("i", {
-                                                  staticClass:
-                                                    "fas fa-ellipsis-h"
-                                                })
-                                              ]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "div",
-                                              {
-                                                staticClass:
-                                                  "dropdown-menu dropdown-menu-right panel-dropdown-menu"
-                                              },
-                                              [
-                                                _c(
-                                                  "ul",
-                                                  {
-                                                    staticClass: "list-unstyled"
-                                                  },
-                                                  [
-                                                    _c("li", [
-                                                      _c(
-                                                        "a",
-                                                        {
-                                                          staticClass:
-                                                            "dropdown-item",
-                                                          attrs: { href: "#" }
-                                                        },
-                                                        [_vm._v("Edit")]
-                                                      )
-                                                    ]),
-                                                    _vm._v(" "),
-                                                    _c("li", [
-                                                      _c(
-                                                        "a",
-                                                        {
-                                                          staticClass:
-                                                            "dropdown-item",
-                                                          attrs: { href: "#" }
-                                                        },
-                                                        [_vm._v("Delete")]
-                                                      )
-                                                    ])
-                                                  ]
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      ])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("tr", [
-                                      _c(
-                                        "th",
-                                        {
-                                          staticClass: "pl-6",
-                                          attrs: { scope: "row" }
-                                        },
-                                        [_vm._v("#4853")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("td", [
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "d-flex align-items-center"
-                                          },
-                                          [
-                                            _c("span", {
-                                              staticClass:
-                                                "icon-table-cust d-none d-lp-inline icon-building lead-2"
-                                            }),
-                                            _vm._v(" "),
-                                            _c(
-                                              "small",
-                                              { staticClass: "ml-3 small-2" },
-                                              [_vm._v("ATOS")]
-                                            )
-                                          ]
-                                        )
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("td", [_vm._v("Porta VII")]),
-                                      _vm._v(" "),
-                                      _c("td", [_vm._v("321,418")]),
-                                      _vm._v(" "),
-                                      _c("td", [_vm._v("$104,142")]),
-                                      _vm._v(" "),
-                                      _c("td", [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass:
-                                              "d-flex align-items-center small-2 fw-500",
-                                            attrs: { href: "#" }
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "fas fa-circle text-glow-warning text-warning small-8 mr-2"
-                                            }),
-                                            _vm._v("Moving")
-                                          ]
-                                        )
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("td", [
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "panel-dropdown-menu dropdown"
-                                          },
-                                          [
-                                            _c(
-                                              "button",
-                                              {
-                                                staticClass:
-                                                  "btn text-warning dropdown-toggle no-carret bc-t p-0",
-                                                attrs: {
-                                                  type: "button",
-                                                  "data-toggle": "dropdown",
-                                                  "aria-haspopup": "true",
-                                                  "aria-expanded": "false"
-                                                }
-                                              },
-                                              [
-                                                _c("i", {
-                                                  staticClass:
-                                                    "fas fa-ellipsis-h"
-                                                })
-                                              ]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "div",
-                                              {
-                                                staticClass:
-                                                  "dropdown-menu dropdown-menu-right panel-dropdown-menu"
-                                              },
-                                              [
-                                                _c(
-                                                  "ul",
-                                                  {
-                                                    staticClass: "list-unstyled"
-                                                  },
-                                                  [
-                                                    _c("li", [
-                                                      _c(
-                                                        "a",
-                                                        {
-                                                          staticClass:
-                                                            "dropdown-item",
-                                                          attrs: { href: "#" }
-                                                        },
-                                                        [_vm._v("Edit")]
-                                                      )
-                                                    ]),
-                                                    _vm._v(" "),
-                                                    _c("li", [
-                                                      _c(
-                                                        "a",
-                                                        {
-                                                          staticClass:
-                                                            "dropdown-item",
-                                                          attrs: { href: "#" }
-                                                        },
-                                                        [_vm._v("Delete")]
-                                                      )
-                                                    ])
-                                                  ]
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      ])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("tr", [
-                                      _c(
-                                        "th",
-                                        {
-                                          staticClass: "pl-6",
-                                          attrs: { scope: "row" }
-                                        },
-                                        [_vm._v("#8162")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("td", [
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "d-flex align-items-center"
-                                          },
-                                          [
-                                            _c("span", {
-                                              staticClass:
-                                                "icon-table-cust d-none d-lp-inline icon-building lead-2"
-                                            }),
-                                            _vm._v(" "),
-                                            _c(
-                                              "small",
-                                              { staticClass: "ml-3 small-2" },
-                                              [_vm._v("Secrt")]
-                                            )
-                                          ]
-                                        )
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("td", [_vm._v("Odio+")]),
-                                      _vm._v(" "),
-                                      _c("td", [_vm._v("321,418")]),
-                                      _vm._v(" "),
-                                      _c("td", [_vm._v("$104,142")]),
-                                      _vm._v(" "),
-                                      _c("td", [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass:
-                                              "d-flex align-items-center small-2 fw-500",
-                                            attrs: { href: "#" }
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "fas fa-circle text-glow-success text-success small-8 mr-2"
-                                            }),
-                                            _vm._v("Pending")
-                                          ]
-                                        )
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("td", [
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "panel-dropdown-menu dropdown"
-                                          },
-                                          [
-                                            _c(
-                                              "button",
-                                              {
-                                                staticClass:
-                                                  "btn text-warning dropdown-toggle no-carret bc-t p-0",
-                                                attrs: {
-                                                  type: "button",
-                                                  "data-toggle": "dropdown",
-                                                  "aria-haspopup": "true",
-                                                  "aria-expanded": "false"
-                                                }
-                                              },
-                                              [
-                                                _c("i", {
-                                                  staticClass:
-                                                    "fas fa-ellipsis-h"
-                                                })
-                                              ]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "div",
-                                              {
-                                                staticClass:
-                                                  "dropdown-menu dropdown-menu-right panel-dropdown-menu"
-                                              },
-                                              [
-                                                _c(
-                                                  "ul",
-                                                  {
-                                                    staticClass: "list-unstyled"
-                                                  },
-                                                  [
-                                                    _c("li", [
-                                                      _c(
-                                                        "a",
-                                                        {
-                                                          staticClass:
-                                                            "dropdown-item",
-                                                          attrs: { href: "#" }
-                                                        },
-                                                        [_vm._v("Edit")]
-                                                      )
-                                                    ]),
-                                                    _vm._v(" "),
-                                                    _c("li", [
-                                                      _c(
-                                                        "a",
-                                                        {
-                                                          staticClass:
-                                                            "dropdown-item",
-                                                          attrs: { href: "#" }
-                                                        },
-                                                        [_vm._v("Delete")]
-                                                      )
-                                                    ])
-                                                  ]
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      ])
-                                    ])
-                                  ])
-                                ]
-                              )
-                            ])
-                          ]
-                        )
-                      ])
-                    ]
-                  )
-                ])
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c("footer", { staticClass: "footer panel" }, [
-        _c("div", { staticClass: "footer-body text-primary" }, [
-          _c("div", { staticClass: "row no-gutters align-items-center" }, [
-            _c("div", { staticClass: "col-12 col-sm-auto" }, [
-              _c(
-                "div",
-                { staticClass: "text-center text-sm-left fw-400 mb-2 mb-sm-0" },
-                [
-                  _vm._v(
-                    "\n                                2020 © Mintaka\n                            "
-                  )
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-12 col-sm" }, [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "nav nav-bold-style justify-content-center justify-content-sm-end text-uppercase mx--4"
-                },
-                [
-                  _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                    _vm._v("About")
-                  ]),
-                  _vm._v(" "),
-                  _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                    _vm._v("Terms of use")
-                  ]),
-                  _vm._v(" "),
-                  _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                    _vm._v("Privacy Policy")
-                  ])
-                ]
-              )
-            ])
+              ]
+            )
           ])
         ])
       ])
@@ -23883,9 +20657,467 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("Home")])
+  return _c("div", { staticClass: "container-fluid" }, [
+    _c("div", { staticClass: "panel-row row gutters-y mb-0" }, [
+      _c("div", { staticClass: "panel-col col-xl-6 col-lp-4" }, [
+        _c("div", { staticClass: "panel-card panel" }, [
+          _c("header", { staticClass: "panel-header align-items-center" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("div", { staticClass: "panel-header-nav ml-auto" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-item mr-3",
+                  attrs: { "data-toggle": "refresh" },
+                  on: { click: _vm.refresh_user_online_offline }
+                },
+                [_c("span", { staticClass: "icon-refresh" })]
+              ),
+              _vm._v(" "),
+              _vm._m(1)
+            ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "collapse show",
+              attrs: { id: "browserStatistics" }
+            },
+            [
+              _c("div", { staticClass: "panel-body" }, [
+                _c(
+                  "div",
+                  { staticClass: "pt-3 pb-8", staticStyle: { width: "155px" } },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "apexcharts-legend center position-bottom",
+                        staticStyle: {
+                          inset: "auto 0px -10px 20px",
+                          position: "absolute",
+                          top: "15px"
+                        },
+                        attrs: { xmlns: "http://www.w3.org/1999/xhtml" }
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "apexcharts-legend-series",
+                            staticStyle: { margin: "10px" },
+                            attrs: { rel: "1", "data:collapsed": "false" }
+                          },
+                          [
+                            _c("span", {
+                              staticClass: "apexcharts-legend-marker",
+                              staticStyle: {
+                                background:
+                                  "rgb(0, 255, 0) none repeat scroll 0% 0%",
+                                color: "rgb(0, 255, 0)",
+                                height: "12px",
+                                width: "12px",
+                                left: "0px",
+                                top: "0px",
+                                "border-width": "0px",
+                                "border-color": "rgb(255, 255, 255)",
+                                "border-radius": "12px"
+                              },
+                              attrs: { rel: "1", "data:collapsed": "false" }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "apexcharts-legend-text",
+                                staticStyle: {
+                                  color: "rgb(255, 255, 255)",
+                                  "font-size": "14px",
+                                  "font-family": "Inter, sans-serif"
+                                },
+                                attrs: {
+                                  rel: "1",
+                                  i: "0",
+                                  "data:default-text": "USA%20-%2044",
+                                  "data:collapsed": "false"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "Online - " +
+                                    _vm._s(_vm.user_online_offline.online)
+                                )
+                              ]
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "apexcharts-legend-series",
+                            staticStyle: { margin: "10px" },
+                            attrs: { rel: "2", "data:collapsed": "false" }
+                          },
+                          [
+                            _c("span", {
+                              staticClass: "apexcharts-legend-marker",
+                              staticStyle: {
+                                background:
+                                  "rgb(255, 0, 0) none repeat scroll 0% 0%",
+                                color: "rgb(255, 0, 0)",
+                                height: "12px",
+                                width: "12px",
+                                left: "0px",
+                                top: "0px",
+                                "border-width": "0px",
+                                "border-color": "rgb(255, 255, 255)",
+                                "border-radius": "12px"
+                              },
+                              attrs: { rel: "2", "data:collapsed": "false" }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "apexcharts-legend-text",
+                                staticStyle: {
+                                  color: "rgb(255, 255, 255)",
+                                  "font-size": "14px",
+                                  "font-family": "Inter, sans-serif"
+                                },
+                                attrs: {
+                                  rel: "2",
+                                  i: "1",
+                                  "data:default-text": "China%20-%2055",
+                                  "data:collapsed": "false"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "Offline - " +
+                                    _vm._s(_vm.user_online_offline.offline)
+                                )
+                              ]
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "apexcharts-legend-series",
+                            staticStyle: { margin: "10px" },
+                            attrs: { rel: "3", "data:collapsed": "false" }
+                          },
+                          [
+                            _c("span", {
+                              staticClass: "apexcharts-legend-marker",
+                              staticStyle: {
+                                background:
+                                  "rgb(255, 255, 250) none repeat scroll 0% 0%",
+                                color: "rgb(255, 255, 250)",
+                                height: "12px",
+                                width: "12px",
+                                left: "0px",
+                                top: "0px",
+                                "border-width": "0px",
+                                "border-color": "rgb(255, 255, 255)",
+                                "border-radius": "12px"
+                              },
+                              attrs: { rel: "3", "data:collapsed": "false" }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "apexcharts-legend-text",
+                                staticStyle: {
+                                  color: "rgb(255, 255, 255)",
+                                  "font-size": "14px",
+                                  "font-family": "Inter, sans-serif"
+                                },
+                                attrs: {
+                                  rel: "3",
+                                  i: "2",
+                                  "data:default-text": "Singapore%20-%2041",
+                                  "data:collapsed": "false"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "Users - " +
+                                    _vm._s(
+                                      _vm.user_online_offline.online +
+                                        _vm.user_online_offline.offline
+                                    )
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ]
+                    )
+                  ]
+                )
+              ])
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "panel-col col-xl-6 col-lp-4" }, [
+        _c("div", { staticClass: "panel-card panel" }, [
+          _c("header", { staticClass: "panel-header align-items-center" }, [
+            _vm._m(2),
+            _vm._v(" "),
+            _c("div", { staticClass: "panel-header-nav ml-auto" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-item mr-3",
+                  attrs: { "data-toggle": "refresh" },
+                  on: { click: _vm.refresh_admin_online_offline }
+                },
+                [_c("span", { staticClass: "icon-refresh" })]
+              ),
+              _vm._v(" "),
+              _vm._m(3)
+            ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "collapse show", attrs: { id: "collapseLocation" } },
+            [
+              _c("div", { staticClass: "panel-body" }, [
+                _c(
+                  "div",
+                  { staticClass: "pt-3 pb-8", staticStyle: { width: "155px" } },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "apexcharts-legend center position-bottom",
+                        staticStyle: {
+                          inset: "auto 0px -10px 20px",
+                          position: "absolute",
+                          top: "15px"
+                        },
+                        attrs: { xmlns: "http://www.w3.org/1999/xhtml" }
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "apexcharts-legend-series",
+                            staticStyle: { margin: "10px" },
+                            attrs: { rel: "1", "data:collapsed": "false" }
+                          },
+                          [
+                            _c("span", {
+                              staticClass: "apexcharts-legend-marker",
+                              staticStyle: {
+                                background:
+                                  "rgb(0, 255, 0) none repeat scroll 0% 0%",
+                                color: "rgb(0, 255, 0)",
+                                height: "12px",
+                                width: "12px",
+                                left: "0px",
+                                top: "0px",
+                                "border-width": "0px",
+                                "border-color": "rgb(255, 255, 255)",
+                                "border-radius": "12px"
+                              },
+                              attrs: { rel: "1", "data:collapsed": "false" }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "apexcharts-legend-text",
+                                staticStyle: {
+                                  color: "rgb(255, 255, 255)",
+                                  "font-size": "14px",
+                                  "font-family": "Inter, sans-serif"
+                                },
+                                attrs: {
+                                  rel: "1",
+                                  i: "0",
+                                  "data:default-text": "USA%20-%2044",
+                                  "data:collapsed": "false"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "Online - " +
+                                    _vm._s(_vm.admin_online_offline.online)
+                                )
+                              ]
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "apexcharts-legend-series",
+                            staticStyle: { margin: "10px" },
+                            attrs: { rel: "2", "data:collapsed": "false" }
+                          },
+                          [
+                            _c("span", {
+                              staticClass: "apexcharts-legend-marker",
+                              staticStyle: {
+                                background:
+                                  "rgb(255, 0, 0) none repeat scroll 0% 0%",
+                                color: "rgb(255, 0, 0)",
+                                height: "12px",
+                                width: "12px",
+                                left: "0px",
+                                top: "0px",
+                                "border-width": "0px",
+                                "border-color": "rgb(255, 255, 255)",
+                                "border-radius": "12px"
+                              },
+                              attrs: { rel: "2", "data:collapsed": "false" }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "apexcharts-legend-text",
+                                staticStyle: {
+                                  color: "rgb(255, 255, 255)",
+                                  "font-size": "14px",
+                                  "font-family": "Inter, sans-serif"
+                                },
+                                attrs: {
+                                  rel: "2",
+                                  i: "1",
+                                  "data:default-text": "China%20-%2055",
+                                  "data:collapsed": "false"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "Offline - " +
+                                    _vm._s(_vm.admin_online_offline.offline)
+                                )
+                              ]
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "apexcharts-legend-series",
+                            staticStyle: { margin: "10px" },
+                            attrs: { rel: "3", "data:collapsed": "false" }
+                          },
+                          [
+                            _c("span", {
+                              staticClass: "apexcharts-legend-marker",
+                              staticStyle: {
+                                background:
+                                  "rgb(255, 255, 250) none repeat scroll 0% 0%",
+                                color: "rgb(255, 255, 250)",
+                                height: "12px",
+                                width: "12px",
+                                left: "0px",
+                                top: "0px",
+                                "border-width": "0px",
+                                "border-color": "rgb(255, 255, 255)",
+                                "border-radius": "12px"
+                              },
+                              attrs: { rel: "3", "data:collapsed": "false" }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "apexcharts-legend-text",
+                                staticStyle: {
+                                  color: "rgb(255, 255, 255)",
+                                  "font-size": "14px",
+                                  "font-family": "Inter, sans-serif"
+                                },
+                                attrs: {
+                                  rel: "3",
+                                  i: "2",
+                                  "data:default-text": "Singapore%20-%2041",
+                                  "data:collapsed": "false"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "Admin - " +
+                                    _vm._s(
+                                      _vm.admin_online_offline.online +
+                                        _vm.admin_online_offline.offline
+                                    )
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ]
+                    )
+                  ]
+                )
+              ])
+            ]
+          )
+        ])
+      ])
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("h5", { staticClass: "title text-glow-white-sm mb-0" }, [
+        _vm._v("Users Online - Offline")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      { staticClass: "nav-item", attrs: { "data-toggle": "remove" } },
+      [_c("span", { staticClass: "icon-close" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("h5", { staticClass: "title mb-0" }, [
+        _vm._v("Admin Online - Offline")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      { staticClass: "nav-item close", attrs: { "data-toggle": "remove" } },
+      [_c("span", { staticClass: "icon-close" })]
+    )
+  }
+]
 render._withStripped = true
 
 
@@ -23907,47 +21139,271 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("h1", [_vm._v("product")]),
-      _vm._v(" "),
-      _vm._l(_vm.products, function(p) {
-        return _c("div", { key: p.id }, [
-          _c("h3", [_vm._v(_vm._s(p.name))]),
-          _vm._v(" "),
-          _c("h5", [_vm._v(_vm._s(p.price))]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              on: {
-                click: function($event) {
-                  return _vm.confirm_prod(p.id)
+  return _c("div", { staticClass: "container-fluid mb-4" }, [
+    _c(
+      "div",
+      { staticClass: "row no-gutters panel-top-line panel-fill rounded" },
+      [
+        _c("div", { staticClass: "col-12" }, [
+          _c("div", { staticClass: "shop-search h-100" }, [
+            _c(
+              "div",
+              {
+                staticClass: "input-light h-100",
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.noop($event)
+                  }
                 }
-              }
-            },
-            [_vm._v("confirm")]
-          ),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              on: {
-                click: function($event) {
-                  return _vm.delete_prod(p.id)
-                }
-              }
-            },
-            [_vm._v("delete")]
-          )
+              },
+              [
+                _c("div", { staticClass: "input-group h-100" }, [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass:
+                      "input_search form-control form-control-lg h-100",
+                    attrs: {
+                      type: "text",
+                      placeholder: "Search Here",
+                      "aria-label": "Search"
+                    },
+                    on: { keyup: _vm.search }
+                  })
+                ])
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-12" }, [
+          _c("div", { staticClass: "row no-gutters panel-top-line" }, [
+            _c("div", { staticClass: "col-lp-10 pl-lp-0 char-sFill" }, [
+              _c("div", { staticClass: "pt-6 px-5" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "tab-content",
+                    attrs: { id: "minimalTabContent" }
+                  },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "tab-pane fade show active",
+                        attrs: {
+                          id: "mode-simple",
+                          role: "tabpanel",
+                          "aria-labelledby": "content-mode-simple-tab"
+                        }
+                      },
+                      _vm._l(_vm.products, function(p) {
+                        return _c(
+                          "div",
+                          { key: p.id, staticClass: "row shop-list" },
+                          [
+                            _c("div", { staticClass: "col-12 shop-item" }, [
+                              _c("div", { staticClass: "d-xl-flex" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "mb-6 mb-xl-0 mr-xl-4 position-relative"
+                                  },
+                                  [
+                                    _c("img", {
+                                      staticClass: "img-shop-item-v rounded",
+                                      attrs: {
+                                        src:
+                                          "http://localhost:8000/product_photo/" +
+                                          p.p_photo[0].photo
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("span", {
+                                      staticClass:
+                                        "badge badge-warning position-absolute l--2 t-2 text-uppercase fw-600 ls-1 rounded-2 small-6"
+                                    })
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "flex-1 mb-6 mb-xl-0 mr-xl-5"
+                                  },
+                                  [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass:
+                                          "lead-2 fw-600 d-block lh-3 mb-3",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                            _vm._s(p.name) +
+                                            "\n\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _vm._m(1, true),
+                                    _vm._v(" "),
+                                    _c(
+                                      "p",
+                                      { staticClass: "lh-7 small-2 mb-4" },
+                                      [_vm._v(_vm._s(p.description))]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("div", [
+                                      _c(
+                                        "span",
+                                        { staticClass: "small-2 mr-3" },
+                                        [
+                                          _c(
+                                            "span",
+                                            {
+                                              staticClass: "text-secondary mr-1"
+                                            },
+                                            [_vm._v("Added:")]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "a",
+                                            {
+                                              staticClass:
+                                                "text-success text-dotted"
+                                            },
+                                            [
+                                              _vm._v(
+                                                " \t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                  _vm._s(p.time) +
+                                                  "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ])
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("div", [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "d-flex align-items-center h-100"
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        { staticClass: "text-xl-center" },
+                                        [
+                                          _c(
+                                            "h4",
+                                            { staticClass: "emce-price mb-5" },
+                                            [_vm._v("$" + _vm._s(p.price))]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "a",
+                                            {
+                                              staticClass:
+                                                "btn btn-danger d-flex align-items-center mb-4",
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.delete_prod(p.id)
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _vm._v(
+                                                "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tDelete\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "a",
+                                            {
+                                              staticClass:
+                                                "btn btn-outline-primary d-flex align-items-center",
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.confirm_prod(p.id)
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _vm._v(
+                                                "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tConfirm\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("hr", { staticClass: "my-7" })
+                            ])
+                          ]
+                        )
+                      }),
+                      0
+                    )
+                  ]
+                )
+              ])
+            ])
+          ])
         ])
-      })
-    ],
-    2
-  )
+      ]
+    )
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "input-group-prepend border-0 input-group-prepend" },
+      [
+        _c("span", { staticClass: "input-group-text lead-1 pl-4" }, [
+          _c("span", { staticClass: "icon-search" })
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      { staticClass: "text-success mb-2 d-block", attrs: { href: "#" } },
+      [
+        _c("span", { staticClass: "icon-star-favorite" }),
+        _vm._v(" "),
+        _c("span", { staticClass: "icon-star-favorite" }),
+        _vm._v(" "),
+        _c("span", { staticClass: "icon-star-favorite" }),
+        _vm._v(" "),
+        _c("span", { staticClass: "icon-star-favorite" }),
+        _vm._v(" "),
+        _c("span", { staticClass: "icon-star-shape-favorite" })
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 
@@ -23969,23 +21425,504 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("h1", [_vm._v("Home")]),
-      _vm._v(" "),
-      _vm._l(_vm.users, function(u) {
-        return _c("div", { key: u.id }, [
-          _c("h3", [_vm._v(_vm._s(u.name))]),
+  return _c("div", { staticClass: "container-fluid" }, [
+    _c("div", { staticClass: "panel-row row gutters-y mb-0" }, [
+      _c("div", { staticClass: "panel-col col-12" }, [
+        _c("div", { staticClass: "panel-card panel" }, [
+          _c("header", { staticClass: "panel-header align-items-center" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("div", { staticClass: "panel-header-nav ml-auto" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-item mr-3",
+                  attrs: { "data-toggle": "refresh" },
+                  on: { click: _vm.refresh_user }
+                },
+                [_c("span", { staticClass: "icon-refresh" })]
+              ),
+              _vm._v(" "),
+              _vm._m(1)
+            ])
+          ]),
           _vm._v(" "),
-          _c("h5", [_vm._v(_vm._s(u.surname))])
+          _c("div", { staticClass: "col-12" }, [
+            _c("div", { staticClass: "shop-search h-100" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "input-light h-100",
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                      return _vm.noop($event)
+                    }
+                  }
+                },
+                [
+                  _c("div", { staticClass: "input-group h-100" }, [
+                    _vm._m(2),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass:
+                        "input_search form-control form-control-lg h-100",
+                      attrs: {
+                        type: "text",
+                        placeholder: "Search Here",
+                        "aria-label": "Search"
+                      },
+                      on: { keyup: _vm.search }
+                    })
+                  ])
+                ]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "collapse show",
+              attrs: { id: "collapsePurchaseHistory" }
+            },
+            [
+              _c("div", { staticClass: "panel-body p-0" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "panel-list-sc list-unstyled",
+                    attrs: { "data-scrollbar": "scroll" }
+                  },
+                  [
+                    _c("div", [
+                      _c(
+                        "table",
+                        { staticClass: "table table-borderless mb-0" },
+                        [
+                          _vm._m(3),
+                          _vm._v(" "),
+                          _vm._l(_vm.users, function(u) {
+                            return _c("tbody", { key: u.id }, [
+                              _c("tr", [
+                                _c(
+                                  "th",
+                                  {
+                                    staticClass: "pl-6",
+                                    attrs: { scope: "row" }
+                                  },
+                                  [_vm._v(_vm._s(u.name))]
+                                ),
+                                _vm._v(" "),
+                                _c("td", [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "d-flex align-items-center"
+                                    },
+                                    [
+                                      _c("span", {
+                                        staticClass:
+                                          "icon-table-cust d-none d-lp-inline icon-building lead-2"
+                                      }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "small",
+                                        { staticClass: "ml-3 small-2" },
+                                        [_vm._v(_vm._s(u.surname))]
+                                      )
+                                    ]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("td", [_vm._v(_vm._s(u.email))]),
+                                _vm._v(" "),
+                                _c("td", [_vm._v(_vm._s(u.age))]),
+                                _vm._v(" "),
+                                _c("td", [
+                                  u.online_offline === 1
+                                    ? _c(
+                                        "a",
+                                        {
+                                          staticClass:
+                                            "d-flex align-items-center small-2 fw-500"
+                                        },
+                                        [
+                                          _c("i", {
+                                            staticClass:
+                                              "fas fa-circle text-glow-success text-success small-8 mr-2"
+                                          }),
+                                          _vm._v(
+                                            "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tOnline\n\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                          )
+                                        ]
+                                      )
+                                    : u.online_offline === 0
+                                    ? _c(
+                                        "a",
+                                        {
+                                          staticClass:
+                                            "d-flex align-items-center small-2 fw-500"
+                                        },
+                                        [
+                                          _c("i", {
+                                            staticClass:
+                                              "fas fa-circle text-glow-danger text-danger small-8 mr-2"
+                                          }),
+                                          _vm._v(
+                                            "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tOffline\n\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ]),
+                                _vm._v(" "),
+                                _c("td", [
+                                  u.block == 0
+                                    ? _c(
+                                        "a",
+                                        {
+                                          staticClass:
+                                            "d-flex align-items-center small-2 fw-500"
+                                        },
+                                        [
+                                          _c("i", {
+                                            staticClass:
+                                              "fas fa-circle text-glow-success text-success small-8 mr-2"
+                                          }),
+                                          _vm._v(
+                                            "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tNo Block\n\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                          )
+                                        ]
+                                      )
+                                    : u.block === "permanent"
+                                    ? _c(
+                                        "a",
+                                        {
+                                          staticClass:
+                                            "d-flex align-items-center small-2 fw-500"
+                                        },
+                                        [
+                                          _c("i", {
+                                            staticClass:
+                                              "fas fa-circle text-glow-danger text-danger small-8 mr-2"
+                                          }),
+                                          _vm._v(
+                                            "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tBlock Permanent \n\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                          )
+                                        ]
+                                      )
+                                    : _c(
+                                        "a",
+                                        {
+                                          staticClass:
+                                            "d-flex align-items-center small-2 fw-500"
+                                        },
+                                        [
+                                          _c("i", {
+                                            staticClass:
+                                              "fas fa-circle text-glow-warning text-warning small-8 mr-2"
+                                          }),
+                                          _vm._v(
+                                            "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tTemporary (" +
+                                              _vm._s(u.block) +
+                                              ")\n\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                          )
+                                        ]
+                                      )
+                                ]),
+                                _vm._v(" "),
+                                _c("td", [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "panel-dropdown-menu dropdown"
+                                    },
+                                    [
+                                      _vm._m(4, true),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "dropdown-menu dropdown-menu-right panel-dropdown-menu",
+                                          attrs: {
+                                            "aria-labelledby": "navbar-dropdown"
+                                          }
+                                        },
+                                        [
+                                          _c(
+                                            "ul",
+                                            { staticClass: "list-unstyled" },
+                                            [
+                                              u.block == 0
+                                                ? _c(
+                                                    "li",
+                                                    {
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {
+                                                          return _vm.block_3_day(
+                                                            u.id
+                                                          )
+                                                        }
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "a",
+                                                        {
+                                                          staticClass:
+                                                            "dropdown-item"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tBlock 3 day\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                          )
+                                                        ]
+                                                      )
+                                                    ]
+                                                  )
+                                                : _vm._e(),
+                                              _vm._v(" "),
+                                              u.block == 0
+                                                ? _c(
+                                                    "li",
+                                                    {
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {
+                                                          return _vm.block_one_week(
+                                                            u.id
+                                                          )
+                                                        }
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "a",
+                                                        {
+                                                          staticClass:
+                                                            "dropdown-item"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tBlock one week\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                          )
+                                                        ]
+                                                      )
+                                                    ]
+                                                  )
+                                                : _vm._e(),
+                                              _vm._v(" "),
+                                              u.block == 0
+                                                ? _c(
+                                                    "li",
+                                                    {
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {
+                                                          return _vm.block_1_month(
+                                                            u.id
+                                                          )
+                                                        }
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "a",
+                                                        {
+                                                          staticClass:
+                                                            "dropdown-item"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tBlock 1 month\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                          )
+                                                        ]
+                                                      )
+                                                    ]
+                                                  )
+                                                : _vm._e(),
+                                              _vm._v(" "),
+                                              u.block == 0
+                                                ? _c(
+                                                    "li",
+                                                    {
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {
+                                                          return _vm.block_permanent(
+                                                            u.id
+                                                          )
+                                                        }
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "a",
+                                                        {
+                                                          staticClass:
+                                                            "dropdown-item"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tBlock permanent \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                          )
+                                                        ]
+                                                      )
+                                                    ]
+                                                  )
+                                                : _vm._e(),
+                                              _vm._v(" "),
+                                              u.block != 0
+                                                ? _c(
+                                                    "li",
+                                                    {
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {
+                                                          return _vm.remove_block(
+                                                            u.id
+                                                          )
+                                                        }
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "a",
+                                                        {
+                                                          staticClass:
+                                                            "dropdown-item"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tRemove block\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                          )
+                                                        ]
+                                                      )
+                                                    ]
+                                                  )
+                                                : _vm._e()
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                ])
+                              ])
+                            ])
+                          })
+                        ],
+                        2
+                      )
+                    ])
+                  ]
+                )
+              ])
+            ]
+          )
         ])
-      })
-    ],
-    2
-  )
+      ])
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("h5", { staticClass: "title mb-0" }, [_vm._v("Users")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      { staticClass: "nav-item close", attrs: { "data-toggle": "remove" } },
+      [_c("span", { staticClass: "icon-close" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "input-group-prepend border-0 input-group-prepend" },
+      [
+        _c("span", { staticClass: "input-group-text lead-1 pl-4" }, [
+          _c("span", { staticClass: "icon-search" })
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { staticClass: "pl-6 py-3", attrs: { scope: "col" } }, [
+          _vm._v("Name")
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "py-3", attrs: { scope: "col" } }, [
+          _vm._v("Surname")
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "py-3", attrs: { scope: "col" } }, [
+          _vm._v("Email")
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "py-3", attrs: { scope: "col" } }, [
+          _vm._v("Age")
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "py-3", attrs: { scope: "col" } }, [
+          _vm._v("Online - Offline")
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "py-3", attrs: { scope: "col" } }, [
+          _vm._v("Block")
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "py-3", attrs: { scope: "col" } }, [
+          _vm._v("Action")
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "btn text-warning dropdown-toggle no-carret bc-t p-0",
+        attrs: {
+          type: "button",
+          id: "navbar-dropdown",
+          "data-toggle": "dropdown",
+          "aria-haspopup": "true",
+          "aria-expanded": "false"
+        }
+      },
+      [_c("i", { staticClass: "fas fa-ellipsis-h" })]
+    )
+  }
+]
 render._withStripped = true
 
 
@@ -39196,6 +37133,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
 var vm = new Vue(Vue.util.extend({
   router: router
 }, _Main_vue__WEBPACK_IMPORTED_MODULE_3__["default"])).$mount('#app');
+Vue.prototype.$userId = document.querySelector("meta[name='user-id']").getAttribute('content');
 
 /***/ }),
 

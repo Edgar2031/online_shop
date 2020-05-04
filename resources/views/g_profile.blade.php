@@ -57,23 +57,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     </head>
     <body>
-
-
-        {{-- app --}}
-        {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script>
-            $(document).ready(function() {                 
-                var type = "{{ Session::token() }}"; 
-                setTimeout(function(){
-                    alert(type)
-                },4000)
-            });
-        </script> --}}
-    
-        https://codepen.io/aaroniker/pen/VwZOOxz
-
-        Logo image ???
-        Strip ???
         <!-- Page Loading -->
         <div class="l_ing">
             <div class="circles">
@@ -133,7 +116,7 @@
                                                 <img src="{{ asset('product_photo/'.$pro->p_photo[0]->photo) }}" alt="Image" title="Image" style='height: 120px;'>
                                             </header>
                                             <div class="product-inner">
-                                                <h5 class="product-title">{{ $pro->name }}</h5>
+                                                <a href="{{ url('g_profile/page_shop/product_shop_sidebar/'.$pro->id) }}" class="product-title">{{ $pro->name }}</a>
                                                 <p class="product-desciption">
                                                     {{ $pro->desciption }}
                                                 </p>
@@ -181,7 +164,7 @@
                                                 <img src="{{ asset('product_photo/'.$pro->p_photo[0]->photo) }}" alt="Image" title="Image" style='height: 120px;'>
                                             </header>
                                             <div class="product-inner">
-                                                <h5 class="product-title">{{ $pro->name }}</h5>
+                                                <a href="{{ url('g_profile/page_shop/product_shop_sidebar/'.$pro->id) }}" class="product-title">{{ $pro->name }}</a>
                                                 <p class="product-desciption">
                                                     {{ $pro->desciption }}
                                                 </p>
@@ -228,7 +211,7 @@
                                                 <img src="{{ asset('product_photo/'.$pro->p_photo[0]->photo) }}" alt="Image" title="Image" style='height: 120px;'>
                                             </header>
                                             <div class="product-inner">
-                                                <h5 class="product-title">{{ $pro->name }}</h5>
+                                                <a href="{{ url('g_profile/page_shop/product_shop_sidebar/'.$pro->id) }}" class="product-title">{{ $pro->name }}</a>
                                                 <p class="product-desciption">
                                                     {{ $pro->desciption }}
                                                 </p>
@@ -275,7 +258,7 @@
                                                 <img src="{{ asset('product_photo/'.$pro->p_photo[0]->photo) }}" alt="Image" title="Image" style='height: 120px;'>
                                             </header>
                                             <div class="product-inner">
-                                                <h5 class="product-title">{{ $pro->name }}</h5>
+                                                <a href="{{ url('g_profile/page_shop/product_shop_sidebar/'.$pro->id) }}" class="product-title">{{ $pro->name }}</a>
                                                 <p class="product-desciption">
                                                     {{ $pro->desciption }}
                                                 </p>

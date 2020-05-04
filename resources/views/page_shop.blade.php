@@ -88,7 +88,7 @@
                     <div class="row">
                         <div class="col-md-8 clearfix" style="display: inline-block;">
                             <div class="search-area-division search-area-division-input">
-                                <input class="form-control product_val" type="text" placeholder="Travel Vacation" style="padding-left: 10px;">
+                                <input class="form-control product_val" type="text" placeholder="{{ __('page_shop.searching') }}" style="padding-left: 10px;">
                             </div>
                         </div>
                         <div class="product-sort">
@@ -115,7 +115,7 @@
                             <div class="slider" data-value-0="#first" data-value-1="#second" data-range="#third"></div>
                         </div>
                         <div class="col-md-1">
-                            <button class="btn btn-block btn-white search-btn" type="submit">Search</button>
+                            <button class="btn btn-block btn-white search-btn" type="submit">{{ __('page_shop.search') }}</button>
                         </div>
                     </div>
                 </div>
@@ -130,32 +130,32 @@
                             <ul class="nav nav-tabs nav-stacked nav-coupon-category">
                                 <li data-id="all" class="search_li active search_data_id">
                                     <a>
-                                        <i class="fa fa-plane"></i>
-                                        All
+                                        <i class="fab fa-atlassian"></i>
+                                        {{ __('page_shop.all') }}
                                     </a>
                                 </li>
                                 <li data-id="grocery" class="search_li">
                                     <a>
                                         <i class="fas fa-apple-alt"></i>
-                                        Grocery
+                                        {{ __('page_shop.grocery') }}
                                     </a>
                                 </li>
                                 <li data-id="apparel" class="search_li">
                                     <a>
                                         <i class="fas fa-tshirt"></i>
-                                        Apparel
+                                        {{ __('page_shop.apparel') }}
                                     </a>
                                 </li>
                                 <li data-id="electronics" class="search_li">
                                     <a>
                                         <i class="fas fa-tv"></i>
-                                        Electronics
+                                        {{ __('page_shop.electronics') }}
                                     </a>
                                 </li>
-                                <li data-id="beauty" class="search_li">
+                                <li data-id="another" class="search_li">
                                     <a>
-                                        <i class="fa fa-female"></i>
-                                        Beauty
+                                        <i class="far fa-question-circle"></i>
+                                        {{ __('page_shop.another') }}
                                     </a>
                                 </li>
                             </ul>
@@ -192,7 +192,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-4">
-                                <p>Copyright © <?php date_default_timezone_set("Asia/Yerevan"); echo(date('Y')); ?>, Your Store, All Rights Reserved</p>
+                                <p>{{ __('page_shop.copyright') }} <?php date_default_timezone_set("Asia/Yerevan"); echo(date('Y')); ?>, {{ __('page_shop.all_rights_reserved') }}</p>
                             </div>
                         </div>
                     </div>

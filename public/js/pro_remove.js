@@ -4,7 +4,7 @@ $('.delete_prd').click( function() {
 	$.ajax({
 		url: '/deletpro',
 		type: 'post',
-		data: {'_token': token},
+		data: {'_token': token, id},
 		success: function(r){
 
 		}

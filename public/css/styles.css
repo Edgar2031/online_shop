@@ -964,6 +964,7 @@ label {
   font-size: 15px;
   margin-bottom: 0;
   line-height: 1.4em;
+  word-break: break-word;
 }
 .product-time {
   color: #666;
@@ -1287,8 +1288,10 @@ label {
   margin: 0;
   color: #666;
 }
-.nav-tabs.nav-stacked.nav-coupon-category > li > a .fa,
-.nav-tabs.nav-stacked.nav-coupon-category > li > a .fas {
+.nav-tabs.nav-stacked.nav-coupon-category > li > a .fa, 
+.nav-tabs.nav-stacked.nav-coupon-category > li > a .fas,  
+.nav-tabs.nav-stacked.nav-coupon-category > li > a .far, 
+.nav-tabs.nav-stacked.nav-coupon-category > li > a .fab {
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   -o-transform: translate3d(0, 0, 0);
@@ -1305,6 +1308,7 @@ label {
   text-align: center;
   line-height: 40px;
   border-right: 1px solid #ededed;
+  color: #2f2b2b;
 }
 .nav-tabs.nav-stacked.nav-coupon-category > li > a .fa:before,
 .nav-tabs.nav-stacked.nav-coupon-category > li > a .fas:before {
@@ -1331,12 +1335,16 @@ label {
   color: #2a8fbd;
 }
 .nav-tabs.nav-stacked.nav-coupon-category > li > a:hover .fa,
-.nav-tabs.nav-stacked.nav-coupon-category > li > a:hover .fas {
+.nav-tabs.nav-stacked.nav-coupon-category > li > a:hover .fas,
+.nav-tabs.nav-stacked.nav-coupon-category > li > a:hover .far,
+.nav-tabs.nav-stacked.nav-coupon-category > li > a:hover .fab {
   background: #2a8fbd;
   color: #fff;
 }
 .nav-tabs.nav-stacked.nav-coupon-category > li > a:hover .fa:before,
-.nav-tabs.nav-stacked.nav-coupon-category > li > a:hover .fas:before {
+.nav-tabs.nav-stacked.nav-coupon-category > li > a:hover .fas:before,
+.nav-tabs.nav-stacked.nav-coupon-category > li > a:hover .far:before,
+.nav-tabs.nav-stacked.nav-coupon-category > li > a:hover .fab:before {
   opacity: 1;
   -ms-filter: none;
   filter: none;
@@ -1361,13 +1369,17 @@ label {
   background: rgba(0,0,0,0.5);
 }
 .nav-tabs.nav-stacked.nav-coupon-category > .active > a .fa,
-.nav-tabs.nav-stacked.nav-coupon-category > .active > a .fas {
+.nav-tabs.nav-stacked.nav-coupon-category > .active > a .fas,
+.nav-tabs.nav-stacked.nav-coupon-category > .active > a .far,
+.nav-tabs.nav-stacked.nav-coupon-category > .active > a .fab {
   background: #298dba;
   color: #fff;
   border-right: 1px solid #fff;
 }
 .nav-tabs.nav-stacked.nav-coupon-category > .active > a .fa:before,
-.nav-tabs.nav-stacked.nav-coupon-category > .active > a .fas:before {
+.nav-tabs.nav-stacked.nav-coupon-category > .active > a .fas:before,
+.nav-tabs.nav-stacked.nav-coupon-category > .active > a .far:before,
+.nav-tabs.nav-stacked.nav-coupon-category > .active > a .fab:before {
   opacity: 1;
   -ms-filter: none;
   filter: none;
@@ -1545,7 +1557,7 @@ label {
   cursor: default;
 }
 .product-info-price {
-  font-size: 50px;
+  font-size: 30px;
   color: #2a8fbd;
   margin-bottom: 10px;
   padding-bottom: 10px;

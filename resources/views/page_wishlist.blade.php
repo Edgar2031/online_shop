@@ -148,7 +148,6 @@
                                 @endforeach
                             </tbody>
                         </table>	
-                        <a href="#" class="btn btn-primary">Update the cart</a>
                     </div>
                 </div>
                 <div class="gap"></div>

@@ -100,7 +100,7 @@
                     <div class="col-md-9">
                         <div class="row">
                             <div class="col-md-6">
-                            <form action="{{url('/add_product')}}" method="post" enctype="multipart/form-data">
+                                <form action="{{url('/add_product')}}" method="post" enctype="multipart/form-data">
                                     {{csrf_field()}}
                                     <div class="form-group">
                                         <label for="">{{ __('g_product.name') }}</label>
@@ -152,7 +152,7 @@
                                         {{ $errors->first('p_photo') }}
                                         <input type="file" value="{{ old('p_photo') }}" name="p_photo[]" multiple="" class="form-control">
                                     </div>
-                                    <input type="submit" value="Save Changes" class="btn btn-primary">
+                                    <input type="submit" value="Add Product" class="btn btn-primary">
                                 </form>
                             </div>
                         </div>

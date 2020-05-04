@@ -23,6 +23,8 @@ $(document).ready(function() {
 		$(".on").addClass('default-btn_2').find('span,i').css('display', 'none');
 		$(".default-btn_2").removeClass('default-btn');
 		$(".l_verify_error").css('display', 'none').text('');
+		$(".l_block_permanent_error").css('display', 'none');
+		$(".l_block_error").css('display', 'none').text('');
 		$(".l_email_error").css('display', 'none').text('');
 		$(".l_password_error").css('display', 'none').text('');
 		$(".l_email").css('border', '1px solid #fff');
@@ -42,7 +44,7 @@ $(document).ready(function() {
 					else if (data.success === false) window.location.href = 'http://localhost:8000/g_profile'; 
 				}	
 			},
-			error: function (reject) {
+			error: function(reject) {
 				$(".default-btn_2").addClass('default-btn').find('span,i').css('display', 'inline-block');
 				$(".sk-wave").css('display', 'none');
 				$(".on").removeClass('default-btn_2');
@@ -53,6 +55,12 @@ $(document).ready(function() {
 	                    	switch (key) {
 	                    		case 'verify':
 	                        		$(".l_" + key + "_error").css('display', 'flex').text(val[0]);
+	                    			break;
+	                    		case 'block_permanent':
+	                        		$(".l_" + key + "_error").css('display', 'flex');
+	                    			break;
+	                    		case 'block':
+	                        		$(".l_" + key + "_error").css('display', 'flex').html('Your profile is temporarily blocked. (' + val[0] + ')');
 	                    			break;
 	                    		case 'email':
 	                        		$(".l_" + key + "_error").css('display', 'flex').text(val[0]);

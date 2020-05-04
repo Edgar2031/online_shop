@@ -16,4 +16,12 @@ class ProductModel extends Model
     public function p_photo(){
     	return $this->hasMany("App\PhotoModel", "product_id");
     }
+
+    public function review(){
+    	return $this->hasMany("App\ReviewModel", "product_id");
+    }
+
+    public function feedback(){
+    	return $this->hasMany("App\FeedbackModel", "product_id");
+    }
 }

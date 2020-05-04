@@ -58,10 +58,11 @@ class EditController extends Controller
 		$validator = Validator::make(
 		   $r->all(),
 		    array(
-		        'pro_name_my' => 'required|min:3|max:25',
+		        'pro_name_my' => 'required|min:3|max:50',
 		        'pro_count_my' => 'required|integer|min:1|max:10000',
 		        'pro_price_my' => 'required|integer|min:500|max:12000',
-		        'pro_description_my' => 'required|min:6|max:200',
+		        'pro_description_my' => 'required|min:50|max:200',
+		        'pro_category_my' => 'required',
 		        'pro_photo_my' => 'max:2000' 
 		    )
 		);
@@ -77,9 +78,10 @@ class EditController extends Controller
 								'name' => $r->pro_name_my, 
 								'count' => $r->pro_count_my, 
 								'price' => $r->pro_price_my, 
+								'category' => $r->pro_category_my,
 								'description' => $r->pro_description_my
 							]
-						);		
+						);	
 			if ($r->hasfile('pro_photo_my')) {
 				foreach ($r->file('pro_photo_my') as $img) {
 					$address = time().$img->getClientOriginalName();
@@ -93,5 +95,7 @@ class EditController extends Controller
 			return Redirect::to('g_profile/my_product/product_item/'.$id);
 		}
 	}
+
+
 	
 }

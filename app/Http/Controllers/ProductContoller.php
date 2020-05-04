@@ -9,6 +9,7 @@ use App\ProductModel;
 use App\PhotoModel;
 use App\CartModel;
 use App\WishlistModel;
+use App\ReviewModel;
 use Validator;
 use Session;
 
@@ -26,7 +27,7 @@ class ProductContoller extends Controller
 		        'p_name' => 'required|min:3|max:25',
 		        'p_count' => 'required|integer|min:1|max:10000',
 		        'p_price' => 'required|integer|min:500|max:12000',
-		        'p_description' => 'required|min:6|max:200',
+		        'p_description' => 'required|min:50|max:200',
 		        'p_category' => 'required',
 		        'p_photo' => 'max:2000' 
 		    )
@@ -97,6 +98,64 @@ class ProductContoller extends Controller
 									array_push($arr, $p);	
 								}
 	    echo json_encode($arr);
+    }
+
+    // <= === Product === =>
+    function g_product_shop_sidebar($id){
+    	$arr = [];
+	    $cart = CartModel::where('user_id', Session::get('id'))->get();
+	    $wishlist = WishlistModel::where('user_id', Session::get('id'))->get();
+	    $product = ProductModel::where('id', $id)->get();
+	    $similar_product = false;
+
+	    foreach ($product as $p) {
+		    $similar_product = ProductModel::where('user_id', '<>', Session::get('id'))->where('category', $p->category)->limit(3)->get();
+		    if (!empty($similar_product)) {
+			    foreach ($similar_product as $si) {
+					$si['cart'] = 0;
+					$si['wishlist'] = 0;
+					foreach ($cart as $c) {
+						if ($si->id == $c->product_id) {
+							$si['cart'] = 1;
+						}
+					}
+					foreach ($wishlist as $w) {
+						if ($si->id == $w->product_id) {
+							$si['wishlist'] = 1;
+						}
+					}
+					$si->p_photo;
+				}
+		    }
+			
+	    }
+	    
+		foreach($product as $p){		
+			$p['cart'] = 0;
+			$p['wishlist'] = 0;
+			foreach ($cart as $c) {
+				if ($p->id == $c->product_id) {
+					$p['cart'] = 1;
+				}
+			}
+			foreach ($wishlist as $w) {
+				if ($p->id == $w->product_id) {
+					$p['wishlist'] = 1;
+				}
+			}
+			$p->p_photo;
+			$p->review;
+			$p->Seller;
+			$p->feedback;
+			if (!empty($similar_product)) {
+				$p['similar_product'] = $similar_product;
+			}else {
+				$p['similar_product'] = 0;
+			}
+			array_push($arr, $p);	
+		}
+
+    	return view('product_shop_sidebar')->with('product', $arr);
     }
 
 	// <= === Sort Product === =>
@@ -371,19 +430,45 @@ class ProductContoller extends Controller
 	}
 
 	function g_product_item($id){
-		$my_product = ProductModel::where('id', $id)->get();
+		$arr = [];
+	    $my_product = ProductModel::where('id', $id)->get();
+		$similar_product = ProductModel::where('user_id', Session::get('id'))->where('id', '<>', $id)->limit(3)->get();
+
+
+		foreach($my_product as $my_pro){		
+			$my_pro->p_photo;
+			$my_pro->review;
+			$my_pro->Seller;
+			$my_pro->feedback;
+			if (!empty($similar_product)) {
+				$my_pro['similar_product'] = $similar_product;
+			}else {
+				$my_pro['similar_product'] = 0;
+			}
+			array_push($arr, $my_pro);	
+		}
+		
 		return view('product_item')->with('my_product', $my_product);
 	}
 
 	// <= === Product Remove === =>
     function deletpro(Request $r){
+    	$photo = PhotoModel::where('product_id', $r->id)->get();
+    	foreach ($photo as $key) {
+			unlink(public_path().'/product_photo/'.$key->photo);
+    	}
     	ProductModel::where('id', $r->id)->delete();
     }
 
     // <= === My Product Delete Photo === =>
-	function g_product_delete_photo(Request $r){
-		$photo = PhotoModel::where('id', $r->photo_id)->first();
-		unlink(public_path().'/product_photo/'.$photo->photo);
-		PhotoModel::where('id', $r->photo_id)->delete();
+	function g_product_delete_photo($id, $photo_id){
+		$photo = PhotoModel::where('id', $photo_id)->first();
+		if (!empty($photo)) {
+			unlink(public_path().'/product_photo/'.$photo->photo);
+		}
+		PhotoModel::where('id', $photo_id)->delete();
+		return Redirect::to('http://localhost:8000/g_profile/my_product/product_item/'.$id);
 	}
+
+
 }

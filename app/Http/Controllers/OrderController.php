@@ -9,6 +9,7 @@ use Session;
 use App\OrderDetailModel;
 use App\FeedbackModel;
 use Response;
+use Validator;
 
 class OrderController extends Controller
 {
@@ -30,13 +31,66 @@ class OrderController extends Controller
 		$feedback = FeedbackModel::where('order_id', $id)->get();
 		$order_this = OrderDetailModel::where('order_id', $id)->get();
 		foreach ($order_this as $key) {
-			$f = FeedbackModel::where('order_id', $key->order_id)->get();
-			if ($f) {
-				$key['feedback'] = FeedbackModel::where('order_id', $key->order_id)->get();
-			}else {
-				$key['feedback'] = true;
+			$key['feedback'] = '';
+			foreach ($feedback as $k) {
+				if ($key->order_id == $k->order_id && $key->product_id == $k->product_id) {
+					$key['feedback'] = FeedbackModel::where('order_id', $key->order_id)->first('feedback');
+				}
 			}
+			
 		}
-		return view('my_history_this')->with('order_this', $order_this)->with('feedback', $feedback);
+		return view('my_history_this')->with('order_this', $order_this);
+	}
+
+	//<= === Add feedback === =>
+	function add_feedback(Request $r){
+		$validator = Validator::make(
+		   $r->send,
+		    array(
+		        'feedback' => 'required|min:50|max:200'
+		    )
+		);
+		if ($validator->fails()) {
+			// Переданные данные не прошли проверку
+			return Response::json(array(
+							        'success' => false,
+							        'errors' => $validator->getMessageBag()->toArray()
+							    ), 400); // 400 being the HTTP code for an invalid request.	
+		}else {
+			$feedback = new FeedbackModel();
+			$feedback->product_id = $r->send['product_id'];
+			$feedback->order_id = $r->send['order_id'];
+			$feedback->user_id = Session::get('id');
+			$feedback->feedback = $r->send['feedback'];
+			$feedback->save();
+			return Response::json(array(
+							        'success' => true
+							    ), 200); // 200 being the HTTP code for an invalid request.	
+		}
+	}
+
+	//<= === Change feedback === =>
+	function change_feedback(Request $r){
+		$validator = Validator::make(
+		   $r->send,
+		    array(
+		        'feedback' => 'required|min:50|max:200'
+		    )
+		);
+		if ($validator->fails()) {
+			// Переданные данные не прошли проверку
+			return Response::json(array(
+							        'success' => false,
+							        'errors' => $validator->getMessageBag()->toArray()
+							    ), 400); // 400 being the HTTP code for an invalid request.	
+		}else {
+			FeedbackModel::where('product_id', $r->send['product_id'])
+						 ->where('order_id', $r->send['order_id'])
+						 ->where('user_id', Session::get('id'))
+						 ->update(['feedback' => $r->send['feedback']]);
+			return Response::json(array(
+							        'success' => true
+							    ), 200); // 200 being the HTTP code for an invalid request.	
+		}
 	}
 }

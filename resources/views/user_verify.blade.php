@@ -40,14 +40,14 @@
                 <div class="form-holder">
                     <div class="form-content">
                         <div class="form-items div_1">
-                            <h3>Password Reset</h3>
-                            <p>To reset your password, enter the email address you use to login to Arduix</p>
+                            <h3>{{ __('user_verify.password') }}</h3>
+                            <p>{{ __('user_verify.to') }}</p>
                             <div>
                                 <input class="form-control email" type="text" placeholder="E-mail Address" required>
-                                <div class="spinner-border text-success load_1" role="status" style="width: 1.5rem; height: 1.5rem; position: absolute; top: 295px; left: 500px; display: none;">
+                                <div class="spinner-border text-success load_1" role="status" style="width: 1.5rem; height: 1.5rem; position: absolute; top: 344px; left: 776px; display: none;">
                                 </div>
                                 <div class="form-button full-width">
-                                    <button id="submit" type="submit" class="ibtn btn-forget">Send</button>
+                                    <button id="submit" type="submit" class="ibtn btn-forget">{{ __('user_verify.send') }}</button>
                                 </div>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
                             <div id="wrapper">
                                 <div id="dialog">
                                     <button class="close">×</button>
-                                    <h3>Please enter the 5-digit verification code we sent via SMS:</h3>
+                                    <h3>{{ __('user_verify.please') }}</h3>
                                     <div id="form">
                                         <input class="inp" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
                                         <input class="inp" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
@@ -65,18 +65,18 @@
                                         <a class="btn btn-primary btn-embossed code_send" style="color: #fff;">
                                             <div class="spinner-border text-success load_2" role="status" style="width: 1.3rem; height: 1.3rem; margin-right: 8px; color: lawngreen !important; display: none;">
                                             </div>
-                                            Verify
+                                            {{ __('user_verify.verify') }}
                                         </a>
                                     </div>
                                     <div>
-                                        Didn't receive the code?<br />
-                                        <a class="change_email" style="color: blue; cursor: pointer;">Change email address</a>
+                                        {{ __('user_verify.didnt') }}<br />
+                                        <a class="change_email" style="color: blue; cursor: pointer;">{{ __('user_verify.change') }}</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="form-items div_2" style="display: none;">
-                            <h3>Yours name and last name</h3>
+                            <h3>{{ __('user_verify.yours') }}</h3>
                             <p class="p_error" style="background: red none repeat scroll 0% 0%; color: rgb(255, 255, 255); display: none; height: 40px; margin-bottom: 10px; justify-content: center; align-items: center; border-radius: 10px; font-size: 18px;"></p>
                             <div>
                                 <input class="form-control name" type="text" placeholder="Name" required>
@@ -85,13 +85,13 @@
                                     <button id="submit_n_s" type="submit" class="ibtn btn-forget">
                                         <div class="spinner-border text-success load_3" role="status" style="width: 1.2rem; height: 1.2rem; width: 1.2rem; height: 1.2rem; margin-right: 5px; color: #fff !important; display: none;">
                                         </div>
-                                        Send
+                                        {{ __('user_verify.send') }}
                                     </button>
                                 </div>
                             </div>
                         </div>
                         <div class="form-items div_3" style="display: none;">
-                            <h3>New password</h3>
+                            <h3>{{ __('user_verify.new_password') }}</h3>
                             <p class="p_error_password" style="background: red none repeat scroll 0% 0%; color: rgb(255, 255, 255); display: none; height: 40px; margin-bottom: 10px; justify-content: center; align-items: center; border-radius: 10px; font-size: 18px;"></p>
                             <div>
                                 <input class="form-control new_password" type="password" placeholder="New password" required>
@@ -100,7 +100,7 @@
                                     <button id="submit_password" type="submit" class="ibtn btn-forget">
                                         <div class="spinner-border text-success load_4" role="status" style="width: 1.2rem; height: 1.2rem; width: 1.2rem; height: 1.2rem; margin-right: 5px; color: #fff !important; display: none;">
                                         </div>
-                                        Send
+                                        {{ __('user_verify.send') }}
                                     </button>
                                 </div>
                             </div>

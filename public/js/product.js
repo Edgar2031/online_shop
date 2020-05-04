@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     const date = $('meta[name="date"]').attr('content');
     const all_pro = $('#all_pro').val();
 
@@ -15,11 +16,10 @@ $(document).ready(function() {
                                             <div class="col-md-4">
                                                 <div class="product-thumb">
                                                     <header class="product-header">
-                                                        <span class="product-label label label-info">Featured</span>
                                                         <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image" style='height: 120px;'>
                                                     </header>
                                                     <div class="product-inner">
-                                                        <h5 class="product-title">${element.name}</h5>
+                                                        <a href="http://localhost:8000/g_profile/page_shop/product_shop_sidebar/${element.id}" class="product-title">${element.name}</a>
                                                         <p class="product-desciption">
                                                             ${des}
                                                         </p>
@@ -64,11 +64,10 @@ $(document).ready(function() {
                                             <div class="col-md-4">
                                                 <div class="product-thumb">
                                                     <header class="product-header">
-                                                        <span class="product-label label label-info">Featured</span>
                                                         <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image" style='height: 120px;'>
                                                     </header>
                                                     <div class="product-inner">
-                                                        <h5 class="product-title">${element.name}</h5>
+                                                        <a href="http://localhost:8000/g_profile/page_shop/product_shop_sidebar/${element.id}" class="product-title">${element.name}</a>
                                                         <p class="product-desciption">
                                                             ${des}
                                                         </p>
@@ -112,11 +111,10 @@ $(document).ready(function() {
                                             <div class="col-md-4">
                                                 <div class="product-thumb">
                                                     <header class="product-header">
-                                                        <span class="product-label label label-info">Featured</span>
                                                         <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image" style='height: 120px;'>
                                                     </header>
                                                     <div class="product-inner">
-                                                        <h5 class="product-title">${element.name}</h5>
+                                                        <a href="http://localhost:8000/g_profile/page_shop/product_shop_sidebar/${element.id}" class="product-title">${element.name}</a>
                                                         <p class="product-desciption">
                                                             ${des}
                                                         </p>
@@ -160,11 +158,10 @@ $(document).ready(function() {
                                             <div class="col-md-4">
                                                 <div class="product-thumb">
                                                     <header class="product-header">
-                                                        <span class="product-label label label-info">Featured</span>
                                                         <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image" style='height: 120px;'>
                                                     </header>
                                                     <div class="product-inner">
-                                                        <h5 class="product-title">${element.name}</h5>
+                                                        <a href="http://localhost:8000/g_profile/page_shop/product_shop_sidebar/${element.id}" class="product-title">${element.name}</a>
                                                         <p class="product-desciption">
                                                             ${des}
                                                         </p>
@@ -238,11 +235,10 @@ $(document).ready(function() {
                                                 <div class="col-md-4">
                                                     <div class="product-thumb">
                                                         <header class="product-header">
-                                                            <span class="product-label label label-info">Featured</span>
                                                             <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image" style='height: 120px;'>
                                                         </header>
                                                         <div class="product-inner">
-                                                            <h5 class="product-title">${element.name}</h5>
+                                                            <a href="http://localhost:8000/g_profile/page_shop/product_shop_sidebar/${element.id}" class="product-title">${element.name}</a>
                                                             <p class="product-desciption">
                                                                 ${des}
                                                             </p>
@@ -287,11 +283,10 @@ $(document).ready(function() {
                                                 <div class="col-md-4">
                                                     <div class="product-thumb">
                                                         <header class="product-header">
-                                                            <span class="product-label label label-info">Featured</span>
                                                             <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image" style='height: 120px;'>
                                                         </header>
                                                         <div class="product-inner">
-                                                            <h5 class="product-title">${element.name}</h5>
+                                                            <a href="http://localhost:8000/g_profile/page_shop/product_shop_sidebar/${element.id}" class="product-title">${element.name}</a>
                                                             <p class="product-desciption">
                                                                 ${des}
                                                             </p>
@@ -336,11 +331,10 @@ $(document).ready(function() {
                                                 <div class="col-md-4">
                                                     <div class="product-thumb">
                                                         <header class="product-header">
-                                                            <span class="product-label label label-info">Featured</span>
                                                             <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image" style='height: 120px;'>
                                                         </header>
                                                         <div class="product-inner">
-                                                            <h5 class="product-title">${element.name}</h5>
+                                                            <a href="http://localhost:8000/g_profile/page_shop/product_shop_sidebar/${element.id}" class="product-title">${element.name}</a>
                                                             <p class="product-desciption">
                                                                 ${des}
                                                             </p>
@@ -385,11 +379,10 @@ $(document).ready(function() {
                                                 <div class="col-md-4">
                                                     <div class="product-thumb">
                                                         <header class="product-header">
-                                                            <span class="product-label label label-info">Featured</span>
                                                             <img src="http://localhost:8000/product_photo/${element.p_photo[0].photo}" alt="Image" title="Image" style='height: 120px;'>
                                                         </header>
                                                         <div class="product-inner">
-                                                            <h5 class="product-title">${element.name}</h5>
+                                                            <a href="http://localhost:8000/g_profile/page_shop/product_shop_sidebar/${element.id}" class="product-title">${element.name}</a>
                                                             <p class="product-desciption">
                                                                 ${des}
                                                             </p>

@@ -42,10 +42,10 @@ Route::post('/login_check', "UserController@g_login_check");
 Route::get('/g_logout', "UserController@g_logout");
 
 // <= =============== Admin =============== =>
-Route::get('/admin', "AdminController@admin_show");
+Route::get('/admin', "AdminController@admin_show")->middleware('checkLogin:admin');
 Route::get('/admin/{any}', function(){
 	return view('admin');
-})->where('any', '.*');
+})->where('any', '.*')->middleware('checkLogin:admin');
 
 // <= =============== Profile =============== =>
 Route::get('/g_profile', "UserController@profile")->middleware('checkLogin:profile');
@@ -65,9 +65,18 @@ Route::post('g_profile/my_orders_history/remove', "OrderController@g_profile_my_
 // <= =============== Orders History this show =============== =>
 Route::get('g_profile/my_orders_history/this/{id}', "OrderController@g_profile_my_orders_history_this")->middleware('checkLogin:profile');
 
+// <= =============== Add feedback =============== =>
+Route::post('/g_add_feedback', "OrderController@add_feedback")->middleware('checkLogin:profile');
+
+// <= =============== change feedback =============== =>
+Route::post('/change_feedback', "OrderController@change_feedback")->middleware('checkLogin:profile');
+
 // <= =============== All Product =============== =>
 Route::get('/g_profile/page_shop', 'ProductContoller@g_page_shop')->middleware('checkLogin:profile');
 Route::post('/g_profile/page_shop/page', 'ProductContoller@g_profile_page_shop_page')->middleware('checkLogin:profile');
+
+// <= =============== Product =============== =>
+Route::get('/g_profile/page_shop/product_shop_sidebar/{id}', 'ProductContoller@g_product_shop_sidebar')->middleware('checkLogin:profile');
 
 // <= =============== Sort Product =============== =>
 Route::post('/g_profile/page_shop/page/sort_pro', 'ProductContoller@g_profile_page_shop_page_sort_pro')->middleware('checkLogin:profile');
@@ -87,7 +96,7 @@ Route::post('/add_product', "ProductContoller@u_product")->middleware('checkLogi
 Route::post('/deletpro', "ProductContoller@deletpro")->middleware('checkLogin:profile');
 
 // <= =============== My Product Delete Photo =============== =>
-Route::post('g_profile/my_product/product_item/delete_photo', "ProductContoller@g_product_delete_photo")->middleware('checkLogin:profile');
+Route::get('g_profile/my_product/product_item/delete_photo/{id}/{photo_id}', "ProductContoller@g_product_delete_photo")->middleware('checkLogin:profile');
 
 // <= =============== Cart =============== =>
 Route::get('/g_profile/page_cart', "CartController@g_page_cart")->middleware('checkLogin:profile');
@@ -143,7 +152,10 @@ Route::post('/g_profile/page_cart/cart_this_remove_cart', "WishlistController@g_
 // <= =============== Add Wishlist =============== =>
 Route::post('/g_profile/page_wishlist/cart_this_add', "WishlistController@g_page_wishlist_this_add")->middleware('checkLogin:profile');
 
+// <= =============== Add Review =============== =>
+Route::post('/g_profile/page_shop/product_shop_sidebar/add_review', "ReviewController@add_review")->middleware('checkLogin:profile');
 
-
+// <= =============== Remove Review =============== =>
+Route::post('/g_profile/page_shop/product_shop_sidebar/remove_review', "ReviewController@remove_review")->middleware('checkLogin:profile');
 
 // php -S localhost:8000 -t public

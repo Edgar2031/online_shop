@@ -238,14 +238,16 @@
     <script type="text/javascript">
         $('.buy_all').click(function(event) {
             const total = $('.total_span').html().split('$')[1];
-            $.ajax({
-                url: '/g_profile/page_cart/stripe_total',
-                type: 'post',
-                data: {'_token': '{{ csrf_token() }}', total},
-                success: function(r){
-                    location.href = '{{ url('g_profile/page_cart/stripe') }}'
-                }
-            });
+            if (total != 0.00) {       
+                $.ajax({
+                    url: '/g_profile/page_cart/stripe_total',
+                    type: 'post',
+                    data: {'_token': '{{ csrf_token() }}', total},
+                    success: function(r){
+                        location.href = '{{ url('g_profile/page_cart/stripe') }}'
+                    }
+                });
+            }
         });
     </script>
 </html>

@@ -86,7 +86,6 @@
 #range_brightness {
 	width: 100%;
 	-webkit-appearance: none;
-	background: #0a85ff;
 	height: 3px;
 	outline: none;
 }
@@ -98,4 +97,83 @@
 	background: #333;
 	border-radius: 50%;
 	cursor: pointer;
+}
+
+
+
+.change_feedback,
+.add_feedbeck {
+	background-color: #3d94f6;
+	border-radius: 28px;
+	border: 1px solid #337fed;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	padding: 4px 8px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #1570cd;
+}
+.change_feedback:hover,
+.add_feedbeck:hover {
+	color: #fff;
+}
+.change_feedback:active,
+.add_feedbeck:active {
+	position: relative;
+	top: 1px;
+}
+
+
+.form_change,
+.show_add_feedbeck {
+	background-color: #44c767;
+	border-radius: 28px;
+	border: 2px solid #18ab29;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	padding: 4px 8px;
+	text-decoration: none;
+	text-shadow: 0px 0px 0px #2f6627;
+}
+
+.form_change:hover,
+.show_add_feedbeck:hover {
+	color: #fff;
+}
+.form_change:active,
+.show_add_feedbeck:active {
+	position: relative;
+	top: 1px;
+}
+#range_brightness,
+.remove_review {
+  background: #2A8FBD;
+}
+
+
+.this_wishlist,
+.this_wishlist_remove,
+.this_wishlist:hover,
+.this_wishlist_remove:hover {
+	color: #2A8FBD;
+}
+
+.order-item-remove > a {
+	cursor: pointer;
+}
+
+.dletete_this > ul {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-right: 40px;
+}
+
+.dletete_this ul > li {
+	float: left;
+	padding: 2px 5px;
 }

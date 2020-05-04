@@ -113,24 +113,69 @@
                                     </thead>
                                     <tbody class="cart_tbody">
                                         @foreach($order_this as $product)
-                                            <tr data-id="this_{{ $product->order_pro->id }}">
-                                                <td class="cart-item-image" style="height: 80px; width: 105px;">
-                                                    <a class="cart_pr_img">
-                                                        <img src="{{ asset('product_photo/'.$product->order_pro->p_photo[0]->photo) }}" alt="Image" title="Image" style="height: 100%; width: 100%;">
-                                                    </a>
-                                                </td>
-                                                <td>
-                                                    <a>{{ $product->order_pro->name }}</a>
-                                                </td>
-                                                <td class="cart_td">&#36; {{ $product->order_pro->price }}
-                                                </td>
-                                                <td>
-                                                    <a>{{ $product->count }}</a>
-                                                </td>
-                                                <td class="order-item-remove">
-                                                    
-                                                </td>
-                                            </tr>
+                                            @if($product->feedback == '')
+                                                    <tr data-id="this_{{ $product->order_pro->id }}">
+                                                        <td class="cart-item-image" style="height: 80px; width: 105px;">
+                                                            <a class="cart_pr_img">
+                                                                <img src="{{ asset('product_photo/'.$product->order_pro->p_photo[0]->photo) }}" alt="Image" title="Image" style="height: 100%; width: 100%;">
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <a href="{{ url('g_profile/page_shop/product_shop_sidebar/'.$product->id) }}">{{ $product->order_pro->name }}</a>
+                                                        </td>
+                                                        <td class="cart_td">&#36; {{ $product->order_pro->price }}
+                                                        </td>
+                                                        <td>
+                                                            <a>{{ $product->count }}</a>
+                                                        </td>
+                                                        <td style="width: 40%;">
+                                                            <button class="show_add_feedbeck">+ Feedback</button>
+                                                            <div class="div_feedback" style="display: none; text-align: right;">
+                                                                <div class="form-group">
+                                                                    <p class="text_error" style="display: none; color: red; height: 30px; margin-bottom: 6px; justify-content: center; align-items: center; border-radius: 10px; font-size: 14px;"></p>
+                                                                    <textarea class="form-control text" placeholder="Feedback" style="resize: none; margin: 10px; width: 94%;"></textarea>
+                                                                </div>
+                                                                <input type="submit" value="Add Feedback" class="btn btn-primary add_feedbeck">
+                                                            </div>
+                                                            <div class="div_ok" style="display: none;">
+                                                                <div style="height: 20px; width: 20px; border-radius: 50%; color: #fff; background: green; text-align: center; display: inline-block;">&#10004;</div>
+                                                                <button class="form_change">Change Feedback</button>
+                                                            </div>
+                                                            <div class="div_change" style="display: none; text-align: right;">
+                                                                <p class="text_error" style="display: none; color: red; height: 30px; margin-bottom: 6px; justify-content: center; align-items: center; border-radius: 10px; font-size: 14px;"></p>
+                                                                <textarea class="form-control text" placeholder="Feedback" style="resize: none; margin: 10px; width: 94%;"></textarea>
+                                                                <a class="change_feedback">Change</a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                @else
+                                                    <tr data-id="this_{{ $product->order_pro->id }}">
+                                                        <td class="cart-item-image" style="height: 80px; width: 105px;">
+                                                            <a class="cart_pr_img">
+                                                                <img src="{{ asset('product_photo/'.$product->order_pro->p_photo[0]->photo) }}" alt="Image" title="Image" style="height: 100%; width: 100%;">
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <a href="{{ url('g_profile/page_shop/product_shop_sidebar/'.$product->id) }}">{{ $product->order_pro->name }}</a>
+                                                        </td>
+                                                        <td class="cart_td">&#36; {{ $product->order_pro->price }}
+                                                        </td>
+                                                        <td>
+                                                            <a>{{ $product->count }}</a>
+                                                        </td>
+                                                        <td style="width: 40%;">
+                                                            <div class="div_ok">
+                                                                <div style="height: 20px; width: 20px; border-radius: 50%; color: #fff; background: green; text-align: center; display: inline-block;">&#10004;</div>
+                                                                <button class="form_change">Change Feedback</button>
+                                                            </div>
+                                                            <div class="div_change" style="display: none; text-align: right;">
+                                                                <p class="text_error" style="display: none; color: red; height: 30px; margin-bottom: 6px; justify-content: center; align-items: center; border-radius: 10px; font-size: 14px;"></p>
+                                                                <textarea class="form-control text" placeholder="Feedback" style="resize: none; margin: 10px; width: 94%;">{{ $product->feedback->feedback }}</textarea>
+                                                                <a class="change_feedback">Change</a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                            @endif
                                         @endforeach
                                     </tbody>
                                 </table>
@@ -163,6 +208,105 @@
     <!-- jQuery and Loading -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="{{asset('js/loader.js')}}"></script>
+
+    <script type="text/javascript">
+        $('.show_add_feedbeck').click(function() {
+            $(this).parent().find('.div_feedback').toggle('fadeIn');
+        });
+
+        let url = window.location.href.split('/');
+        $('.add_feedbeck').click(function() {
+            if ($(this).parent().find('.text').val() == '') {
+                $(this).parent().find('.text').css('border', '1px solid red');
+            }else {
+                $(this).parent().find('.text').css('border', '1px solid #d9d9d9');
+                let send = {
+                    'product_id' : Number($(this).parent().parent().parent().attr('data-id').split('_')[1]),
+                    'order_id' : Number(url[url.length-1]),
+                    'feedback' : $(this).parent().find('.text').val()
+                };
+                let t = $(this);
+                $.ajax({
+                    url: '/g_add_feedback',
+                    type: 'post',
+                    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                    data: {send},
+                    success: function(data){
+                        if (data){
+                            $(t).parent().parent().find('.div_ok').css('display', 'block');
+                            $(t).parent().parent().find('.div_change').fadeOut('display', 'block');
+                            $(t).parent().parent().find('.div_change').find('.text').html(send['feedback']);
+                            $(t).parent().parent().find('.show_add_feedbeck').remove();
+                            $(t).parent().remove();
+                            $(t).parent().find('.text_error').css('display', 'none').text('');
+                        }
+                    },
+                    error: function(reject) {
+                        var response = $.parseJSON(reject.responseText);
+                        if (response.success === false){
+                            if (reject.status === 400){
+                                $.each(response.errors, function (key, val) {
+                                    switch (key) {
+                                        case 'feedback':
+                                            $(t).parent().find('.text').css('border', '1px solid red');
+                                            $(t).parent().find('.text_error').css('display', 'block').text(val[0]);
+                                            break;
+                                    }
+                                });
+                            }
+                        }
+                    }
+                });
+            }
+        });
+
+        $('.form_change').click(function() {
+            $(this).parent().parent().find('.div_change').toggle('fadeIn');
+        });
+
+
+        $('.change_feedback').click(function() {
+            if ($(this).parent().find('.text').val() == '') {
+                $(this).parent().find('.text').css('border', '1px solid red');
+            }else {
+                $(this).parent().find('.text').css('border', '1px solid #d9d9d9');
+                let send = {
+                    'product_id' : Number($(this).parent().parent().parent().attr('data-id').split('_')[1]),
+                    'order_id' : Number(url[url.length-1]),
+                    'feedback' : $(this).parent().find('.text').val()
+                };
+                let t = $(this);
+                $.ajax({
+                    url: '/change_feedback',
+                    type: 'post',
+                    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                    data: {send},
+                    success: function(data){
+                        if (data){
+                            $(t).parent().find('.text_error').css('display', 'none').text('');
+                            $(t).parent().fadeOut();
+                        }
+                    },
+                    error: function(reject) {
+                        var response = $.parseJSON(reject.responseText);
+                        if (response.success === false){
+                            if (reject.status === 400){
+                                $.each(response.errors, function (key, val) {
+                                    switch (key) {
+                                        case 'feedback':
+                                            $(t).parent().find('.text').css('border', '1px solid red');
+                                            $(t).parent().find('.text_error').css('display', 'block').text(val[0]);
+                                            break;
+                                    }
+                                });
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+
     <!-- Scripts queries -->
     <script src="{{asset('js/up.js')}}"></script>
     <script src="{{asset('js/jquery.js')}}"></script>
@@ -185,6 +329,5 @@
     <!-- Custom scripts -->
     <script src="{{asset('js/custom.js')}}"></script>
     <script src="{{asset('js/switcher.js')}}"></script>
-
 </html>
 @endsection

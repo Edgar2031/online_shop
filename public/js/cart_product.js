@@ -66,6 +66,10 @@ $(document).ready(function() {
 	        data: {'_token': cart_token, cart_remove_this_id},
 	        success: function(r){
 	        	$(this_cart).remove();
+	        	if (!$('.cart_tbody > tr')) {
+			        $('.con_empty').remove()
+			    }
+	        	total();
 	        }
 	    })
 	});

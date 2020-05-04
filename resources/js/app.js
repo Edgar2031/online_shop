@@ -30,3 +30,5 @@ let routes = [
 
 let router = new VueRouter({mode: 'history', routes: routes});
 let vm = new Vue(Vue.util.extend({router: router}, Main)).$mount('#app');
+
+Vue.prototype.$userId = document.querySelector("meta[name='user-id']").getAttribute('content');

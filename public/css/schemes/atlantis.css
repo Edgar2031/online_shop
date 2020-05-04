@@ -54,11 +54,15 @@ ul.pagination li.active a:hover,
 .box-icon,
 .nav-tabs.nav-stacked.nav-coupon-category > li > a:hover .fa,
 .nav-tabs.nav-stacked.nav-coupon-category > li > a:hover .fas,
+.nav-tabs.nav-stacked.nav-coupon-category > li > a:hover .far,
+.nav-tabs.nav-stacked.nav-coupon-category > li > a:hover .fab,
 .nav-tabs.nav-stacked.nav-coupon-category > .active > a,
 .nav-tabs.nav-stacked.nav-coupon-category > .active > a:hover,
 .nav-tabs.nav-stacked.nav-coupon-category > .active > a:before,
 .nav-tabs.nav-stacked.nav-coupon-category > li.active > a .fa,
 .nav-tabs.nav-stacked.nav-coupon-category > li.active > a .fas,
+.nav-tabs.nav-stacked.nav-coupon-category > li.active > a .far,
+.nav-tabs.nav-stacked.nav-coupon-category > li.active > a .fab,
 .tabbable >.nav li.active a,
 .dropcap-color:first-letter,
 .nav-pills.nav-stacked.nav-arrow > li.active a,
@@ -129,4 +133,15 @@ ul.pagination li.active a:hover,
 }
 .form-control:focus {
   border-color: #98d043;
+}
+#range_brightness,
+.remove_review {
+  background: #8cc732;
+}
+
+.this_wishlist,
+.this_wishlist_remove,
+.this_wishlist:hover,
+.this_wishlist_remove:hover {
+  color: #8cc732;
 }

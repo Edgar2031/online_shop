@@ -49,7 +49,11 @@
                 <div class="div_log">
                     <h1>{{ __('login.login') }}</h1>
 
-                    <p class="l_verify_error" style="height: 35px; width: 230px; border-radius: 10px; margin: 5px; letter-spacing: 0; text-align: center; background: red; color: #fff; display: none; justify-content: center; align-items: center;"></p>
+                    <p class="l_verify_error" style="height: 35px; width: 250px; border-radius: 10px; margin: 5px; letter-spacing: 0; text-align: center; color: red; display: none; justify-content: center; align-items: center;"></p>
+
+                    <p class="l_block_permanent_error" style="height: 35px; width: 250px; border-radius: 10px; margin: 5px; letter-spacing: 0; text-align: center; color: red; display: none; justify-content: center; align-items: center;">Your profile is blocked.</p>
+
+                    <p class="l_block_error" style="height: 35px; width: 250px; border-radius: 10px; margin: 5px; letter-spacing: 0; text-align: center; color: red; display: none; justify-content: center; align-items: center;"> </p>
 
                     <input class="l_email" type="email" placeholder="{{ __('login.email') }}" value="{{ old('l_email') }}" >
 

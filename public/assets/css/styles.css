@@ -101,7 +101,7 @@
 /* Header */
 .main-header {
   position: fixed;
-  left: 3.875rem;
+  left: 20rem;
   right: 0;
   z-index: 1060;
   -webkit-transition: all 0.3s linear;
@@ -207,7 +207,7 @@
 
 @media (min-width: 768px) {
   .main-header {
-    left: 16.25rem; } }
+    left: 20rem; } }
 .main-content {
   padding-top: 3.875rem;
   display: flex;
@@ -514,7 +514,6 @@
   letter-spacing: normal;
   font-size: .85rem; }
   .panel-dropdown .dropdown-toggle:after {
-    content: '\f078';
     font-family: 'Font Awesome 5 Free';
     border: 0;
     vertical-align: baseline;
@@ -887,7 +886,7 @@
     align-items: center;
     width: 100%; }
     .main-sidebar .theme-logo .logo-cont .logo-icon {
-      max-width: 1.7rem; }
+      max-width: 8rem; }
     .main-sidebar .theme-logo .logo-cont .logo {
       max-width: 4.7rem;
       margin-left: .38rem; }

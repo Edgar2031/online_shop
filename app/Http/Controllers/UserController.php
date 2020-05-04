@@ -206,20 +206,30 @@ class UserController extends Controller
 			else if ($user->active == 0) {
 				$validator->errors()->add('verify', 'Verify your account');
 			}
+			else if ($user->block === 'permanent') {
+				$validator->errors()->add('block_permanent', $user->block);
+			}
+			else if ($user->block != 0) {
+				$validator->errors()->add('block', $user->block);
+			}
 		});
 
 		if ($validator->fails()) {
 			// Переданные данные не прошли проверку
 			return Response::json(array(
-		        'success' => false,
-		        'errors' => $validator->getMessageBag()->toArray()
-		    ), 400); 
-		    // 400 being the HTTP code for an invalid request.
-		}else {
-			Session::put('id', $user->id);
-			if ($user->type == 1) return Response::json(array('success' => true), 200);// 200 being the HTTP code for an invalid request.
-			else return Response::json(array('success' => false), 200);
-			// 200 being the HTTP code for an invalid request.
+							        'success' => false,
+							        'errors' => $validator->getMessageBag()->toArray()
+							    ), 400); // 400 being the HTTP code for an invalid request.			
+		}else {		
+			UserModel::where('email', $r->send['email'])->update(['online_offline' => 1]);
+			if ($user->type == 1) {
+				Session::put('admin_id', $user->id); 
+				return Response::json(array('success' => true), 200);// 200 being the HTTP code for an invalid request.
+			}else { 
+				Session::put('id', $user->id);
+				return Response::json(array('success' => false), 200);// 200 being the HTTP code for an invalid request.
+			}
+			
 		}		
 	}
 
@@ -229,7 +239,7 @@ class UserController extends Controller
 	    $wishlist = WishlistModel::where('user_id', Session::get('id'))->get();
 	    $product = ProductModel::where('user_id', '<>', Session::get('id'))
 	    						->orderBy('id','DESC')
-	    						->limit(5)
+	    						->limit(3)
 	    						->get();
 								foreach($product as $p){		
 									$p['cart'] = 0;
@@ -251,6 +261,13 @@ class UserController extends Controller
 
 	// <= === Logout === =>
 	function g_logout() {
+		$id = Session::get('id');
+		$admin_id = Session::get('admin_id');
+		if ($id) {
+			UserModel::where('id', $id)->update(['online_offline' => 0]);
+		}else {
+			UserModel::where('id', $admin_id)->update(['online_offline' => 0]);
+		}
 		Session::flush();
 		return Redirect::to('/');
 	}

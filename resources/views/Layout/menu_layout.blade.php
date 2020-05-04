@@ -81,6 +81,25 @@
                                         </li>
                                     </ul>
                                 </li>
+                                <li>
+                                    <a>         
+                                        <i class="fas fa-globe"></i>
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="{{ url('locale/en') }}">
+                                                <img src="{{ asset('img/flag/united-states.png') }}" style="height: 20px; width: 20px;">
+                                                English(US) 
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url('locale/am') }}" > 
+                                                <img src="{{ asset('img/flag/armenia.png') }}" style="height: 20px; width: 20px;">  
+                                                Հայերեն
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
                             </ul>
                         </nav>
                         <!-- END MAIN NAVIGATION -->

@@ -12,7 +12,8 @@
   font-style: normal;
 }
 .fa,
-.fas {
+.fas,
+.far {
   display: inline-block;
   font-family: FontAwesome;
   font-style: normal;

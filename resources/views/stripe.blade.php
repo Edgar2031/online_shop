@@ -1,5 +1,4 @@
-@extends('Layout.menu_layout')
-@section('header')
+
 <!DOCTYPE HTML>
 <html>
     <head>  
@@ -58,6 +57,17 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <style type="text/css">
+            body {
+                background-image: url('{{ asset('img/fon.jpg') }}');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                font-family: 'Montserrat', sans-serif;
+                height: 100vh;
+            }
             .panel-title {
                 display: inline;
                 font-weight: bold;
@@ -90,10 +100,7 @@
                 <div class="d"></div>
             </div>
         </div>        
-        @endsection
-            
-        @section('footer')
-        <div class="container">  
+        <div class="container" style="margin-top: 8%;">  
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="panel panel-default credit-card-box">
@@ -234,4 +241,3 @@
     <script src="{{asset('js/masonry.js')}}"></script>
     <script src="{{asset('js/nicescroll.js')}}"></script>
 </html>
-@endsection

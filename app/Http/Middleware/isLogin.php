@@ -22,18 +22,25 @@ class isLogin
     {
         $respone = $next($request);
         switch ($is) {
-            case 'profile':
-                if (!Session::has('id')) {
+            case 'login':
+                if (Session::has('id')) {
+                    return Redirect::to('/g_profile');
+                }else if(Session::has('admin_id')){
+                    return Redirect::to('/admin');
+                }else {    
+                    return $respone->header('Cache-Control','no-cache, no-store, max-age-0, must-revalisate');
+                }
+                break;
+            case 'admin':
+                if(!Session::has('admin_id')){
                     return Redirect::to('/')->with('mess','pliz login');
                 }else {    
                     return $respone->header('Cache-Control','no-cache, no-store, max-age-0, must-revalisate');
                 }
                 break;
-            case 'login':
-                if (Session::has('id')) {
-                    $user = UserModel::where('id', Session::get('id'))->first();
-                    if ($user->type == 1) return Redirect::to('/admin');
-                    else return Redirect::to('/g_profile');
+            case 'profile':
+                if (!Session::has('id')) {
+                    return Redirect::to('/')->with('mess','pliz login');
                 }else {    
                     return $respone->header('Cache-Control','no-cache, no-store, max-age-0, must-revalisate');
                 }
