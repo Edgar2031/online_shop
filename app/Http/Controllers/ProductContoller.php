@@ -21,6 +21,7 @@ class ProductContoller extends Controller
     }
 
     function u_product(Request $r){
+    	dd($r->all());
       	$validator = Validator::make(
 		   $r->all(),
 		    array(
